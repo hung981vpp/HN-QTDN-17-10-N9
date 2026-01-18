@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Form view -->
+        <record id="view_tin_tuyen_dung_form" model="ir.ui.view">
+            <field name="name">tin_tuyen_dung.form</field>
+            <field name="model">tin_tuyen_dung</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_read_only" style="font-size:25px">Tin tuyển dụng</div>
+                        <group col="4" string="Thông tin chung">
+                            <field name="ma_tin"/>
+                            <field name="tieu_de"/>
+                            <field name="vi_tri"/>
+                            <field name="muc_luong"/>
+                            <field name="so_luong"/>
+                            <field name="han_dang_ky"/>
+                        </group>
+                        <group string="Mô tả chi tiết">
+                            <field name="mo_ta"/>
+                            <field name="thong_tin_cong_ty"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree view -->
+        <record id="view_tin_tuyen_dung_tree" model="ir.ui.view">
+            <field name="name">tin_tuyen_dung.tree</field>
+            <field name="model">tin_tuyen_dung</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ma_tin"/>
+                    <field name="tieu_de"/>
+                    <field name="vi_tri"/>
+                    <field name="muc_luong"/>
+                    <field name="so_luong"/>
+                    <field name="han_dang_ky"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Search view -->
+        <record model="ir.ui.view" id="tin_tuyen_dung_search">
+            <field name="name">tin_tuyen_dung.search</field>
+            <field name="model">tin_tuyen_dung</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="ma_tin"/>
+                    <field name="tieu_de"/>
+                    <field name="vi_tri"/>
+                    <field name="han_dang_ky"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_tin_tuyen_dung" model="ir.actions.act_window">
+            <field name="name">Tin tuyển dụng</field>
+            <field name="res_model">tin_tuyen_dung</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="tin_tuyen_dung_search"/>
+        </record>
+    </data>
+</odoo>

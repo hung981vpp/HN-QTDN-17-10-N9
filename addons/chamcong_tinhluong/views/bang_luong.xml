@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Sequence -->
+        <record id="seq_bang_luong" model="ir.sequence">
+            <field name="name">Bảng lương Sequence</field>
+            <field name="code">bang_luong.sequence</field>
+            <field name="prefix">BL</field>
+            <field name="padding">5</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <!-- Form view -->
+        <record id="view_bang_luong_form" model="ir.ui.view">
+            <field name="name">bang_luong.form</field>
+            <field name="model">bang_luong</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="trang_thai" widget="statusbar" statusbar_visible="chua_duyet,da_duyet,da_thanh_toan"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="ma_bang_luong" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group col="4" string="Thông tin chung">
+                            <field name="id_nhan_vien"/>
+                            <field name="thang"/>
+                            <field name="nam"/>
+                            <field name="luong_co_ban"/>
+                        </group>
+                        
+                        <group col="4" string="Công và giờ làm (Tự động từ Chấm công)">
+                            <field name="so_cong" readonly="1"/>
+                            <field name="tong_gio_lam" readonly="1"/>
+                            <field name="tong_gio_ot" readonly="1"/>
+                            <field name="luong_theo_gio" readonly="1"/>
+                        </group>
+                        
+                        <group col="4" string="Lương và OT">
+                            <field name="tien_luong_chinh" readonly="1"/>
+                            <field name="he_so_ot"/>
+                            <field name="tien_ot" readonly="1"/>
+                        </group>
+                        
+                        
+                        <group col="4" string="Thưởng tự động (Từ chấm công)">
+                            <field name="thuong_chuyen_can" readonly="1" style="color: green;"/>
+                            <field name="thuong_ot" readonly="1" style="color: green;"/>
+                        </group>
+                        
+                        <group col="4" string="Thưởng thủ công">
+                            <field name="tro_cap"/>
+                            <field name="thuong_hieu_suat"/>
+                            <field name="thuong_le_tet"/>
+                            <field name="thuong_khac"/>
+                            <field name="tong_thuong" readonly="1" style="font-weight: bold; color: green;"/>
+                        </group>
+                        
+                        <group col="4" string="Phạt tự động (Từ chấm công)">
+                            <field name="phat_khong_chuyen_can" readonly="1" style="color: red;"/>
+                            <field name="phat_den_muon" readonly="1" style="color: red;"/>
+                            <field name="phat_ve_som" readonly="1" style="color: red;"/>
+                        </group>
+                        
+                        <group col="4" string="Phạt thủ công">
+                            <field name="phat_thu_cong"/>
+                            <field name="tong_phat" readonly="1" style="font-weight: bold; color: red;"/>
+                        </group>
+                        
+                        <group col="4" string="Bảo hiểm cá nhân">
+                            <field name="ty_le_bhxh"/>
+                            <field name="ty_le_bhyt"/>
+                            <field name="ty_le_bhtn"/>
+                            <field name="tong_bao_hiem" readonly="1" style="font-weight: bold;"/>
+                        </group>
+                        
+                        <group col="4" string="Tổng kết">
+                            <field name="tong_luong" readonly="1" style="font-weight: bold; font-size: 16px;"/>
+                            <field name="luong_thuc_nhan" readonly="1" style="font-weight: bold; font-size: 16px; color: green;"/>
+                        </group>
+                        
+                        <group string="Ghi chú">
+                            <field name="ghi_chu" nolabel="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree view -->
+        <record id="view_bang_luong_tree" model="ir.ui.view">
+            <field name="name">bang_luong.tree</field>
+            <field name="model">bang_luong</field>
+            <field name="arch" type="xml">
+                <tree decoration-info="trang_thai=='chua_duyet'" 
+                      decoration-success="trang_thai=='da_thanh_toan'">
+                    <field name="ma_bang_luong"/>
+                    <field name="id_nhan_vien"/>
+                    <field name="thang"/>
+                    <field name="nam"/>
+                    <field name="so_cong"/>
+                    <field name="tong_gio_lam"/>
+                    <field name="tong_gio_ot"/>
+                    <field name="tien_luong_chinh"/>
+                    <field name="tien_ot"/>
+                    <field name="tong_thuong"/>
+                    <field name="tong_phat"/>
+                    <field name="tong_bao_hiem"/>
+                    <field name="luong_thuc_nhan" sum="Tổng lương thực nhận"/>
+                    <field name="trang_thai"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Search view -->
+        <record id="view_bang_luong_search" model="ir.ui.view">
+            <field name="name">bang_luong.search</field>
+            <field name="model">bang_luong</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="ma_bang_luong"/>
+                    <field name="id_nhan_vien"/>
+                    <field name="thang"/>
+                    <field name="nam"/>
+                    <filter string="Chưa duyệt" name="chua_duyet" domain="[('trang_thai','=','chua_duyet')]"/>
+                    <filter string="Đã duyệt" name="da_duyet" domain="[('trang_thai','=','da_duyet')]"/>
+                    <filter string="Đã thanh toán" name="da_thanh_toan" domain="[('trang_thai','=','da_thanh_toan')]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Nhân viên" name="group_nhan_vien" context="{'group_by':'id_nhan_vien'}"/>
+                        <filter string="Tháng" name="group_thang" context="{'group_by':'thang'}"/>
+                        <filter string="Năm" name="group_nam" context="{'group_by':'nam'}"/>
+                        <filter string="Trạng thái" name="group_trang_thai" context="{'group_by':'trang_thai'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_bang_luong" model="ir.actions.act_window">
+            <field name="name">Bảng lương</field>
+            <field name="res_model">bang_luong</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_bang_luong_search"/>
+        </record>
+    </data>
+</odoo>

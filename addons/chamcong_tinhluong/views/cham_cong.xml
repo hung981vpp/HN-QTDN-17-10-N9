@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Sequence -->
+        <record id="seq_cham_cong" model="ir.sequence">
+            <field name="name">Chấm công Sequence</field>
+            <field name="code">cham_cong.sequence</field>
+            <field name="prefix">CC</field>
+            <field name="padding">5</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <!-- Form view -->
+        <record id="view_cham_cong_form" model="ir.ui.view">
+            <field name="name">cham_cong.form</field>
+            <field name="model">cham_cong</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="ma_cham_cong" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group col="4" string="Thông tin chấm công">
+                            <field name="id_nhan_vien"/>
+                            <field name="ngay"/>
+                            <field name="gio_vao"/>
+                            <field name="gio_ra"/>
+                            <field name="gio_nghi"/>
+                            <field name="tong_so_gio_lam"/>
+                            <field name="gio_ot"/>
+                            <field name="trang_thai"/>
+                            <field name="co_xin_phep" widget="boolean_toggle"/>
+                        </group>
+                        <group string="Ghi chú">
+                            <field name="ghi_chu" nolabel="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree view -->
+        <record id="view_cham_cong_tree" model="ir.ui.view">
+            <field name="name">cham_cong.tree</field>
+            <field name="model">cham_cong</field>
+            <field name="arch" type="xml">
+                <tree decoration-success="trang_thai=='dung_gio'" 
+                      decoration-info="trang_thai=='lam_them'"
+                      decoration-warning="trang_thai=='ve_som'" 
+                      decoration-danger="trang_thai=='den_muon'"
+                      decoration-muted="trang_thai=='nghi'">
+                    <field name="ma_cham_cong"/>
+                    <field name="id_nhan_vien"/>
+                    <field name="ngay"/>
+                    <field name="gio_vao"/>
+                    <field name="gio_ra"/>
+                    <field name="gio_nghi"/>
+                    <field name="tong_so_gio_lam"/>
+                    <field name="gio_ot"/>
+                    <field name="trang_thai"/>
+                    <field name="co_xin_phep" widget="boolean_toggle"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Search view -->
+        <record id="view_cham_cong_search" model="ir.ui.view">
+            <field name="name">cham_cong.search</field>
+            <field name="model">cham_cong</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="ma_cham_cong"/>
+                    <field name="id_nhan_vien"/>
+                    <field name="ngay"/>
+                    <filter string="Đúng giờ" name="dung_gio" domain="[('trang_thai','=','dung_gio')]"/>
+                    <filter string="Làm thêm giờ" name="lam_them" domain="[('trang_thai','=','lam_them')]"/>
+                    <filter string="Đến muộn" name="den_muon" domain="[('trang_thai','=','den_muon')]"/>
+                    <filter string="Về sớm" name="ve_som" domain="[('trang_thai','=','ve_som')]"/>
+                    <filter string="Nghỉ" name="nghi" domain="[('trang_thai','=','nghi')]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Nhân viên" name="group_nhan_vien" context="{'group_by':'id_nhan_vien'}"/>
+                        <filter string="Trạng thái" name="group_trang_thai" context="{'group_by':'trang_thai'}"/>
+                        <filter string="Ngày" name="group_ngay" context="{'group_by':'ngay'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_cham_cong" model="ir.actions.act_window">
+            <field name="name">Chấm công</field>
+            <field name="res_model">cham_cong</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_cham_cong_search"/>
+        </record>
+    </data>
+</odoo>

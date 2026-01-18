@@ -49,5 +49,11 @@
             sequence="4"
             action="action_danh_sach_chung_chi_bang_cap"
         />
+        <menuitem name="Tin tuyển dụng"
+            id="menu_tin_tuyen_dung" 
+            parent="menu_root"
+            action="action_tin_tuyen_dung"
+            sequence="20"/>
+
     </data>
 </odoo>

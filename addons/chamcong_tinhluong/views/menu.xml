@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Tạo menu root riêng cho module này -->
+        <menuitem
+            id="menu_root_chamcong_tinhluong"
+            name="Chấm công - Tính lương"
+            sequence="10"/>
+          
+        <menuitem 
+            id="menu_cham_cong" 
+            name="Chấm công"
+            parent="menu_root_chamcong_tinhluong"
+            action="action_cham_cong"
+            sequence="1"/>
+            
+        <menuitem 
+            id="menu_bang_luong" 
+            name="Bảng lương"
+            parent="menu_root_chamcong_tinhluong"
+            action="action_bang_luong"
+            sequence="2"/>
+    </data>
+</odoo>

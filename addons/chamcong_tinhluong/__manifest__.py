@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "nhan_su",
+    'name': "chamcong_tinhluong",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -24,19 +24,16 @@
 
     # always loaded
     'data': [
-        # Load views trước (tạo models)
-        'views/chuc_vu.xml',
-        'views/don_vi.xml',
-        'views/nhan_vien.xml',
-        'views/lich_su_cong_tac.xml',
-        'views/chung_chi_bang_cap.xml',
-        'views/danh_sach_chung_chi_bang_cap.xml',
-        'views/tin_tuyen_dung.xml',
+
+        'views/cham_cong.xml',
+        'views/bang_luong.xml',
         'views/menu.xml',
-        
-        # Load security cuối cùng
+
         'security/ir.model.access.csv',
     ],
+
+    'installable': True,
+    'application': True,
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',

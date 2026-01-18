@@ -8,9 +8,11 @@ class NhanVien(models.Model):
     _description = 'Bảng chứa thông tin nhân viên'
     _rec_name = 'ho_va_ten'
     _order = 'ten asc, tuoi desc'
-
+    _sql_constraints = [
+        ('ma_dinh_danh_unique', 'unique(ma_dinh_danh)', 'Mã định danh phải là duy nhất')
+    ]
+    
     ma_dinh_danh = fields.Char("Mã định danh", required=True)
-
     ho_ten_dem = fields.Char("Họ tên đệm", required=True)
     ten = fields.Char("Tên", required=True)
     ho_va_ten = fields.Char("Họ và tên", compute="_compute_ho_va_ten", store=True)
@@ -33,6 +35,7 @@ class NhanVien(models.Model):
                                         compute="so_nguoi_bang_tuoi",
                                         store=True
                                         )
+    luong_co_ban = fields.Float("Lương cơ bản/tháng", default=5000000, help="Lương cơ bản hàng tháng của nhân viên")
     
     @api.depends("tuoi")
     def _compute_so_nguoi_bang_tuoi(self):
