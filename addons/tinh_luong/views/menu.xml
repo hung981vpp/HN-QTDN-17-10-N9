@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Menu Root -->
+    <menuitem id="menu_tinh_luong_root" 
+              name="Tính Lương" 
+              sequence="20"
+              web_icon="tinh_luong,static/description/icon.png"/>
+    
+    <!-- Menu Bảng Lương -->
+    <menuitem id="menu_bang_luong" 
+              name="Bảng Lương" 
+              parent="menu_tinh_luong_root" 
+              action="action_bang_luong" 
+              sequence="10"/>
+</odoo>

@@ -8,24 +8,76 @@
                 <form>
                     <sheet>
                         <div class="oe_read_only" style="font-size:25px">Nhân viên</div>
-                        <group col="4" string="Thông tin chung">
+                        <group col="4" string="Thông tin cá nhân">
                             <field name="ho_ten_dem"/>
                             <field name="ten"/>
                             <field name="ho_va_ten"/>
                             <field name="ma_dinh_danh"/>
                             <field name="ngay_sinh"/>
                             <field name="tuoi"/>
-                            <field name="so_nguoi_bang_tuoi"/>
                             <field name="que_quan"/>
                             <field name="email"/>
-                            <field name="luong_co_ban" widget="monetary"/>
+                            <field name="so_dien_thoai"/>
                             <field name="anh" widget="image"/>
                         </group>
+                        
                         <notebook>
-                            <page string="Danh sách lịch sử công tác">
+                            <!-- Tab Thông tin công việc -->
+                            <page string="Thông tin công việc">
+                                <group string="Vị trí công việc">
+                                    <field name="chuc_vu_hien_tai_id"/>
+                                    <field name="phong_ban_hien_tai_id"/>
+                                </group>
+                            </page>
+                            
+                            <!-- Tab Hợp đồng -->
+                            <page string="Hợp đồng">
+                                <group string="Thông tin hợp đồng">
+                                    <field name="so_hop_dong"/>
+                                    <field name="loai_hop_dong"/>
+                                    <field name="thoi_han_hop_dong"/>
+                                    <field name="trang_thai_hop_dong"/>
+                                </group>
+                                <group string="Thời gian">
+                                    <field name="ngay_ky_hop_dong"/>
+                                    <field name="ngay_bat_dau_lam_viec"/>
+                                    <field name="ngay_ket_thuc_hop_dong"/>
+                                </group>
+                            </page>
+                            
+                            <!-- Tab Lương & Bảo hiểm -->
+                            <page string="Lương &amp; Bảo hiểm">
+                                <group string="Hệ thống lương">
+                                    <field name="he_so_luong"/>
+                                    <field name="luong_co_ban" widget="monetary"/>
+                                    <field name="luong_theo_ngay" widget="monetary"/>
+                                    <field name="luong_theo_gio" widget="monetary"/>
+                                </group>
+                                <group string="Lương đóng bảo hiểm">
+                                    <field name="ma_so_bhxh"/>
+                                    <field name="luong_dong_bao_hiem" widget="monetary" style="font-weight: bold;"/>
+                                </group>
+                                
+                                <group string="Tỷ lệ đóng">
+                                    <field name="ty_le_dong_bhxh"/>
+                                    <field name="ty_le_dong_bhyt"/>
+                                    <field name="ty_le_dong_bhtn"/>
+                                </group>
+                                <group string="Số tiền phải đóng">
+                                    <field name="tien_dong_bhxh" widget="monetary"/>
+                                    <field name="tien_dong_bhyt" widget="monetary"/>
+                                    <field name="tien_dong_bhtn" widget="monetary"/>
+                                    <field name="tong_tien_bao_hiem" widget="monetary" style="font-weight: bold; color: #d9534f;"/>
+                                </group>
+                            </page>
+                            
+                            <!-- Tab Lịch sử công tác -->
+                            <page string="Lịch sử công tác">
                                 <field name="lich_su_cong_tac_ids"/>
                             </page>
-                            <page string="Danh sách chứng chỉ bằng cấp">
+                            
+                            <!-- Tab Chứng chỉ bằng cấp -->
+                            <page string="Chứng chỉ bằng cấp">
                                 <field name="danh_sach_chung_chi_bang_cap_ids"/>
                             </page>
                         </notebook>
@@ -41,15 +93,15 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="ma_dinh_danh"/>
-                    <field name="ho_ten_dem"/>
-                    <field name="ten"/>
                     <field name="ho_va_ten"/>
-                    <field name="ngay_sinh"/>
-                    <field name="tuoi"/>
-                    <field name="so_nguoi_bang_tuoi"/>
-                    <field name="que_quan"/>
-                    <field name="email"/>
+                    <field name="chuc_vu_hien_tai_id"/>
+                    <field name="phong_ban_hien_tai_id"/>
+                    <field name="loai_hop_dong"/>
+                    <field name="trang_thai_hop_dong"/>
+                    <field name="he_so_luong"/>
                     <field name="luong_co_ban" widget="monetary"/>
+                    <field name="email"/>
+                    <field name="so_dien_thoai"/>
                 </tree>
             </field>
         </record>
@@ -60,10 +112,29 @@
                 <search>
                     <field name="ma_dinh_danh"/>
                     <field name="ho_va_ten"/>
-                    <field name="ngay_sinh"/>
-                    <field name="tuoi"/>
-                    <field name="que_quan"/>
                     <field name="email"/>
+                    <field name="so_dien_thoai"/>
+                    <field name="chuc_vu_hien_tai_id"/>
+                    <field name="phong_ban_hien_tai_id"/>
+                    <field name="loai_hop_dong"/>
+                    <field name="trang_thai_hop_dong"/>
+                    <field name="ma_so_bhxh"/>
+                    
+                    <filter string="Hợp đồng đang hiệu lực" name="hop_dong_hieu_luc" 
+                            domain="[('trang_thai_hop_dong', '=', 'dang_hieu_luc')]"/>
+                    <filter string="Hợp đồng hết hạn" name="hop_dong_het_han" 
+                            domain="[('trang_thai_hop_dong', '=', 'het_han')]"/>
+                    
+                    <group expand="0" string="Nhóm theo">
+                        <filter string="Phòng ban" name="group_phong_ban" 
+                                context="{'group_by': 'phong_ban_hien_tai_id'}"/>
+                        <filter string="Chức vụ" name="group_chuc_vu" 
+                                context="{'group_by': 'chuc_vu_hien_tai_id'}"/>
+                        <filter string="Loại hợp đồng" name="group_loai_hop_dong" 
+                                context="{'group_by': 'loai_hop_dong'}"/>
+                        <filter string="Trạng thái hợp đồng" name="group_trang_thai" 
+                                context="{'group_by': 'trang_thai_hop_dong'}"/>
+                    </group>
                 </search>
             </field>
         </record>

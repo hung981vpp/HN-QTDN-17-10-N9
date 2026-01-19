@@ -2,23 +2,35 @@
 <odoo>
     <data>
         <record id="view_van_ban_den_form" model="ir.ui.view">
-            <field name="name">van_ban_den</field>
+            <field name="name">van_ban_den.form</field>
             <field name="model">van_ban_den</field>
             <field name="arch" type="xml">
-                <form>
+                <form string="Văn bản đến">
                     <sheet>
-                        <div class="oe_read_only" style="font-size:25px">Văn bản đến</div>
-                        <group col="4" string="Thông tin chung">
-                            <field name="ten_van_ban"/>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="ten_van_ban" placeholder="Tên văn bản"/>
+                            </h1>
+                        </div>
+
+                        <group string="Thông tin chung" col="2">
                             <field name="so_van_ban_den"/>
                             <field name="so_hieu_van_ban"/>
                             <field name="noi_gui_den"/>
                         </group>
+
+                        <group string="Nhân sự">
+                            <group col="2">
+                                <field name="nhan_vien_xu_ly_id"/>
+                                <field name="nhan_vien_ky_id"/>
+                            </group>
+                        </group>
+
                     </sheet>
-                    
                 </form>
             </field>
         </record>
+
 
         <record id="view_van_ban_den_tree" model="ir.ui.view">
             <field name="name">van_ban_den</field>
