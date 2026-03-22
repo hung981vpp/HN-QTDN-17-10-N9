@@ -1,3 +1,9 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_cham_cong_user,access_cham_cong_user,model_cham_cong,base.group_user,1,1,1,1
 access_cham_cong_manager,access_cham_cong_manager,model_cham_cong,base.group_system,1,1,1,1
+access_dot_dang_ky_user,access_dot_dang_ky_user,model_dot_dang_ky,base.group_user,1,1,1,1
+access_dot_dang_ky_manager,access_dot_dang_ky_manager,model_dot_dang_ky,base.group_system,1,1,1,1
+access_dang_ky_ca_lam_theo_ngay_user,access_dang_ky_ca_lam_theo_ngay_user,model_dang_ky_ca_lam_theo_ngay,base.group_user,1,1,1,1
+access_dang_ky_ca_lam_theo_ngay_manager,access_dang_ky_ca_lam_theo_ngay_manager,model_dang_ky_ca_lam_theo_ngay,base.group_system,1,1,1,1
+access_don_tu_user,access_don_tu_user,model_don_tu,base.group_user,1,1,1,0
+access_don_tu_manager,access_don_tu_manager,model_don_tu,base.group_system,1,1,1,1

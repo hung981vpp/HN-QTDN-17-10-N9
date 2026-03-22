@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_dang_ky_ca_lam_theo_ngay_tree" model="ir.ui.view">
+        <field name="name">dang.ky.ca.lam.theo.ngay.tree</field>
+        <field name="model">dang_ky_ca_lam_theo_ngay</field>
+        <field name="arch" type="xml">
+            <tree string="Đăng Ký Ca Làm">
+                <field name="ma_dot_ngay"/>
+                <field name="ten_dot"/>
+                <field name="ten_nhan_vien"/>
+                <field name="ngay_lam"/>
+                <field name="ca_lam"/>
+                <field name="trang_thai" widget="badge" decoration-info="trang_thai == 'nhap'" decoration-warning="trang_thai == 'cho_duyet'" decoration-success="trang_thai == 'da_duyet'" decoration-danger="trang_thai == 'tu_choi'"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_dang_ky_ca_lam_theo_ngay_form" model="ir.ui.view">
+        <field name="name">dang.ky.ca.lam.theo.ngay.form</field>
+        <field name="model">dang_ky_ca_lam_theo_ngay</field>
+        <field name="arch" type="xml">
+            <form string="Đăng Ký Ca Làm">
+                <header>
+                    <button name="action_gui_duyet" string="Gửi duyệt" type="object" class="oe_highlight" attrs="{'invisible': [('trang_thai', '!=', 'nhap')]}"/>
+                    <button name="action_duyet" string="Duyệt" type="object" class="oe_highlight" groups="base.group_user" attrs="{'invisible': [('trang_thai', '!=', 'cho_duyet')]}"/>
+                    <button name="action_tu_choi" string="Từ chối" type="object" groups="base.group_user" attrs="{'invisible': [('trang_thai', '!=', 'cho_duyet')]}"/>
+                    <button name="action_reset" string="Quay về nháp" type="object" attrs="{'invisible': [('trang_thai', '==', 'nhap')]}"/>
+                    <field name="trang_thai" widget="statusbar" statusbar_visible="nhap,cho_duyet,da_duyet"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="ma_dot_ngay" readonly="1"/>
+                            <field name="dot_dang_ky_id" attrs="{'readonly': [('trang_thai', '!=', 'nhap')]}"/>
+                            <field name="nhan_vien_id" attrs="{'readonly': [('trang_thai', '!=', 'nhap')]}"/>
+                        </group>
+                        <group>
+                            <field name="ngay_lam" attrs="{'readonly': [('trang_thai', '!=', 'nhap')]}"/>
+                            <field name="ca_lam" attrs="{'readonly': [('trang_thai', '!=', 'nhap')]}"/>
+                            <field name="ly_do_tu_choi" readonly="1" attrs="{'invisible': [('trang_thai', '!=', 'tu_choi')]}"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_dang_ky_ca_lam_theo_ngay_search" model="ir.ui.view">
+        <field name="name">dang.ky.ca.lam.theo.ngay.search</field>
+        <field name="model">dang_ky_ca_lam_theo_ngay</field>
+        <field name="arch" type="xml">
+            <search string="Tìm Kiếm Đăng Ký Ca Làm">
+                <field name="nhan_vien_id"/>
+                <field name="dot_dang_ky_id"/>
+                <field name="ngay_lam"/>
+                <filter string="Ca Sáng" name="ca_sang" domain="[('ca_lam', '=', 'sang')]"/>
+                <filter string="Ca Chiều" name="ca_chieu" domain="[('ca_lam', '=', 'chieu')]"/>
+                <filter string="Cả Ngày" name="ca_ngay" domain="[('ca_lam', '=', 'ca_ngay')]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Đợt Đăng Ký" name="group_dot" context="{'group_by': 'dot_dang_ky_id'}"/>
+                    <filter string="Nhân Viên" name="group_nhan_vien" context="{'group_by': 'nhan_vien_id'}"/>
+                    <filter string="Ngày Làm" name="group_ngay" context="{'group_by': 'ngay_lam'}"/>
+                    <filter string="Ca Làm" name="group_ca" context="{'group_by': 'ca_lam'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_dang_ky_ca_lam_theo_ngay" model="ir.actions.act_window">
+        <field name="name">Đăng Ký Ca Làm</field>
+        <field name="res_model">dang_ky_ca_lam_theo_ngay</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_dang_ky_ca_lam_theo_ngay_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Tạo đăng ký ca làm mới
+            </p>
+            <p>
+                Đăng ký ca làm theo ngày cho nhân viên.
+            </p>
+        </field>
+    </record>
+</odoo>

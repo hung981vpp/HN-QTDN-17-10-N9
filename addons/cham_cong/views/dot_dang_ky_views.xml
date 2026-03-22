@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_dot_dang_ky_tree" model="ir.ui.view">
+        <field name="name">dot.dang.ky.tree</field>
+        <field name="model">dot_dang_ky</field>
+        <field name="arch" type="xml">
+            <tree string="Đợt Đăng Ký">
+                <field name="ma_dot"/>
+                <field name="ten_dot"/>
+                <field name="ngay_bat_dau"/>
+                <field name="ngay_ket_thuc"/>
+                <field name="han_dang_ky"/>
+                <field name="so_luong_nhan_vien"/>
+                <field name="so_luong_dang_ky"/>
+                <field name="trang_thai_dang_ky" decoration-success="trang_thai_dang_ky == 'dang_mo'" decoration-danger="trang_thai_dang_ky == 'da_dong'"/>
+                <field name="trang_thai_ap_dung" decoration-info="trang_thai_ap_dung == 'dang_ap_dung'"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_dot_dang_ky_form" model="ir.ui.view">
+        <field name="name">dot.dang.ky.form</field>
+        <field name="model">dot_dang_ky</field>
+        <field name="arch" type="xml">
+            <form string="Đợt Đăng Ký">
+                <header>
+                    <button name="action_mo_dang_ky" string="Mở Đăng Ký" type="object" class="btn-primary" attrs="{'invisible': [('trang_thai_dang_ky', '=', 'dang_mo')]}"/>
+                    <button name="action_dong_dang_ky" string="Đóng Đăng Ký" type="object" class="btn-warning" attrs="{'invisible': [('trang_thai_dang_ky', '=', 'da_dong')]}"/>
+                    <button name="action_ap_dung" string="Áp Dụng" type="object" class="btn-success" attrs="{'invisible': [('trang_thai_ap_dung', '=', 'dang_ap_dung')]}"/>
+                    <button name="action_ngung_ap_dung" string="Ngừng Áp Dụng" type="object" class="btn-danger" attrs="{'invisible': [('trang_thai_ap_dung', '!=', 'dang_ap_dung')]}"/>
+                    <field name="trang_thai_dang_ky" widget="statusbar" statusbar_visible="dang_mo,het_han,da_dong"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                        </button>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="ma_dot" readonly="1"/>
+                            <field name="ten_dot"/>
+                            <field name="nam_dang_ky"/>
+                            <field name="thang_dang_ky"/>
+                        </group>
+                        <group>
+                            <field name="ngay_bat_dau" readonly="1"/>
+                            <field name="ngay_ket_thuc" readonly="1"/>
+                            <field name="han_dang_ky"/>
+                            <field name="trang_thai_ap_dung"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="so_luong_nhan_vien"/>
+                            <field name="so_luong_dang_ky"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Nhân Viên Được Đăng Ký">
+                            <field name="nhan_vien_ids">
+                                <tree>
+                                    <field name="ma_dinh_danh"/>
+                                    <field name="ho_va_ten"/>
+                                    <field name="so_dien_thoai"/>
+                                    <field name="phong_ban_hien_tai_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Đăng Ký Ca Làm">
+                            <field name="dang_ky_ca_ids">
+                                <tree>
+                                    <field name="ma_dot_ngay"/>
+                                    <field name="nhan_vien_id"/>
+                                    <field name="ngay_lam"/>
+                                    <field name="ca_lam"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_dot_dang_ky" model="ir.actions.act_window">
+        <field name="name">Đợt Đăng Ký</field>
+        <field name="res_model">dot_dang_ky</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Tạo đợt đăng ký ca làm mới
+            </p>
+            <p>
+                Quản lý các đợt đăng ký ca làm theo tháng/năm.
+            </p>
+        </field>
+    </record>
+</odoo>

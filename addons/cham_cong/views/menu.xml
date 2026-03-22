@@ -12,4 +12,25 @@
               parent="menu_cham_cong_root" 
               action="action_cham_cong" 
               sequence="10"/>
+    
+    <!-- Menu Đợt Đăng Ký -->
+    <menuitem id="menu_dot_dang_ky" 
+              name="Đợt Đăng Ký" 
+              parent="menu_cham_cong_root" 
+              action="action_dot_dang_ky" 
+              sequence="20"/>
+    
+    <!-- Menu Đăng Ký Ca Làm -->
+    <menuitem id="menu_dang_ky_ca_lam" 
+              name="Đăng Ký Ca Làm" 
+              parent="menu_cham_cong_root" 
+              action="action_dang_ky_ca_lam_theo_ngay" 
+              sequence="30"/>
+    
+    <!-- Menu Đơn Từ -->
+    <menuitem id="menu_don_tu" 
+              name="Đơn Từ" 
+              parent="menu_cham_cong_root" 
+              action="action_don_tu" 
+              sequence="40"/>
 </odoo>

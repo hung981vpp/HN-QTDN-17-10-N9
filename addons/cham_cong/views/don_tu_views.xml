@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_don_tu_tree" model="ir.ui.view">
+        <field name="name">don.tu.tree</field>
+        <field name="model">don_tu</field>
+        <field name="arch" type="xml">
+            <tree string="Đơn Từ" decoration-success="trang_thai == 'da_duyet'" decoration-danger="trang_thai == 'tu_choi'" decoration-muted="trang_thai == 'cho_duyet'">
+                <field name="ma_don"/>
+                <field name="ten_nhan_vien"/>
+                <field name="ngay_lam_don"/>
+                <field name="ngay_ap_dung"/>
+                <field name="loai_don"/>
+                <field name="thoi_gian_xin" optional="hide"/>
+                <field name="trang_thai" decoration-success="trang_thai == 'da_duyet'" decoration-danger="trang_thai == 'tu_choi'"/>
+                <field name="nguoi_duyet_id" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_don_tu_form" model="ir.ui.view">
+        <field name="name">don.tu.form</field>
+        <field name="model">don_tu</field>
+        <field name="arch" type="xml">
+            <form string="Đơn Từ">
+                <header>
+                    <button name="action_duyet" string="Duyệt" type="object" class="btn-success" attrs="{'invisible': [('trang_thai', '!=', 'cho_duyet')]}"/>
+                    <button name="action_tu_choi" string="Từ Chối" type="object" class="btn-danger" attrs="{'invisible': [('trang_thai', '!=', 'cho_duyet')]}"/>
+                    <button name="action_reset_to_draft" string="Đưa Về Chờ Duyệt" type="object" class="btn-warning" attrs="{'invisible': [('trang_thai', '=', 'cho_duyet')]}"/>
+                    <field name="trang_thai" widget="statusbar" statusbar_visible="cho_duyet,da_duyet,tu_choi"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="ma_don" readonly="1"/>
+                            <field name="nhan_vien_id" attrs="{'readonly': [('trang_thai', '!=', 'cho_duyet')]}"/>
+                            <field name="ngay_lam_don" attrs="{'readonly': [('trang_thai', '!=', 'cho_duyet')]}"/>
+                            <field name="ngay_ap_dung" attrs="{'readonly': [('trang_thai', '!=', 'cho_duyet')]}"/>
+                        </group>
+                        <group>
+                            <field name="loai_don" attrs="{'readonly': [('trang_thai', '!=', 'cho_duyet')]}"/>
+                            <field name="thoi_gian_xin" attrs="{'invisible': [('loai_don', '=', 'nghi')], 'readonly': [('trang_thai', '!=', 'cho_duyet')], 'required': [('loai_don', 'in', ['di_muon', 've_som'])]}"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="ly_do" attrs="{'readonly': [('trang_thai', '!=', 'cho_duyet')]}"/>
+                    </group>
+                    <group string="Thông Tin Duyệt" attrs="{'invisible': [('trang_thai', '=', 'cho_duyet')]}">
+                        <group>
+                            <field name="nguoi_duyet_id"/>
+                            <field name="ngay_duyet"/>
+                        </group>
+                        <group>
+                            <field name="ghi_chu_duyet"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_don_tu_search" model="ir.ui.view">
+        <field name="name">don.tu.search</field>
+        <field name="model">don_tu</field>
+        <field name="arch" type="xml">
+            <search string="Tìm Kiếm Đơn Từ">
+                <field name="nhan_vien_id"/>
+                <field name="ma_don"/>
+                <field name="ngay_ap_dung"/>
+                <filter string="Chờ Duyệt" name="cho_duyet" domain="[('trang_thai', '=', 'cho_duyet')]"/>
+                <filter string="Đã Duyệt" name="da_duyet" domain="[('trang_thai', '=', 'da_duyet')]"/>
+                <filter string="Từ Chối" name="tu_choi" domain="[('trang_thai', '=', 'tu_choi')]"/>
+                <separator/>
+                <filter string="Đơn Xin Nghỉ" name="nghi" domain="[('loai_don', '=', 'nghi')]"/>
+                <filter string="Đơn Xin Đi Muộn" name="di_muon" domain="[('loai_don', '=', 'di_muon')]"/>
+                <filter string="Đơn Xin Về Sớm" name="ve_som" domain="[('loai_don', '=', 've_som')]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Nhân Viên" name="group_nhan_vien" context="{'group_by': 'nhan_vien_id'}"/>
+                    <filter string="Loại Đơn" name="group_loai" context="{'group_by': 'loai_don'}"/>
+                    <filter string="Trạng Thái" name="group_trang_thai" context="{'group_by': 'trang_thai'}"/>
+                    <filter string="Ngày Áp Dụng" name="group_ngay" context="{'group_by': 'ngay_ap_dung'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_don_tu" model="ir.actions.act_window">
+        <field name="name">Đơn Từ</field>
+        <field name="res_model">don_tu</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_don_tu_search"/>
+        <field name="context">{'search_default_cho_duyet': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Tạo đơn từ mới
+            </p>
+            <p>
+                Quản lý đơn xin nghỉ, đi muộn, về sớm của nhân viên.
+            </p>
+        </field>
+    </record>
+</odoo>

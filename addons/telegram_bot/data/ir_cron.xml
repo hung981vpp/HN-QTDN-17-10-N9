@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Cron job: Poll Telegram updates mỗi 1 phút -->
+        <record id="ir_cron_telegram_poll" model="ir.cron">
+            <field name="name">Telegram Bot: Poll Updates</field>
+            <field name="model_id" ref="model_telegram_bot_config"/>
+            <field name="state">code</field>
+            <field name="code">model.poll_updates()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="active">True</field>
+            <field name="priority">10</field>
+        </record>
+    </data>
+</odoo>

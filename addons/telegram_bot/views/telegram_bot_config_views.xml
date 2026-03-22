@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Form view: Telegram Bot Config -->
+    <record id="view_telegram_bot_config_form" model="ir.ui.view">
+        <field name="name">telegram.bot.config.form</field>
+        <field name="model">telegram.bot.config</field>
+        <field name="arch" type="xml">
+            <form string="Cấu hình Telegram Bot">
+                <header>
+                    <button name="test_connection" string="Test Kết nối" type="object"
+                            class="btn-primary" icon="fa-plug"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group string="Cấu hình Bot">
+                            <field name="bot_token" password="True"/>
+                            <field name="bot_name" readonly="1"/>
+                            <field name="bot_username" readonly="1"/>
+                            <field name="is_active" widget="boolean_toggle"/>
+                        </group>
+                        <group string="Trạng thái Polling">
+                            <field name="last_update_id" readonly="1"/>
+                            <field name="last_poll_time" readonly="1"/>
+                            <field name="last_error" readonly="1" widget="text"/>
+                        </group>
+                    </group>
+                    <group string="Cài đặt GPS (tuỳ chọn)">
+                        <group>
+                            <field name="enable_gps_check" widget="boolean_toggle"/>
+                            <field name="gps_radius" attrs="{'invisible': [('enable_gps_check','=',False)]}"/>
+                        </group>
+                        <group>
+                            <field name="company_latitude" attrs="{'invisible': [('enable_gps_check','=',False)]}"/>
+                            <field name="company_longitude" attrs="{'invisible': [('enable_gps_check','=',False)]}"/>
+                        </group>
+                    </group>
+                    <group string="Hướng dẫn">
+                        <div class="alert alert-info" role="alert">
+                            <h4>Cách lấy Bot Token:</h4>
+                            <ol>
+                                <li>Mở Telegram, tìm kiếm <b>@BotFather</b></li>
+                                <li>Gửi lệnh <code>/newbot</code></li>
+                                <li>Đặt tên cho bot</li>
+                                <li>Copy token và dán vào ô Bot Token ở trên</li>
+                            </ol>
+                            <h4>Hướng dẫn nhân viên liên kết:</h4>
+                            <p>Nhân viên mở chat với bot và gửi: <code>link &lt;số điện thoại&gt;</code></p>
+                        </div>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- List view -->
+    <record id="view_telegram_bot_config_list" model="ir.ui.view">
+        <field name="name">telegram.bot.config.list</field>
+        <field name="model">telegram.bot.config</field>
+        <field name="arch" type="xml">
+            <tree string="Telegram Bot Config">
+                <field name="name"/>
+                <field name="bot_username"/>
+                <field name="is_active" widget="boolean"/>
+                <field name="last_poll_time"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Server Action: mở singleton form (luôn mở record cũ) -->
+    <record id="action_telegram_bot_config" model="ir.actions.server">
+        <field name="name">Cấu hình Telegram Bot</field>
+        <field name="model_id" ref="model_telegram_bot_config"/>
+        <field name="binding_model_id" ref="model_telegram_bot_config"/>
+        <field name="state">code</field>
+        <field name="code">action = model.action_view_config()</field>
+    </record>
+</odoo>

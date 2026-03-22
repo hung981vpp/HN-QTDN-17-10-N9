@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Menu gốc kế thừa từ cham_cong nếu có, nếu không tạo riêng -->
+    <menuitem id="menu_telegram_bot_root"
+              name="Telegram Bot"
+              parent="nhan_su.menu_root"
+              sequence="90"/>
+
+    <menuitem id="menu_telegram_bot_config"
+              name="Cấu hình Bot"
+              parent="menu_telegram_bot_root"
+              action="action_telegram_bot_config"
+              sequence="10"/>
+
+    <menuitem id="menu_telegram_bot_users"
+              name="Danh sách User liên kết"
+              parent="menu_telegram_bot_root"
+              action="action_telegram_bot_user"
+              sequence="20"/>
+</odoo>
