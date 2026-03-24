@@ -21,8 +21,8 @@ class ChamCongFaceID(models.TransientModel):
             import face_recognition
             import numpy as np
             import cv2
-        except ImportError:
-            raise ValidationError("Hệ thống chưa cài đặt thư viện nhận diện khuôn mặt (face_recognition, opencv). Báo Admin cài đặt!")
+        except ImportError as e:
+            raise ValidationError(f"Lỗi Import thư viện: {str(e)}. Hệ thống chưa cài đặt đủ thư viện (face_recognition, opencv). Báo Admin!")
             
         # 1. Decode base64 image from user upload/webcam
         try:

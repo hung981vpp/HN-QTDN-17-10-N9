@@ -177,11 +177,12 @@ class TelegramBotConfig(models.Model):
         chat_id = str(chat.get('id', ''))
         text = (message.get('text') or '').strip()
         location = message.get('location')
+        photos = message.get('photo', [])
 
-        if not chat_id or (not text and not location):
+        if not chat_id or (not text and not location and not photos):
             return
 
-        _logger.info(f'Telegram message from {chat_id}: text="{text}", location={bool(location)}')
+        _logger.info(f'Telegram message from {chat_id}: text="{text}", location={bool(location)}, photo={bool(photos)}')
 
         # Tìm user đã liên kết
         telegram_user = self.env['telegram.bot.user'].search([
@@ -208,6 +209,12 @@ class TelegramBotConfig(models.Model):
         # Cập nhật last interaction
         telegram_user.last_interaction = fields.Datetime.now()
         
+        # Xử lý gửi ảnh (Face ID Check-in)
+        if photos:
+            api.send_chat_action(chat_id, 'typing')
+            self._handle_faceid_photo(telegram_user, photos, api)
+            return
+
         # Tự động suy luận từ Location
         if location and not text:
             today = fields.Date.today()
@@ -231,6 +238,130 @@ class TelegramBotConfig(models.Model):
             api.send_message(chat_id, self._get_message('help'))
         else:
             api.send_message(chat_id, '❓ Tôi không hiểu lệnh này. Gửi /help để xem hướng dẫn.')
+
+    def _handle_faceid_photo(self, telegram_user, photos, api):
+        """Xử lý nhận diện khuôn mặt qua ảnh Telegram kèm hiệu ứng loading"""
+        chat_id = telegram_user.telegram_chat_id
+        
+        # 1. Bắt đầu quá trình
+        msg_resp = api.send_message(chat_id, '⏳ <b>[10%]</b> Đang khởi tạo bộ phân tích...')
+        msg_id = None
+        if msg_resp and msg_resp.get('ok'):
+            msg_id = msg_resp['result'].get('message_id')
+            
+        def update_progress(text):
+            if msg_id:
+                api.edit_message_text(chat_id, msg_id, text)
+            else:
+                api.send_message(chat_id, text)
+
+        try:
+            import face_recognition
+            import numpy as np
+            import cv2
+            import base64
+            import time
+        except ImportError as e:
+            update_progress(f'❌ Hệ thống chưa cài đặt đủ thư viện ({str(e)}). Vui lòng liên hệ Admin.')
+            return
+
+        time.sleep(0.5)
+        update_progress('⏳ <b>[30%]</b> Đang tải ảnh độ phân giải cao từ hệ thống...')
+        
+        # Lấy file_id lớn nhất (độ phân giải cao nhất)
+        file_id = photos[-1]['file_id']
+        file_info = api.get_file(file_id)
+        if not file_info or not file_info.get('ok'):
+            update_progress('❌ Không thể lấy thông tin ảnh từ Telegram.')
+            return
+            
+        file_path = file_info['result'].get('file_path')
+        img_bytes = api.download_file(file_path)
+        if not img_bytes:
+            update_progress('❌ Lỗi tải ảnh từ hệ thống lưu trữ.')
+            return
+            
+        try:
+            time.sleep(0.6)
+            update_progress('⏳ <b>[50%]</b> Đang trích xuất đặc điểm khuôn mặt (Face Landmarks)...')
+            
+            # 1. Decode ảnh từ Telegram
+            nparr = np.frombuffer(img_bytes, np.uint8)
+            img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+            
+            if img is None:
+                update_progress('❌ Không thể đọc định dạng ảnh.')
+                return
+                
+            rgb_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+            face_encodings = face_recognition.face_encodings(rgb_img)
+            
+            if not face_encodings:
+                update_progress('❌ Không tìm thấy khuôn mặt nào trong ảnh. Hãy nhìn thẳng và đủ sáng!')
+                return
+            if len(face_encodings) > 1:
+                update_progress('❌ Có quá nhiều khuôn mặt. Hãy chụp một mình bạn!')
+                return
+                
+            current_face_encoding = face_encodings[0]
+            
+            time.sleep(0.6)
+            update_progress('⏳ <b>[75%]</b> Đang đối chiếu với kho dữ liệu nhân sự...')
+            
+            # 2. Decode ảnh hồ sơ của nhân viên
+            nv = telegram_user.id_nhan_vien
+            if not nv.anh:
+                update_progress('❌ Tài khoản của bạn chưa cập nhật Ảnh chân dung. Vui lòng liên hệ HR!')
+                return
+                
+            nv_img_data = base64.b64decode(nv.anh)
+            nv_nparr = np.frombuffer(nv_img_data, np.uint8)
+            nv_img = cv2.imdecode(nv_nparr, cv2.IMREAD_COLOR)
+            
+            if nv_img is None:
+                update_progress('❌ Ảnh chân dung trong Hồ sơ bị lỗi định dạng. Cần cập nhật lại.')
+                return
+                
+            nv_rgb_img = cv2.cvtColor(nv_img, cv2.COLOR_BGR2RGB)
+            nv_encodings = face_recognition.face_encodings(nv_rgb_img)
+            
+            if not nv_encodings:
+                update_progress('❌ Không thể trích xuất khuôn mặt từ Ảnh hồ sơ của bạn. Cần cập nhật ảnh RÕ MẶT.')
+                return
+                
+            time.sleep(0.6)
+            update_progress('⏳ <b>[95%]</b> Đang tính toán độ lệch đồng dạng sinh trắc học...')
+            
+            # 3. So sánh
+            distance = face_recognition.face_distance([nv_encodings[0]], current_face_encoding)[0]
+            threshold = 0.50
+            if distance >= threshold:
+                update_progress(f'❌ <b>[100%]</b> Khuôn mặt trong ảnh không khớp với hồ sơ (Độ lệch {distance:.2f} >= {threshold}).')
+                return
+                
+            time.sleep(0.6)
+            # 4. Thành công -> Checkin/Checkout
+            today = fields.Date.today()
+            cham_cong = self.env['cham_cong'].search([
+                ('id_nhan_vien', '=', nv.id),
+                ('ngay', '=', today)
+            ], limit=1)
+            
+            if not cham_cong or not cham_cong.gio_vao:
+                result = self.env['cham_cong'].zalo_checkin(nv.id, "FaceID_Telegram")
+                msg = f"✅ <b>[100%] TRỰC THUỘC TÀI KHOẢN HỢP LỆ</b>\n📸 Nhận diện thành công ({100 - distance*100:.1f}%)\n\n" + result['message']
+            else:
+                if not cham_cong.gio_ra:
+                    result = self.env['cham_cong'].zalo_checkout(nv.id, "FaceID_Telegram")
+                    msg = f"✅ <b>[100%] TRỰC THUỘC TÀI KHOẢN HỢP LỆ</b>\n📸 Nhận diện thành công ({100 - distance*100:.1f}%)\n\n" + result['message']
+                else:
+                    msg = f"✅ <b>[100%] TRỰC THUỘC TÀI KHOẢN HỢP LỆ</b>\n📸 Chào {nv.ho_va_ten}, bạn đã hoàn tất cả check-in và check-out đủ cho hôm nay rồi!"
+            
+            update_progress(msg)
+
+        except Exception as e:
+            _logger.error(f'Face Decode Error Telegram: {str(e)}')
+            update_progress(f'❌ Xử lý ảnh lỗi: {str(e)}')
 
 
     def _handle_link_command(self, chat_id, text, api):

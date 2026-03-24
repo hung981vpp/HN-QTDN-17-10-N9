@@ -85,3 +85,31 @@ class TelegramBotAPI:
             'action': action,
         }
         return self._make_request('sendChatAction', data)
+
+    def get_file(self, file_id):
+        """Lấy thông tin file từ Telegram API"""
+        data = {'file_id': file_id}
+        return self._make_request('getFile', data)
+
+    def download_file(self, file_path):
+        """Tải file nhị phân (ảnh) từ Telegram"""
+        url = f"https://api.telegram.org/file/bot{self.bot_token}/{file_path}"
+        try:
+            _logger.info(f"Telegram API Download: {file_path}")
+            response = requests.get(url, timeout=35)
+            response.raise_for_status()
+            return response.content
+        except Exception as e:
+            _logger.error(f"Telegram API Download Error: {str(e)}")
+            return None
+
+    def edit_message_text(self, chat_id, message_id, text, parse_mode='HTML'):
+        """Chỉnh sửa nội dung tin nhắn đã gửi (dùng cho hiệu ứng loading)"""
+        data = {
+            'chat_id': str(chat_id),
+            'message_id': message_id,
+            'text': str(text),
+        }
+        if parse_mode:
+            data['parse_mode'] = parse_mode
+        return self._make_request('editMessageText', data)

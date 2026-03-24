@@ -396,3 +396,118 @@ class BangLuong(models.Model):
                 'sticky': False,
             }
         }
+
+    # ─────────── APPROVAL WORKFLOW ───────────
+
+    def action_duyet(self):
+        """Duyệt phiếu lương → Đã duyệt"""
+        for rec in self:
+            if rec.trang_thai != 'chua_duyet':
+                raise UserError('Chỉ có thể duyệt phiếu lương đang ở trạng thái "Chưa duyệt"!')
+            rec.trang_thai = 'da_duyet'
+        return {
+            'type': 'ir.actions.client',
+            'tag': 'display_notification',
+            'params': {
+                'title': '✅ Đã duyệt!',
+                'message': f'Phiếu lương {self.ma_bang_luong} đã được duyệt thành công.',
+                'type': 'success',
+                'sticky': False,
+            }
+        }
+
+    def action_tu_choi(self):
+        """Từ chối / Hủy duyệt → quay về Chưa duyệt"""
+        for rec in self:
+            if rec.trang_thai == 'da_thanh_toan':
+                raise UserError('Không thể hủy duyệt phiếu đã thanh toán!')
+            rec.trang_thai = 'chua_duyet'
+        return {
+            'type': 'ir.actions.client',
+            'tag': 'display_notification',
+            'params': {
+                'title': '↩️ Đã hủy duyệt',
+                'message': f'Phiếu lương {self.ma_bang_luong} đã được đặt lại về Chưa duyệt.',
+                'type': 'warning',
+                'sticky': False,
+            }
+        }
+
+    def action_thanh_toan(self):
+        """Xác nhận đã thanh toán"""
+        for rec in self:
+            if rec.trang_thai != 'da_duyet':
+                raise UserError('Chỉ có thể xác nhận thanh toán cho phiếu đã duyệt!')
+            rec.trang_thai = 'da_thanh_toan'
+        return {
+            'type': 'ir.actions.client',
+            'tag': 'display_notification',
+            'params': {
+                'title': '💰 Đã thanh toán!',
+                'message': f'Phiếu lương {self.ma_bang_luong} đã được xác nhận thanh toán.',
+                'type': 'success',
+                'sticky': False,
+            }
+        }
+
+    # ─────────── TELEGRAM NOTIFICATION ───────────
+
+    def action_send_telegram(self):
+        """Gửi thông báo phiếu lương qua Telegram cho nhân viên"""
+        self.ensure_one()
+
+        nhan_vien = self.id_nhan_vien
+        # Tìm liên kết Telegram của nhân viên
+        telegram_user = self.env['telegram.bot.user'].search(
+            [('id_nhan_vien', '=', nhan_vien.id), ('is_verified', '=', True)], limit=1
+        )
+        if not telegram_user:
+            raise UserError(
+                f'Nhân viên {nhan_vien.ho_va_ten} chưa liên kết hoặc chưa xác thực tài khoản Telegram.\n'
+                'Yêu cầu nhân viên gửi lệnh /link cho Bot Telegram để liên kết.'
+            )
+
+        # Định dạng số tiền VNĐ
+        def fmt(num):
+            return f"{int(num):,}".replace(',', '.') + ' ₫'
+
+        trang_thai_str = dict(self.fields_get(['trang_thai'])['trang_thai']['selection']).get(self.trang_thai, '')
+
+        message = (
+            f"📋 <b>THÔNG BÁO PHIẾU LƯƠNG</b>\n"
+            f"────────────────────\n"
+            f"👤 Nhân viên: <b>{nhan_vien.ho_va_ten}</b>\n"
+            f"📅 Kỳ lương: <b>T{self.thang}/{self.nam}</b>\n"
+            f"─────── Chi tiết ───────\n"
+            f"⏱ Tổng giờ làm: {self.tong_gio_lam:.1f}h\n"
+            f"🕐 Giờ OT: {self.tong_gio_ot:.1f}h\n"
+            f"💰 Lương chính: {fmt(self.tien_luong_chinh)}\n"
+            f"🎁 Tổng thưởng: {fmt(self.tong_thuong)}\n"
+            f"⚠️  Tổng phạt: {fmt(self.tong_phat)}\n"
+            f"🛡 Bảo hiểm: {fmt(self.tong_bao_hiem)}\n"
+            f"────────────────────\n"
+            f"✅ <b>Lương thực nhận: {fmt(self.luong_thuc_nhan)}</b>\n"
+            f"📌 Trạng thái: {trang_thai_str}\n"
+            f"────────────────────\n"
+            f"<i>Vui lòng liên hệ phòng Nhân sự nếu có thắc mắc.</i>"
+        )
+
+        success = telegram_user.send_message(message)
+
+        if success:
+            return {
+                'type': 'ir.actions.client',
+                'tag': 'display_notification',
+                'params': {
+                    'title': '✅ Đã gửi Telegram!',
+                    'message': f'Thông báo phiếu lương đã gửi đến {nhan_vien.ho_va_ten} qua Telegram.',
+                    'type': 'success',
+                    'sticky': False,
+                }
+            }
+        else:
+            raise UserError(
+                f'Không thể gửi tin nhắn Telegram đến {nhan_vien.ho_va_ten}.\n'
+                'Kiểm tra lại cấu hình Bot Telegram trong Settings.'
+            )
+

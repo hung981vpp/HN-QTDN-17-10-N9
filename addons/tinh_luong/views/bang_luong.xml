@@ -18,7 +18,21 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
-                        <button name="action_send_email" string="Gửi Email Payslip" type="object" class="oe_highlight" icon="fa-envelope"/>
+                        <!-- Nút gửi email -->
+                        <button name="action_send_email" string="Gửi Email Payslip" type="object" class="btn-secondary" icon="fa-envelope"/>
+                        <!-- Nút gửi Telegram -->
+                        <button name="action_send_telegram" string="Gửi Telegram" type="object" class="btn-secondary" icon="fa-telegram"/>
+
+                        <!-- Nút duyệt (chỉ hiện khi Chưa duyệt) -->
+                        <button name="action_duyet" string="✅ Duyệt Phiếu" type="object" class="oe_highlight"
+                                attrs="{'invisible': [('trang_thai', '!=', 'chua_duyet')]}"/>
+                        <!-- Nút hủy duyệt (hiện khi Đã duyệt) -->
+                        <button name="action_tu_choi" string="↩️ Hủy Duyệt" type="object"
+                                attrs="{'invisible': [('trang_thai', 'not in', ['da_duyet'])]}"/>
+                        <!-- Nút thanh toán (hiện khi Đã duyệt) -->
+                        <button name="action_thanh_toan" string="💰 Xác Nhận Thanh Toán" type="object" class="oe_highlight"
+                                attrs="{'invisible': [('trang_thai', '!=', 'da_duyet')]}"/>
+
                         <field name="trang_thai" widget="statusbar" statusbar_visible="chua_duyet,da_duyet,da_thanh_toan"/>
                     </header>
                     <sheet>
