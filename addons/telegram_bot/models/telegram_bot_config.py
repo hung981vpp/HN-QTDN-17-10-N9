@@ -237,7 +237,124 @@ class TelegramBotConfig(models.Model):
         elif command in ['help', 'huongdan', 'hướng dẫn']:
             api.send_message(chat_id, self._get_message('help'))
         else:
-            api.send_message(chat_id, '❓ Tôi không hiểu lệnh này. Gửi /help để xem hướng dẫn.')
+            # Truy vấn AI (Natural Language Query)
+            api.send_chat_action(chat_id, 'typing')
+            self._handle_ai_chat(telegram_user, text, api)
+
+    def _handle_ai_chat(self, telegram_user, query, api):
+        """Xử lý câu hỏi tự nhiên bằng Local AI (Ollama) có Context Database"""
+        import requests
+        
+        chat_id = telegram_user.telegram_chat_id
+        msg_resp = api.send_message(chat_id, '⏳ <i>Đang thu thập dữ liệu chuyên cần & lương Odoo...</i>')
+        msg_id = msg_resp['result'].get('message_id') if msg_resp and msg_resp.get('ok') else None
+        
+        try:
+            today = fields.Date.today()
+            nv = telegram_user.id_nhan_vien
+            
+            def format_time(f):
+                if not f: return "Chưa có"
+                try:
+                    from datetime import timedelta
+                    if hasattr(f, 'strftime'):
+                        return (f + timedelta(hours=7)).strftime('%H:%M')
+                    else:
+                        from datetime import datetime
+                        dt = datetime.strptime(str(f), "%Y-%m-%d %H:%M:%S")
+                        return (dt + timedelta(hours=7)).strftime('%H:%M')
+                except Exception:
+                    try:
+                        h = int(f)
+                        m = int(round((f - h) * 60))
+                        return f"{h:02d}:{m:02d}"
+                    except:
+                        return str(f)
+            
+            # Context chấm công hôm nay
+            cham_cong_hom_nay = self.env['cham_cong'].search([
+                ('id_nhan_vien', '=', nv.id),
+                ('ngay', '=', today)
+            ], limit=1)
+            
+            hom_nay_text = f"Hôm nay ({today}) CHƯA CHECK-IN."
+            if cham_cong_hom_nay:
+                if cham_cong_hom_nay.gio_vao and not cham_cong_hom_nay.gio_ra:
+                    hom_nay_text = f"Hôm nay ({today}) ĐÃ CHECK-IN lúc {format_time(cham_cong_hom_nay.gio_vao)}, chưa check-out."
+                elif cham_cong_hom_nay.gio_vao and cham_cong_hom_nay.gio_ra:
+                    hom_nay_text = f"Hôm nay ({today}) ĐÃ CHECK-IN lúc {format_time(cham_cong_hom_nay.gio_vao)} và ĐÃ CHECK-OUT lúc {format_time(cham_cong_hom_nay.gio_ra)}."
+            
+            # Context chấm công tháng này
+            cham_congs = self.env['cham_cong'].search([
+                ('id_nhan_vien', '=', nv.id),
+                ('ngay', '>=', today.replace(day=1))
+            ])
+            tong_lam = sum(cham_congs.mapped('tong_so_gio_lam'))
+            tong_ot = sum(cham_congs.mapped('gio_ot'))
+            so_ngay_tre = len(cham_congs.filtered(lambda c: c.trang_thai in ['vao_tre', 'di_tre_ve_som']))
+            
+            # Context bảng lương gần nhất
+            bang_luong = self.env['bang_luong'].search([('id_nhan_vien', '=', nv.id)], order='id desc', limit=1)
+            luong_info = "Nhân viên chưa có bảng lương nào."
+            if bang_luong:
+                luong_info = f"Kỳ lương mới nhất (Tháng {bang_luong.thang}/{bang_luong.nam}): Lương gốc {bang_luong.luong_co_ban:,.0f}đ. " \
+                             f"Thưởng {bang_luong.tong_thuong:,.0f}đ. Phạt (đi trễ, nghỉ): {bang_luong.tong_phat:,.0f}đ. " \
+                             f"Thực lĩnh mang về: {bang_luong.luong_thuc_nhan:,.0f}đ."
+            
+            phong_ban = nv.phong_ban_hien_tai_id.display_name if nv.phong_ban_hien_tai_id else "Chưa có"
+            chuc_vu = nv.chuc_vu_hien_tai_id.display_name if nv.chuc_vu_hien_tai_id else "Chưa có"
+            hd_map = {'thu_viec': 'Thử việc', 'co_thoi_han': 'Có thời hạn', 'khong_thoi_han': 'Không thời hạn'}
+            loai_hd = hd_map.get(nv.loai_hop_dong, "Chưa rõ")
+            
+            # Super Brain System Prompt
+            context = f"Bạn là Giám đốc Nhân sự (HR Manager) ảo của công ty QTDN (Quản Trị Doanh Nghiệp). Tên bạn là 'HR Bot'. " \
+                      f"Bạn đang nói chuyện trực tiếp với nhân viên công ty qua hệ thống nội bộ.\n\n" \
+                      f"=== HỒ SƠ NHÂN VIÊN ===\n" \
+                      f"- Tên: {nv.ho_va_ten} ({nv.tuoi} tuổi). Phòng: {phong_ban}. Chức vụ: {chuc_vu}. Hợp đồng: {loai_hd}\n\n" \
+                      f"=== DỮ LIỆU ĐIỂM DANH ({today.strftime('%m/%Y')}) ===\n" \
+                      f"- Tính riêng {hom_nay_text}\n" \
+                      f"- Lũy kế tháng này: Đi làm {tong_lam:.1f}h, Tăng ca {tong_ot:.1f}h, Trễ/Sớm {so_ngay_tre} lần.\n\n" \
+                      f"=== BẢNG LƯƠNG GẦN NHẤT ===\n" \
+                      f"- {luong_info}\n\n" \
+                      f"=== CHỈ TÍNH CÁCH (PERSONA) ===\n" \
+                      f"1. Bạn cực kỳ THÔNG MINH, SẮC BÉN, giải thích cặn kẽ logic tài chính.\n" \
+                      f"2. Ví dụ: Nếu nhân viên thắc mắc 'Tại sao lương bị âm?', hãy dùng tư duy IQ cao để suy luận rằng: 'Tiền phạt hoặc tiền đóng bảo hiểm cao hơn mức lương cơ sở (có thể do đi làm 0 ngày)'.\n" \
+                      f"3. Xưng hô: 'Tôi' (đại diện HR) và xưng tên nhân viên.\n" \
+                      f"4. Kỷ luật thép: KHÔNG BỊA ĐẶT DỮ LIỆU. Chỉ trả lời dựa trên con số ở trên. Trả lời NGẮN GỌN dưới 4 câu."
+                      
+            payload = {
+                "model": "qwen2:1.5b",
+                "messages": [
+                    {"role": "system", "content": context},
+                    {"role": "user", "content": query}
+                ],
+                "stream": False
+            }
+            
+            if msg_id:
+                api.edit_message_text(chat_id, msg_id, '🧠 <i>AI đang đọc suy luận nội dung (Qwen2-Local)...</i>')
+                
+            # Gửi tới Local Ollama (qua API 11434)
+            resp = requests.post('http://localhost:11434/api/chat', json=payload, timeout=60)
+            if resp.status_code == 200:
+                answer = resp.json().get('message', {}).get('content', '')
+                if msg_id:
+                    api.edit_message_text(chat_id, msg_id, f"🤖 <b>AI QTDN Trả Lời:</b>\n\n{answer}")
+                else:
+                    api.send_message(chat_id, f"🤖 <b>AI QTDN Trả Lời:</b>\n\n{answer}")
+            else:
+                err = "🤖 Cố vấn AI nội bộ hiện đang bận hoặc quá tải, vui lòng thử lại sau."
+                if msg_id:
+                    api.edit_message_text(chat_id, msg_id, err)
+                else:
+                    api.send_message(chat_id, err)
+                    
+        except Exception as e:
+            err = f"🤖 Lỗi AI nội bộ Odoo (Ollama service not running or crashed): {str(e)}"
+            if msg_id:
+                api.edit_message_text(chat_id, msg_id, err)
+            else:
+                api.send_message(chat_id, err)
 
     def _handle_faceid_photo(self, telegram_user, photos, api):
         """Xử lý nhận diện khuôn mặt qua ảnh Telegram kèm hiệu ứng loading"""
@@ -283,7 +400,7 @@ class TelegramBotConfig(models.Model):
             
         try:
             time.sleep(0.6)
-            update_progress('⏳ <b>[50%]</b> Đang trích xuất đặc điểm khuôn mặt (Face Landmarks)...')
+            update_progress('⏳ <b>[50%]</b> Đang trích xuất đặc điểm khuôn mặt...')
             
             # 1. Decode ảnh từ Telegram
             nparr = np.frombuffer(img_bytes, np.uint8)

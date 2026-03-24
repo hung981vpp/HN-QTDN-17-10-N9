@@ -101,3 +101,22 @@ Người sử dụng truy cập theo đường dẫn _http://localhost:8069/_ đ
 ---
 
     
+module_name/
+├── __init__.py              # Khởi tạo module Python
+├── __manifest__.py          # File khai báo thông tin module
+├── models/                  # Chứa các file định nghĩa model
+│   ├── __init__.py
+│   └── model_name.py
+├── views/                   # Chứa các file view XML
+│   ├── model_views.xml
+│   └── menu_views.xml
+├── security/                # Cấu hình phân quyền
+│   └── ir.model.access.csv
+├── data/                    # Dữ liệu mẫu / dữ liệu khởi tạo
+├── demo/                    # Dữ liệu demo
+├── static/                  # Tài nguyên tĩnh (CSS, JS, images)
+│   └── src/
+│       ├── css/
+│       ├── js/
+│       └── img/
+└── wizard/                  # Các wizard tạm thời (nếu có)

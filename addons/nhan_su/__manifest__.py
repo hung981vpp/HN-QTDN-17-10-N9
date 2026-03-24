@@ -33,6 +33,7 @@
         'views/danh_sach_chung_chi_bang_cap.xml',
         'views/tin_tuyen_dung.xml',
         'views/menu.xml',
+        'wizard/import_nhan_vien_wizard_views.xml',
         
         # Load security cuối cùng
         'security/ir.model.access.csv',
