@@ -18,6 +18,7 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
+                        <button name="action_send_email" string="Gửi Email Payslip" type="object" class="oe_highlight" icon="fa-envelope"/>
                         <field name="trang_thai" widget="statusbar" statusbar_visible="chua_duyet,da_duyet,da_thanh_toan"/>
                     </header>
                     <sheet>
@@ -52,7 +53,8 @@
                             <field name="thuong_ot" readonly="1" style="color: green;"/>
                         </group>
                         
-                        <group col="4" string="Thưởng thủ công">
+                        <group col="4" string="Thưởng bổ sung (Thủ công / Phiếu)">
+                            <field name="thuong_tu_phieu" readonly="1" options="{'no_open': True}"/>
                             <field name="tro_cap"/>
                             <field name="thuong_hieu_suat"/>
                             <field name="thuong_le_tet"/>
@@ -66,7 +68,8 @@
                             <field name="phat_ve_som" readonly="1" style="color: red;"/>
                         </group>
                         
-                        <group col="4" string="Phạt thủ công">
+                        <group col="4" string="Phạt bổ sung (Thủ công / Phiếu)">
+                            <field name="phat_tu_phieu" readonly="1" options="{'no_open': True}"/>
                             <field name="phat_thu_cong"/>
                             <field name="tong_phat" readonly="1" style="font-weight: bold; color: red;"/>
                         </group>

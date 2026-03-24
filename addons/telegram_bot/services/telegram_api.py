@@ -77,3 +77,11 @@ class TelegramBotAPI:
         if caption:
             data['caption'] = caption
         return self._make_request('sendPhoto', data)
+
+    def send_chat_action(self, chat_id, action='typing'):
+        """Gửi trạng thái 'typing...' hoặc 'upload_photo...' cho user"""
+        data = {
+            'chat_id': str(chat_id),
+            'action': action,
+        }
+        return self._make_request('sendChatAction', data)

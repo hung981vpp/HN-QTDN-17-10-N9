@@ -50,6 +50,7 @@
                                 <group string="Hệ thống lương">
                                     <field name="he_so_luong"/>
                                     <field name="luong_co_ban" widget="monetary"/>
+                                    <field name="diem_kpi"/>
                                     <field name="luong_theo_ngay" widget="monetary"/>
                                     <field name="luong_theo_gio" widget="monetary"/>
                                 </group>
@@ -99,6 +100,7 @@
                     <field name="loai_hop_dong"/>
                     <field name="trang_thai_hop_dong"/>
                     <field name="he_so_luong"/>
+                    <field name="diem_kpi"/>
                     <field name="luong_co_ban" widget="monetary"/>
                     <field name="email"/>
                     <field name="so_dien_thoai"/>

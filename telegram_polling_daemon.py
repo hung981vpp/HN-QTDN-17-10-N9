@@ -118,11 +118,12 @@ def process_update_in_odoo(session, update):
 
     chat_id = str(message.get('chat', {}).get('id', ''))
     text = (message.get('text') or '').strip()
+    location = message.get('location')
 
-    if not chat_id or not text:
+    if not chat_id or (not text and not location):
         return
 
-    _logger.info(f"📨 [{chat_id}] {text}")
+    _logger.info(f"📨 [{chat_id}] text='{text}', location={bool(location)}")
 
     # Tìm config trong Odoo và xử lý update
     # Dùng execute_kw để gọi poll_updates vs _handle_update trực tiếp

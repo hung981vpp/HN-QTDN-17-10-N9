@@ -24,6 +24,7 @@ Module quản lý chấm công nhân viên bao gồm:
         'views/don_tu_views.xml',
         'views/menu.xml',
         'security/ir.model.access.csv',
+        'views/cham_cong_face_id_views.xml',
     ],
     'installable': True,
     'application': True,

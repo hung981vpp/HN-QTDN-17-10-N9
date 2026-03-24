@@ -33,6 +33,7 @@
                             <field name="gio_ot"/>
                             <field name="trang_thai"/>
                             <field name="co_xin_phep" widget="boolean_toggle"/>
+                            <field name="anh_minh_chung" widget="image" attrs="{'invisible': [('trang_thai', '!=', 'cong_tac')]}"/>
                         </group>
                         <group string="Ghi chú">
                             <field name="ghi_chu" nolabel="1"/>

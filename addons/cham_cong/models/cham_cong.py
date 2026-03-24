@@ -24,10 +24,14 @@ class ChamCong(models.Model):
         ('den_muon', 'Đến muộn'),
         ('ve_som', 'Về sớm'),
         ('lam_them', 'Làm thêm giờ'),
-        ('nghi', 'Nghỉ')
+        ('nghi', 'Nghỉ'),
+        ('cong_tac', 'Đi Công Tác')
     ], string='Trạng thái', compute='_compute_trang_thai', store=True)
     co_xin_phep = fields.Boolean(string='Có xin phép', default=False, help='Đánh dấu nếu nhân viên đã xin phép đến muộn/về sớm')
     ghi_chu = fields.Text(string='Ghi chú')
+    
+    # Minh chứng công tác
+    anh_minh_chung = fields.Binary(string='Ảnh minh chứng (Đi công tác)', help='Upload ảnh check-in tại địa điểm công tác hoặc hóa đơn')
     
     # Relationships
     don_tu_ids = fields.One2many('don_tu', 'cham_cong_id', string='Đơn từ liên quan')
@@ -40,6 +44,7 @@ class ChamCong(models.Model):
         ('sang', 'Sáng'),
         ('chieu', 'Chiều'),
         ('ca_ngay', 'Cả Ngày'),
+        ('cong_tac', 'Đi Công Tác'),
     ], string='Ca làm đăng ký', related='dang_ky_ca_id.ca_lam', readonly=True)
     
     # Zalo Bot Integration
@@ -108,6 +113,17 @@ class ChamCong(models.Model):
         SAI_SO = 0.1                   # Sai số 6 phút (0.1 giờ)
         
         for record in self:
+            # Nếu ca làm đăng ký là đi công tác, set status công tác
+            if record.dang_ky_ca_id and record.ca_lam_dang_ky == 'cong_tac':
+                # Nếu không có giờ vào/ra nhưng có ảnh minh chứng thì vẫn coi là Đi công tác hợp lệ
+                if not record.gio_vao and not record.gio_ra and record.anh_minh_chung:
+                    record.trang_thai = 'cong_tac'
+                    continue
+                # Nếu có giờ vào ra thì vẫn là công tác
+                elif record.gio_vao or record.gio_ra:
+                    record.trang_thai = 'cong_tac'
+                    continue
+
             if not record.gio_vao and not record.gio_ra:
                 record.trang_thai = 'nghi'
                 continue

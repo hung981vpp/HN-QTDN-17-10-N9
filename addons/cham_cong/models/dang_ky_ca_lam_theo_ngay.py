@@ -22,6 +22,7 @@ class DangKyCaLamTheoNgay(models.Model):
         ("sang", "Sáng"),
         ("chieu", "Chiều"),
         ("ca_ngay", "Cả Ngày"),
+        ("cong_tac", "Đi Công Tác (Cả Ngày)"),
     ], string="Ca làm", default="")
     
     # Approval Status

@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError, UserError
 
 class BangLuong(models.Model):
     _name = 'bang_luong'
@@ -57,6 +57,11 @@ class BangLuong(models.Model):
     phat_den_muon = fields.Float(string='Phạt đến muộn', compute='_compute_phat_tu_dong', store=True)
     phat_ve_som = fields.Float(string='Phạt về sớm', compute='_compute_phat_tu_dong', store=True)
     tong_phat = fields.Float(string='Tổng phạt', compute='_compute_tong_phat', store=True)
+
+    # Thưởng phạt từ phiếu
+    thuong_phat_ids = fields.Many2many('thuong.phat.phieu', compute='_compute_thuong_phat')
+    thuong_tu_phieu = fields.Float(string='Thưởng từ phiếu', compute='_compute_tien_thuong_phat', store=True)
+    phat_tu_phieu = fields.Float(string='Phạt từ phiếu', compute='_compute_tien_thuong_phat', store=True)
     
     # Bảo hiểm
     ty_le_bhxh = fields.Float(string='Tỷ lệ BHXH (%)', default=8.0)
@@ -84,6 +89,55 @@ class BangLuong(models.Model):
         if vals.get('ma_bang_luong', 'New') == 'New':
             vals['ma_bang_luong'] = self.env['ir.sequence'].next_by_code('bang_luong.sequence') or 'New'
         return super(BangLuong, self).create(vals)
+
+    def action_send_email(self):
+        """Gửi email phiếu lương cho nhân viên (kèm PDF đính kèm)"""
+        self.ensure_one()
+        
+        # Kiểm tra nhân viên có email không
+        nv_email = self.id_nhan_vien.email
+        if not nv_email:
+            raise UserError(f'Nhân viên {self.id_nhan_vien.ho_va_ten} chưa có email. Vui lòng cập nhật email trước.')
+        
+        # Kiểm tra mail server
+        mail_server = self.env['ir.mail_server'].search([], limit=1)
+        if not mail_server:
+            raise UserError(
+                'Chưa cấu hình Outgoing Mail Server!\n\n'
+                'Vào: Settings → Technical → Outgoing Mail Servers → Create'
+            )
+        
+        # Tìm email template
+        template = self.env.ref('tinh_luong.email_template_bang_luong', raise_if_not_found=False)
+        if not template:
+            raise UserError('Không tìm thấy Email Template!')
+        
+        # Gắn PDF report vào template
+        report = self.env.ref('tinh_luong.action_report_bang_luong', raise_if_not_found=False)
+        if report:
+            template.report_template = report.id
+        
+        # Force set email_from từ mail server
+        sender_email = mail_server.smtp_user or 'no-reply@company.com'
+        
+        # Gửi email với email_values override (bypass template rendering issues)
+        template.send_mail(self.id, force_send=True, email_values={
+            'email_from': sender_email,
+            'email_to': nv_email,
+        })
+        
+        # Thông báo thành công
+        return {
+            'type': 'ir.actions.client',
+            'tag': 'display_notification',
+            'params': {
+                'title': '✅ Đã gửi email!',
+                'message': f'Phiếu lương T{self.thang}/{self.nam} đã gửi đến {nv_email}',
+                'type': 'success',
+                'sticky': False,
+            }
+        }
+
 
     def _compute_cham_cong(self):
         """Lấy dữ liệu chấm công theo tháng/năm"""
@@ -153,13 +207,43 @@ class BangLuong(models.Model):
         for record in self:
             record.tien_ot = record.luong_theo_gio * record.tong_gio_ot * record.he_so_ot
 
-    @api.depends('luong_co_ban', 'ty_le_bhxh', 'ty_le_bhyt', 'ty_le_bhtn')
-    def _compute_bao_hiem(self):
-        """Tính tổng bảo hiểm cá nhân phải đóng"""
+    @api.depends('id_nhan_vien', 'thang', 'nam')
+    def _compute_thuong_phat(self):
+        """Tìm các phiếu thưởng/phạt đã duyệt trong tháng"""
         for record in self:
-            bhxh = record.luong_co_ban * (record.ty_le_bhxh / 100)
-            bhyt = record.luong_co_ban * (record.ty_le_bhyt / 100)
-            bhtn = record.luong_co_ban * (record.ty_le_bhtn / 100)
+            if record.id_nhan_vien and record.thang and record.nam:
+                month_str = record.thang.zfill(2)
+                domain = [
+                    ('nhan_vien_ids', 'in', record.id_nhan_vien.id),
+                    ('state', '=', 'da_duyet'),
+                    ('ngay_ap_dung', '>=', f'{record.nam}-{month_str}-01'),
+                    ('ngay_ap_dung', '<=', f'{record.nam}-{month_str}-31')
+                ]
+                record.thuong_phat_ids = self.env['thuong.phat.phieu'].search(domain)
+            else:
+                record.thuong_phat_ids = False
+
+    @api.depends('thuong_phat_ids')
+    def _compute_tien_thuong_phat(self):
+        for record in self:
+            thuong = 0.0
+            phat = 0.0
+            for phieu in record.thuong_phat_ids:
+                if phieu.tinh_chat == 'thuong':
+                    thuong += phieu.so_tien
+                else:
+                    phat += phieu.so_tien
+            record.thuong_tu_phieu = thuong
+            record.phat_tu_phieu = phat
+
+    @api.depends('id_nhan_vien.luong_dong_bao_hiem', 'ty_le_bhxh', 'ty_le_bhyt', 'ty_le_bhtn')
+    def _compute_bao_hiem(self):
+        """Tính tổng bảo hiểm cá nhân phải đóng dựa trên lương đóng bảo hiểm (tuân thủ luật)"""
+        for record in self:
+            luong_bh = record.id_nhan_vien.luong_dong_bao_hiem if record.id_nhan_vien else 0
+            bhxh = luong_bh * (record.ty_le_bhxh / 100)
+            bhyt = luong_bh * (record.ty_le_bhyt / 100)
+            bhtn = luong_bh * (record.ty_le_bhtn / 100)
             record.tong_bao_hiem = bhxh + bhyt + bhtn
 
 
@@ -190,12 +274,12 @@ class BangLuong(models.Model):
             else:
                 record.thuong_ot = 0
     
-    @api.depends('thuong_chuyen_can', 'thuong_ot', 'thuong_hieu_suat', 'thuong_le_tet', 'thuong_khac')
+    @api.depends('thuong_chuyen_can', 'thuong_ot', 'thuong_hieu_suat', 'thuong_le_tet', 'thuong_khac', 'thuong_tu_phieu')
     def _compute_tong_thuong(self):
-        """Tổng thưởng = Thưởng tự động + Thưởng thủ công"""
+        """Tổng thưởng = Thưởng tự động + Thưởng thủ công + Thưởng từ phiếu"""
         for record in self:
             total = (record.thuong_chuyen_can + record.thuong_ot + 
-                    record.thuong_hieu_suat + record.thuong_le_tet + record.thuong_khac)
+                    record.thuong_hieu_suat + record.thuong_le_tet + record.thuong_khac + record.thuong_tu_phieu)
             record.tong_thuong = total
             record.thuong = total  # Backward compatibility
 
@@ -230,12 +314,12 @@ class BangLuong(models.Model):
                 record.phat_ve_som = 0
                 record.phat_khong_chuyen_can = 0
     
-    @api.depends('phat_khong_chuyen_can', 'phat_den_muon', 'phat_ve_som', 'phat_thu_cong')
+    @api.depends('phat_khong_chuyen_can', 'phat_den_muon', 'phat_ve_som', 'phat_thu_cong', 'phat_tu_phieu')
     def _compute_tong_phat(self):
-        """Tổng phạt = Phạt không chuyên cần + Phạt đến muộn + Phạt về sớm + Phạt thủ công"""
+        """Tổng phạt = Phạt không chuyên cần + Phạt đến muộn + Phạt về sớm + Phạt thủ công + Phạt từ phiếu"""
         for record in self:
             record.tong_phat = (record.phat_khong_chuyen_can + record.phat_den_muon + 
-                               record.phat_ve_som + record.phat_thu_cong)
+                                record.phat_ve_som + record.phat_thu_cong + record.phat_tu_phieu)
 
     @api.depends('tien_luong_chinh', 'tien_ot', 'tro_cap', 'tong_thuong')
     def _compute_tong_luong(self):
@@ -248,3 +332,67 @@ class BangLuong(models.Model):
         """Lương thực nhận = Tổng lương - Tổng phạt - Bảo hiểm"""
         for record in self:
             record.luong_thuc_nhan = record.tong_luong - record.tong_phat - record.tong_bao_hiem
+
+    @api.model
+    def cron_tu_dong_tinh_luong(self):
+        """Hàm chạy tự động (Cron job) vào ngày 15 hàng tháng để sinh bảng lương mới"""
+        import datetime
+        from dateutil.relativedelta import relativedelta
+
+        today = datetime.date.today()
+        # Tính lương cho tháng trước (hoặc tháng hiện tại tùy rule, nhưng thường là tháng trước)
+        # Sẽ sinh bảng lương tháng trước nếu chạy ngày 15, hoặc tháng hiện tại
+        target_month_date = today - relativedelta(months=1)
+        thang_tinh = str(target_month_date.month)
+        nam_tinh = target_month_date.year
+
+        nhan_viens = self.env['nhan_vien'].search([('trang_thai_hop_dong', '=', 'dang_hieu_luc')])
+        so_luong_tao = 0
+        for nv in nhan_viens:
+            # Kiểm tra xem đã tính lương cho tháng này chưa
+            bang_luong_cu = self.search([
+                ('id_nhan_vien', '=', nv.id),
+                ('thang', '=', thang_tinh),
+                ('nam', '=', nam_tinh)
+            ])
+            if not bang_luong_cu:
+                self.create({
+                    'id_nhan_vien': nv.id,
+                    'thang': thang_tinh,
+                    'nam': nam_tinh,
+                })
+                so_luong_tao += 1
+                
+        # Ghi log lịch sử cron job
+        import logging
+        _logger = logging.getLogger(__name__)
+        _logger.info(f"Đã tự động tạo xong {so_luong_tao} phiếu lương T{thang_tinh}/{nam_tinh}")
+
+    def action_send_email(self):
+        """Gửi email PDF Bảng lương cho nhân viên"""
+        self.ensure_one()
+        if not self.id_nhan_vien.email:
+            raise ValidationError(f"Nhân viên {self.id_nhan_vien.ho_va_ten} chưa có địa chỉ Email được thiết lập trong Hồ sơ!")
+            
+        template = self.env.ref('tinh_luong.email_template_bang_luong', raise_if_not_found=False)
+        if not template:
+            raise ValidationError("Không tìm thấy mẫu Email 'tinh_luong.email_template_bang_luong'!")
+            
+        # Gắn report PDF vào email template tự động
+        report = self.env.ref('tinh_luong.action_report_bang_luong', raise_if_not_found=False)
+        if report:
+            template.report_template = report
+            template.report_name = f"Payslip_{self.id_nhan_vien.ma_dinh_danh}_T{self.thang}_{self.nam}"
+            
+        template.send_mail(self.id, force_send=True)
+        
+        return {
+            'type': 'ir.actions.client',
+            'tag': 'display_notification',
+            'params': {
+                'title': 'Thành công',
+                'message': f'Đã gửi Email Bảng lương thành công cho {self.id_nhan_vien.ho_va_ten}',
+                'type': 'success',
+                'sticky': False,
+            }
+        }

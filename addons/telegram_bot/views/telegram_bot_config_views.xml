@@ -37,6 +37,7 @@
                             <field name="company_longitude" attrs="{'invisible': [('enable_gps_check','=',False)]}"/>
                         </group>
                     </group>
+
                     <group string="Hướng dẫn">
                         <div class="alert alert-info" role="alert">
                             <h4>Cách lấy Bot Token:</h4>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Khai báo Report XML Action -->
+    <record id="action_report_bang_luong" model="ir.actions.report">
+        <field name="name">Phiếu Lương (Payslip PDF)</field>
+        <field name="model">bang_luong</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">tinh_luong.report_bang_luong_view</field>
+        <field name="report_file">tinh_luong.report_bang_luong_view</field>
+        <field name="print_report_name">'Phieu_Luong_%s_T%s_%s' % (object.id_nhan_vien.ma_dinh_danh, object.thang, object.nam)</field>
+        <field name="binding_model_id" ref="model_bang_luong"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!-- QWeb Template cho PDF -->
+    <template id="report_bang_luong_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page" style="font-family: 'Times New Roman', serif; font-size: 13px; color: #222;">
+
+                        <!-- Header -->
+                        <div style="text-align: center; margin-bottom: 20px; border-bottom: 3px double #1a5276; padding-bottom: 15px;">
+                            <h2 style="color: #1a5276; font-weight: bold; margin-bottom: 5px; letter-spacing: 2px;">
+                                PHIẾU THANH TOÁN TIỀN LƯƠNG
+                            </h2>
+                            <h4 style="color: #555; margin-top: 0;">
+                                Tháng <t t-esc="o.thang"/>/<t t-esc="o.nam"/>
+                            </h4>
+                        </div>
+
+                        <!-- Thông tin nhân viên -->
+                        <table style="width: 100%; margin-bottom: 20px; font-size: 13px;">
+                            <tr>
+                                <td style="width: 50%; vertical-align: top; padding: 5px 0;">
+                                    <table style="width: 100%;">
+                                        <tr>
+                                            <td style="width: 120px; font-weight: bold; padding: 3px 0;">Mã nhân viên:</td>
+                                            <td style="padding: 3px 0;"><span t-field="o.id_nhan_vien.ma_dinh_danh"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold; padding: 3px 0;">Họ và tên:</td>
+                                            <td style="padding: 3px 0;"><strong><span t-field="o.id_nhan_vien.ho_va_ten"/></strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold; padding: 3px 0;">Phòng ban:</td>
+                                            <td style="padding: 3px 0;"><span t-field="o.id_nhan_vien.phong_ban_hien_tai_id.ten_don_vi"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold; padding: 3px 0;">Chức vụ:</td>
+                                            <td style="padding: 3px 0;"><span t-field="o.id_nhan_vien.chuc_vu_hien_tai_id.ten_chuc_vu"/></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td style="width: 50%; vertical-align: top; padding: 5px 0;">
+                                    <table style="width: 100%;">
+                                        <tr>
+                                            <td style="width: 130px; font-weight: bold; padding: 3px 0;">Ngày in phiếu:</td>
+                                            <td style="padding: 3px 0;"><span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y')"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold; padding: 3px 0;">Số công chuẩn:</td>
+                                            <td style="padding: 3px 0;">26 ngày</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold; padding: 3px 0;">Số công thực tế:</td>
+                                            <td style="padding: 3px 0;"><span t-esc="'%.1f' % o.so_cong"/> ngày</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold; padding: 3px 0;">Giờ tăng ca (OT):</td>
+                                            <td style="padding: 3px 0;"><span t-esc="'%.1f' % o.tong_gio_ot"/> giờ</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!-- Bảng chi tiết lương -->
+                        <table style="width: 100%; border-collapse: collapse; margin-bottom: 10px;">
+                            <thead>
+                                <tr style="background-color: #1a5276; color: white;">
+                                    <th style="border: 1px solid #1a5276; padding: 8px 10px; width: 55%; text-align: left;">Khoản mục</th>
+                                    <th style="border: 1px solid #1a5276; padding: 8px 10px; width: 45%; text-align: right;">Thành tiền (VNĐ)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- I. Lương chính -->
+                                <tr style="background-color: #eaf2f8;">
+                                    <td style="border: 1px solid #ddd; padding: 8px 10px; font-weight: bold;">
+                                        I. TIỀN LƯƠNG CHÍNH
+                                        <br/><small style="color: #666;">(Lương CB: <t t-esc="'{:,.0f}'.format(o.luong_co_ban)"/> VNĐ × Hệ số: <span t-esc="o.id_nhan_vien.he_so_luong"/>)</small>
+                                    </td>
+                                    <td style="border: 1px solid #ddd; padding: 8px 10px; text-align: right; font-weight: bold;">
+                                        <t t-esc="'{:,.0f}'.format(o.tien_luong_chinh)"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 6px 10px; padding-left: 25px;">Lương tăng ca (OT) — <t t-esc="'%.1f' % o.tong_gio_ot"/> giờ × hệ số <t t-esc="o.he_so_ot"/></td>
+                                    <td style="border: 1px solid #ddd; padding: 6px 10px; text-align: right;"><t t-esc="'{:,.0f}'.format(o.tien_ot)"/></td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 6px 10px; padding-left: 25px;">Phụ cấp / Trợ cấp</td>
+                                    <td style="border: 1px solid #ddd; padding: 6px 10px; text-align: right;"><t t-esc="'{:,.0f}'.format(o.tro_cap)"/></td>
+                                </tr>
+
+                                <!-- II. Thưởng -->
+                                <tr style="background-color: #eaf2f8;">
+                                    <td style="border: 1px solid #ddd; padding: 8px 10px; font-weight: bold;">II. TỔNG THƯỞNG</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px 10px; text-align: right; font-weight: bold; color: #27ae60;">
+                                        <t t-esc="'{:,.0f}'.format(o.tong_thuong)"/>
+                                    </td>
+                                </tr>
+                                <tr t-if="o.thuong_chuyen_can > 0">
+                                    <td style="border: 1px solid #ddd; padding: 6px 10px; padding-left: 25px;">Thưởng chuyên cần</td>
+                                    <td style="border: 1px solid #ddd; padding: 6px 10px; text-align: right;"><t t-esc="'{:,.0f}'.format(o.thuong_chuyen_can)"/></td>
+                                </tr>
+                                <tr t-if="o.thuong_ot > 0">
+                                    <td style="border: 1px solid #ddd; padding: 6px 10px; padding-left: 25px;">Thưởng OT</td>
+                                    <td style="border: 1px solid #ddd; padding: 6px 10px; text-align: right;"><t t-esc="'{:,.0f}'.format(o.thuong_ot)"/></td>
+                                </tr>
+                                <tr t-if="o.thuong_hieu_suat > 0">
+                                    <td style="border: 1px solid #ddd; padding: 6px 10px; padding-left: 25px;">Thưởng hiệu suất</td>
+                                    <td style="border: 1px solid #ddd; padding: 6px 10px; text-align: right;"><t t-esc="'{:,.0f}'.format(o.thuong_hieu_suat)"/></td>
+                                </tr>
+                                <tr t-if="o.thuong_le_tet > 0">
+                                    <td style="border: 1px solid #ddd; padding: 6px 10px; padding-left: 25px;">Thưởng lễ tết</td>
+                                    <td style="border: 1px solid #ddd; padding: 6px 10px; text-align: right;"><t t-esc="'{:,.0f}'.format(o.thuong_le_tet)"/></td>
+                                </tr>
+                                <tr t-if="o.thuong_tu_phieu > 0">
+                                    <td style="border: 1px solid #ddd; padding: 6px 10px; padding-left: 25px;">Thưởng từ Phiếu/Quyết định</td>
+                                    <td style="border: 1px solid #ddd; padding: 6px 10px; text-align: right;"><t t-esc="'{:,.0f}'.format(o.thuong_tu_phieu)"/></td>
+                                </tr>
+
+                                <!-- III. Các khoản trừ -->
+                                <tr style="background-color: #eaf2f8;">
+                                    <td style="border: 1px solid #ddd; padding: 8px 10px; font-weight: bold;">III. CÁC KHOẢN KHẤU TRỪ</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px 10px; text-align: right; font-weight: bold; color: #c0392b;">
+                                        -<t t-esc="'{:,.0f}'.format(o.tong_phat + o.tong_bao_hiem)"/>
+                                    </td>
+                                </tr>
+                                <tr t-if="o.tong_phat > 0">
+                                    <td style="border: 1px solid #ddd; padding: 6px 10px; padding-left: 25px;">Phạt (đi muộn, về sớm, quy chế...)</td>
+                                    <td style="border: 1px solid #ddd; padding: 6px 10px; text-align: right; color: #c0392b;">-<t t-esc="'{:,.0f}'.format(o.tong_phat)"/></td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 6px 10px; padding-left: 25px;">BHXH (<t t-esc="o.ty_le_bhxh"/>%) + BHYT (<t t-esc="o.ty_le_bhyt"/>%) + BHTN (<t t-esc="o.ty_le_bhtn"/>%)</td>
+                                    <td style="border: 1px solid #ddd; padding: 6px 10px; text-align: right; color: #c0392b;">-<t t-esc="'{:,.0f}'.format(o.tong_bao_hiem)"/></td>
+                                </tr>
+
+                                <!-- THỰC NHẬN -->
+                                <tr style="background-color: #1a5276;">
+                                    <td style="border: 1px solid #1a5276; padding: 12px 10px; font-weight: bold; color: white; font-size: 15px;">
+                                        LƯƠNG THỰC NHẬN (I + II - III)
+                                    </td>
+                                    <td style="border: 1px solid #1a5276; padding: 12px 10px; text-align: right; font-weight: bold; color: #f1c40f; font-size: 16px;">
+                                        <t t-esc="'{:,.0f}'.format(o.luong_thuc_nhan)"/> VNĐ
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- Chữ ký -->
+                        <div style="margin-top: 40px;">
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td style="width: 50%; text-align: center;">
+                                        <strong>Người lập phiếu</strong>
+                                        <br/><em style="color: #999; font-size: 11px;">(Ký, ghi rõ họ tên)</em>
+                                        <br/><br/><br/><br/>
+                                        <p>Phòng Nhân sự</p>
+                                    </td>
+                                    <td style="width: 50%; text-align: center;">
+                                        <strong>Giám đốc</strong>
+                                        <br/><em style="color: #999; font-size: 11px;">(Ký, đóng dấu)</em>
+                                        <br/><br/><br/><br/>
+                                        <p>_______________</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

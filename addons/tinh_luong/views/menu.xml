@@ -12,4 +12,27 @@
               parent="menu_tinh_luong_root" 
               action="action_bang_luong" 
               sequence="10"/>
+
+    <!-- Menu Thưởng Phạt -->
+    <menuitem id="menu_thuong_phat"
+              name="Thưởng / Phạt"
+              parent="menu_tinh_luong_root"
+              sequence="20"/>
+
+    <menuitem id="menu_thuong_phat_phieu"
+              name="Quản lý Phiếu"
+              parent="menu_thuong_phat"
+              action="action_thuong_phat_phieu"
+              sequence="10"/>
+
+    <menuitem id="menu_thuong_phat_cauhinh"
+              name="Cấu hình"
+              parent="menu_thuong_phat"
+              sequence="100"/>
+
+    <menuitem id="menu_thuong_phat_loai"
+              name="Loại Thưởng/Phạt"
+              parent="menu_thuong_phat_cauhinh"
+              action="action_thuong_phat_loai"
+              sequence="10"/>
 </odoo>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Template Email gửi Phiếu Lương -->
+        <record id="email_template_bang_luong" model="mail.template">
+            <field name="name">Bảng Lương Điện Tử (Payslip)</field>
+            <field name="model_id" ref="model_bang_luong"/>
+            <field name="subject">Phiếu lương tháng {{ object.thang }}/{{ object.nam }} - {{ object.id_nhan_vien.ho_va_ten }}</field>
+            <field name="email_to">{{ object.id_nhan_vien.email }}</field>
+            <field name="body_html" type="html">
+                <div style="font-family: Arial, sans-serif; font-size: 14px; color: #333333;">
+                    <p>Thân gửi <t t-out="object.id_nhan_vien.ho_va_ten"/>,</p>
+                    <p>Phòng Nhân sự gửi bạn Thông tin chi tiết Phiếu lương (Payslip) của tháng <strong><t t-out="object.thang"/>/<t t-out="object.nam"/></strong>.</p>
+                    
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+                        <tr style="background-color: #f2f2f2;">
+                            <th style="border: 1px solid #dddddd; padding: 8px; text-align: left;">Hạng mục</th>
+                            <th style="border: 1px solid #dddddd; padding: 8px; text-align: right;">Số tiền / Thông tin</th>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #dddddd; padding: 8px;">Tổng công / Giờ OT</td>
+                            <td style="border: 1px solid #dddddd; padding: 8px; text-align: right;"><t t-out="object.so_cong"/> ngày / <t t-out="object.tong_gio_ot"/> giờ</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #dddddd; padding: 8px;">Lương cơ bản</td>
+                            <td style="border: 1px solid #dddddd; padding: 8px; text-align: right;"><t t-out="'{:,.0f}'.format(object.luong_co_ban)"/> VNĐ</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #dddddd; padding: 8px;">Tổng Thưởng</td>
+                            <td style="border: 1px solid #dddddd; padding: 8px; text-align: right; color: green;"><t t-out="'{:,.0f}'.format(object.tong_thuong)"/> VNĐ</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #dddddd; padding: 8px;">Tổng Phạt</td>
+                            <td style="border: 1px solid #dddddd; padding: 8px; text-align: right; color: red;">-<t t-out="'{:,.0f}'.format(object.tong_phat)"/> VNĐ</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #dddddd; padding: 8px;">Bảo hiểm cá nhân (-10.5%)</td>
+                            <td style="border: 1px solid #dddddd; padding: 8px; text-align: right;">-<t t-out="'{:,.0f}'.format(object.tong_bao_hiem)"/> VNĐ</td>
+                        </tr>
+                        <tr style="background-color: #dff0d8; font-weight: bold;">
+                            <td style="border: 1px solid #dddddd; padding: 8px;">Lương Thực Nhận</td>
+                            <td style="border: 1px solid #dddddd; padding: 8px; text-align: right; color: #3c763d;"><t t-out="'{:,.0f}'.format(object.luong_thuc_nhan)"/> VNĐ</td>
+                        </tr>
+                    </table>
+                    
+                    <p style="margin-top: 20px;">Vui lòng kiểm tra chi tiết bảng lương đính kèm dạng PDF. Nếu có bất kỳ thắc mắc nào, hãy liên hệ lại với phòng Nhân sự.</p>
+                    <p>Trân trọng,</p>
+                    <p><strong>Bộ phận Nhân sự (HR Dept)</strong></p>
+                </div>
+            </field>
+            <!-- Sẽ gắn PDF đính kèm tự động ở Python action_send_email / report attachment -->
+            <field name="auto_delete" eval="True"/>
+        </record>
+    </data>
+</odoo>

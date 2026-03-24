@@ -1,3 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_bang_luong_user,access_bang_luong_user,model_bang_luong,base.group_user,1,1,1,0
 access_bang_luong_manager,access_bang_luong_manager,model_bang_luong,base.group_system,1,1,1,1
+access_thuong_phat_loai_user,thuong.phat.loai.user,model_thuong_phat_loai,base.group_user,1,0,0,0
+access_thuong_phat_loai_manager,thuong.phat.loai.manager,model_thuong_phat_loai,base.group_system,1,1,1,1
+access_thuong_phat_phieu_user,thuong.phat.phieu.user,model_thuong_phat_phieu,base.group_user,1,0,0,0
+access_thuong_phat_phieu_manager,thuong.phat.phieu.manager,model_thuong_phat_phieu,base.group_system,1,1,1,1

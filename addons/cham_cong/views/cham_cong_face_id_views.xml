@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_cham_cong_face_id_wizard" model="ir.ui.view">
+        <field name="name">cham_cong.face_id.wizard.form</field>
+        <field name="model">cham_cong.face_id.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Chấm Công Bằng Nhận Diện Khuôn Mặt">
+                <sheet>
+                    <div class="alert alert-info" role="alert" style="margin-bottom: 20px;">
+                        <h4 class="alert-heading">Hướng dẫn chấm công:</h4>
+                        <ol>
+                            <li>Bấm nút <strong>Sửa (Edit)</strong> nếu chưa ở chế độ sửa.</li>
+                            <li>Bấm vào biểu tượng ảnh hoặc nút <strong>Tải lên</strong> để chọn hoặc chụp ảnh từ Camera.</li>
+                            <li>Nhìn thẳng vào thiết bị, đảm bảo mặt đủ sáng và không bị che khuất.</li>
+                            <li>Sau khi ảnh tải lên, bấm nút <strong>Quét Nhận Diện (Check-in/Out)</strong>.</li>
+                        </ol>
+                    </div>
+                    
+                    <group>
+                        <!-- Thêm capture="camera" vào template của widget image thông qua options, Odoo mobile app sẽ tự ưu tiên mở Camera -->
+                        <field name="image" widget="image" class="oe_avatar" style="width: 300px; height: 300px;" options="{'accepted_file_extensions': 'image/*', 'capture': 'camera', 'size': [300, 300]}"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="Quét Nhận Diện (Check-in / Out)" name="action_checkin_faceid" type="object" class="btn-primary" icon="fa-camera"/>
+                    <button string="Hủy bỏ" class="btn-secondary" special="cancel" icon="fa-times"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_cham_cong_face_id_wizard" model="ir.actions.act_window">
+        <field name="name">Face ID AI Check-in</field>
+        <field name="res_model">cham_cong.face_id.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="context">{'default_image': False}</field>
+    </record>
+    
+    <!-- Menu item xuất hiện tại app Chấm Công -->
+    <menuitem id="menu_cham_cong_face_id"
+              name="Face ID Check-in AI"
+              parent="menu_cham_cong"
+              action="action_cham_cong_face_id_wizard"
+              sequence="5"
+              groups="base.group_user"/>
+</odoo>

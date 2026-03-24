@@ -19,6 +19,12 @@ Module quản lý tính lương nhân viên bao gồm:
     'depends': ['base', 'nhan_su', 'cham_cong'],  # Phụ thuộc vào cham_cong
     'data': [
         'security/ir.model.access.csv',
+        'data/sequence_thuong_phat.xml',
+        'data/ir_cron.xml',
+        'data/email_template_bang_luong.xml',
+        'views/loai_thuong_phat_views.xml',
+        'views/phieu_thuong_phat_views.xml',
+        'views/report_bang_luong.xml',
         'views/bang_luong.xml',
         'views/menu.xml',
     ],

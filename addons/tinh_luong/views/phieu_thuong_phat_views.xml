@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- View Form -->
+    <record id="view_thuong_phat_phieu_form" model="ir.ui.view">
+        <field name="name">thuong.phat.phieu.form</field>
+        <field name="model">thuong.phat.phieu</field>
+        <field name="arch" type="xml">
+            <form string="Phiếu Thưởng Phạt">
+                <header>
+                    <button name="action_gui_duyet" string="Gửi duyệt" type="object" class="oe_highlight" states="nhap"/>
+                    <button name="action_duyet" string="Duyệt" type="object" class="oe_highlight" states="cho_duyet" groups="base.group_system"/>
+                    <button name="action_tu_choi" string="Từ chối" type="object" class="btn-danger" states="cho_duyet" groups="base.group_system"/>
+                    <button name="action_huy" string="Hủy/Làm lại" type="object" states="da_duyet,tu_choi" groups="base.group_system"/>
+                    <field name="state" widget="statusbar" statusbar_visible="nhap,cho_duyet,da_duyet"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="so_phieu"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="loai_id" attrs="{'readonly': [('state', '!=', 'nhap')]}"/>
+                            <field name="tinh_chat"/>
+                            <field name="so_tien" widget="monetary" attrs="{'readonly': [('state', '!=', 'nhap')]}"/>
+                        </group>
+                        <group>
+                            <field name="ngay_lap" attrs="{'readonly': [('state', '!=', 'nhap')]}"/>
+                            <field name="ngay_ap_dung" attrs="{'readonly': [('state', '!=', 'nhap')]}"/>
+                        </group>
+                    </group>
+                    
+                    <notebook>
+                        <page string="Danh sách Nhân viên">
+                            <field name="nhan_vien_ids" attrs="{'readonly': [('state', '!=', 'nhap')]}">
+                                <tree string="Nhân viên">
+                                    <field name="ma_dinh_danh"/>
+                                    <field name="ho_va_ten"/>
+                                    <field name="chuc_vu_hien_tai_id"/>
+                                </tree>
+                            </field>
+                            <group class="oe_subtotal_footer oe_right">
+                                <field name="tong_tien" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            </group>
+                        </page>
+                        <page string="Lý do &amp; Thông tin duyệt">
+                            <group>
+                                <field name="ly_do" attrs="{'readonly': [('state', '!=', 'nhap')]}"/>
+                                <field name="nguoi_duyet_id"/>
+                                <field name="ngay_duyet"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- View Tree -->
+    <record id="view_thuong_phat_phieu_tree" model="ir.ui.view">
+        <field name="name">thuong.phat.phieu.tree</field>
+        <field name="model">thuong.phat.phieu</field>
+        <field name="arch" type="xml">
+            <tree string="Phiếu Thưởng Phạt" decoration-info="state=='nhap'" decoration-warning="state=='cho_duyet'" decoration-success="state=='da_duyet'" decoration-danger="state=='tu_choi'">
+                <field name="so_phieu"/>
+                <field name="ngay_lap"/>
+                <field name="loai_id"/>
+                <field name="tinh_chat"/>
+                <field name="so_tien" widget="monetary"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_thuong_phat_phieu" model="ir.actions.act_window">
+        <field name="name">Phiếu Thưởng/Phạt</field>
+        <field name="res_model">thuong.phat.phieu</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

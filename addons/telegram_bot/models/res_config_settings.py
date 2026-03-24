@@ -36,6 +36,31 @@ class ResConfigSettings(models.TransientModel):
         default=100.0
     )
 
+
+    def get_values(self):
+        res = super(ResConfigSettings, self).get_values()
+        config = self.env['telegram.bot.config'].get_config()
+        res.update(
+            telegram_bot_token=config.bot_token,
+            telegram_bot_active=config.is_active,
+            telegram_enable_gps=config.enable_gps_check,
+            telegram_company_lat=config.company_latitude,
+            telegram_company_lng=config.company_longitude,
+            telegram_gps_radius=config.gps_radius,
+        )
+        return res
+
+    def set_values(self):
+        super(ResConfigSettings, self).set_values()
+        config = self.env['telegram.bot.config'].get_config()
+        if self.telegram_bot_token:
+            config.bot_token = self.telegram_bot_token
+        config.is_active = self.telegram_bot_active
+        config.enable_gps_check = self.telegram_enable_gps
+        config.company_latitude = self.telegram_company_lat
+        config.company_longitude = self.telegram_company_lng
+        config.gps_radius = self.telegram_gps_radius
+
     def test_telegram_connection(self):
         """Test kết nối Telegram Bot"""
         config = self.env['telegram.bot.config'].get_config()

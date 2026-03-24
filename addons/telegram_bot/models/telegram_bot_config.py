@@ -24,6 +24,7 @@ class TelegramBotConfig(models.Model):
     bot_username = fields.Char(string='Username Bot', readonly=True)
     is_active = fields.Boolean(string='Kích hoạt', default=True)
 
+
     # GPS Settings
     enable_gps_check = fields.Boolean(string='Kiểm tra vị trí GPS', default=False,
                                       help='Telegram không hỗ trợ share location tự động, nên thường tắt')
@@ -175,11 +176,12 @@ class TelegramBotConfig(models.Model):
         chat = message.get('chat', {})
         chat_id = str(chat.get('id', ''))
         text = (message.get('text') or '').strip()
+        location = message.get('location')
 
-        if not chat_id or not text:
+        if not chat_id or (not text and not location):
             return
 
-        _logger.info(f'Telegram message from {chat_id}: {text}')
+        _logger.info(f'Telegram message from {chat_id}: text="{text}", location={bool(location)}')
 
         # Tìm user đã liên kết
         telegram_user = self.env['telegram.bot.user'].search([
@@ -205,6 +207,18 @@ class TelegramBotConfig(models.Model):
 
         # Cập nhật last interaction
         telegram_user.last_interaction = fields.Datetime.now()
+        
+        # Tự động suy luận từ Location
+        if location and not text:
+            today = fields.Date.today()
+            cham_cong = self.env['cham_cong'].search([
+                ('id_nhan_vien', '=', telegram_user.id_nhan_vien.id),
+                ('ngay', '=', today)
+            ], limit=1)
+            if cham_cong and cham_cong.gio_vao and not cham_cong.gio_ra:
+                command = 'checkout'
+            else:
+                command = 'checkin'
 
         # Xử lý commands
         if command in ['checkin', 'vao', 'vào']:
@@ -216,7 +230,8 @@ class TelegramBotConfig(models.Model):
         elif command in ['help', 'huongdan', 'hướng dẫn']:
             api.send_message(chat_id, self._get_message('help'))
         else:
-            api.send_message(chat_id, '❓ Lệnh không hợp lệ. Gửi /help để xem hướng dẫn.')
+            api.send_message(chat_id, '❓ Tôi không hiểu lệnh này. Gửi /help để xem hướng dẫn.')
+
 
     def _handle_link_command(self, chat_id, text, api):
         """Xử lý lệnh link tài khoản: 'link 0123456789'"""
@@ -270,9 +285,9 @@ class TelegramBotConfig(models.Model):
             location = message.get('location')
             if not location:
                 api.send_message(telegram_user.telegram_chat_id,
-                    '📍 Vui lòng gửi <b>vị trí hiện tại</b> của bạn trước khi check-in.\n\n'
-                    'Cách gửi: nhấn 📎 → Location → Send My Current Location\n'
-                    'Sau đó gửi lại lệnh /checkin')
+                    '📍 Vui lòng gửi <b>vị trí hiện tại (Location)</b> thay thế cho tin nhắn /checkin.\n\n'
+                    'Cách gửi trên điện thoại: Nhấn nút 📎 đính kèm → Chọn Location/Vị trí → Chọn Send My Current Location\n'
+                    'Hệ thống sẽ tự nhận diện thời gian và vị trí để tự check-in!')
                 return
 
             lat = location.get('latitude')
@@ -296,7 +311,8 @@ class TelegramBotConfig(models.Model):
             location = message.get('location')
             if not location:
                 api.send_message(telegram_user.telegram_chat_id,
-                    '📍 Vui lòng gửi vị trí để check-out: nhấn 📎 → Location')
+                    '📍 Vui lòng gửi <b>vị trí hiện tại (Location)</b> thay thế cho tin nhắn /checkout.\n\n'
+                    'Hệ thống sẽ tự nhận diện điểm danh ra về khi nhận được vị trí.')
                 return
 
             lat = location.get('latitude')
@@ -413,3 +429,62 @@ class TelegramBotConfig(models.Model):
         except Exception as e:
             _logger.error(f'handle_message_from_daemon error: {str(e)}', exc_info=True)
             return False
+
+    @api.model
+    def cron_send_daily_report(self):
+        """Cron job gửi báo cáo chuyên cần cuối ngày cho tất cả nhân sự đã liên kết Telegram"""
+        import datetime
+        
+        today = fields.Date.today()
+        users = self.env['telegram.bot.user'].search([('is_verified', '=', True)])
+        
+        if not users:
+            return
+            
+        config = self.get_config()
+        if not config.bot_token or not config.is_active:
+            return
+            
+        from ..services.telegram_api import TelegramBotAPI
+        api = TelegramBotAPI(config.bot_token)
+        
+        for user in users:
+            cham_cong = self.env['cham_cong'].search([
+                ('id_nhan_vien', '=', user.id_nhan_vien.id),
+                ('ngay', '=', today)
+            ], limit=1)
+            
+            msg = f"🌅 <b>Báo cáo điểm danh ngày {today.strftime('%d/%m/%Y')}</b>\n\n"
+            msg += f"👤 Nhân viên: <b>{user.id_nhan_vien.ho_va_ten}</b>\n"
+            
+            if not cham_cong:
+                msg += "\n❌ Bạn KHÔNG có dữ liệu chấm công ngày hôm nay (Vắng mặt)."
+            else:
+                import pytz
+                tz = pytz.timezone('Asia/Ho_Chi_Minh')
+                
+                gio_vao = '---'
+                if cham_cong.gio_vao:
+                    gio_vao = pytz.utc.localize(cham_cong.gio_vao.replace(tzinfo=None)).astimezone(tz).strftime('%H:%M')
+                    
+                gio_ra = '---'
+                if cham_cong.gio_ra:
+                    gio_ra = pytz.utc.localize(cham_cong.gio_ra.replace(tzinfo=None)).astimezone(tz).strftime('%H:%M')
+                
+                msg += f"\n✅ Giờ vào: {gio_vao}"
+                msg += f"\n📤 Giờ ra: {gio_ra}"
+                msg += f"\n⏱️ Tổng làm: {cham_cong.tong_so_gio_lam:.1f}h"
+                
+                if cham_cong.gio_ot > 0:
+                    msg += f"\n⏰ OT: {cham_cong.gio_ot:.1f}h"
+                    
+                trang_thai_dict = dict(cham_cong._fields['trang_thai'].selection)
+                msg += f"\n📌 Trạng thái: <b>{trang_thai_dict.get(cham_cong.trang_thai, 'N/A')}</b>"
+                
+            msg += "\n\n<i>Chúc bạn một buổi tối vui vẻ!</i> 🌙"
+            
+            try:
+                api.send_message(user.telegram_chat_id, msg)
+                _logger.info(f"Đã gửi báo cáo Telegram cuối ngày cho {user.id_nhan_vien.ho_va_ten}")
+            except Exception as e:
+                _logger.error(f"Cannot send daily report to {user.id_nhan_vien.ho_va_ten}: {e}")

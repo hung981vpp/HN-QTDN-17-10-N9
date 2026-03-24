@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- View Form -->
+    <record id="view_thuong_phat_loai_form" model="ir.ui.view">
+        <field name="name">thuong.phat.loai.form</field>
+        <field name="model">thuong.phat.loai</field>
+        <field name="arch" type="xml">
+            <form string="Loại Thưởng Phạt">
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                    <div class="oe_title">
+                        <label for="ten_loai" class="oe_edit_only"/>
+                        <h1><field name="ten_loai" placeholder="VD: Đi muộn, Thưởng chuyên cần..."/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="tinh_chat" widget="radio"/>
+                            <field name="so_tien_mac_dinh" widget="monetary"/>
+                        </group>
+                        <group>
+                            <field name="active" invisible="1"/>
+                            <field name="ghi_chu" placeholder="Ghi chú quy định..."/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- View Tree -->
+    <record id="view_thuong_phat_loai_tree" model="ir.ui.view">
+        <field name="name">thuong.phat.loai.tree</field>
+        <field name="model">thuong.phat.loai</field>
+        <field name="arch" type="xml">
+            <tree string="Loại Thưởng Phạt">
+                <field name="ten_loai"/>
+                <field name="tinh_chat"/>
+                <field name="so_tien_mac_dinh" widget="monetary"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_thuong_phat_loai" model="ir.actions.act_window">
+        <field name="name">Cấu hình Loại Thưởng/Phạt</field>
+        <field name="res_model">thuong.phat.loai</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

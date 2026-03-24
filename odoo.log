@@ -1,0 +1,565 @@
+2026-03-23 13:47:03,114 14111 INFO ? odoo: Odoo version 15.0 
+2026-03-23 13:47:03,115 14111 INFO ? odoo: Using configuration file at /home/hwungg/Business-Internship/odoo.conf 
+2026-03-23 13:47:03,115 14111 INFO ? odoo: addons paths: ['/home/hwungg/Business-Internship/odoo/addons', '/home/hwungg/.local/share/Odoo/addons/15.0', '/home/hwungg/Business-Internship/addons'] 
+2026-03-23 13:47:03,115 14111 INFO ? odoo: database: odoo@localhost:5431 
+2026-03-23 13:47:03,222 14111 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/bin/wkhtmltopdf 
+2026-03-23 13:47:03,614 14111 INFO ? odoo.service.server: HTTP service (werkzeug) running on LAPTOP-HWUNGG.localdomain:8069 
+2026-03-23 13:47:03,626 14111 INFO QLNS odoo.modules.loading: loading 1 modules... 
+2026-03-23 13:47:03,630 14111 INFO QLNS odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2026-03-23 13:47:03,646 14111 INFO QLNS odoo.modules.loading: updating modules list 
+2026-03-23 13:47:03,648 14111 INFO QLNS odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2026-03-23 13:47:03,881 14111 WARNING QLNS odoo.modules.module: Missing `license` key in manifest for 'quan_ly_van_ban', defaulting to LGPL-3 
+2026-03-23 13:47:04,014 14111 WARNING QLNS odoo.modules.module: Missing `license` key in manifest for 'nhan_su', defaulting to LGPL-3 
+2026-03-23 13:47:04,333 14111 INFO QLNS odoo.addons.base.models.ir_module: ALLOW access to module.button_upgrade on ['Tính Lương'] to user __system__ #1 via n/a 
+2026-03-23 13:47:04,333 14111 INFO QLNS odoo.addons.base.models.ir_module: ALLOW access to module.update_list on ['Tính Lương'] to user __system__ #1 via n/a 
+2026-03-23 13:47:04,456 14111 WARNING QLNS odoo.modules.module: Missing `license` key in manifest for 'quan_ly_van_ban', defaulting to LGPL-3 
+2026-03-23 13:47:04,557 14111 WARNING QLNS odoo.modules.module: Missing `license` key in manifest for 'nhan_su', defaulting to LGPL-3 
+2026-03-23 13:47:04,775 14111 INFO QLNS odoo.addons.base.models.ir_module: ALLOW access to module.button_install on [] to user __system__ #1 via n/a 
+2026-03-23 13:47:04,794 14111 WARNING QLNS odoo.modules.module: Missing `license` key in manifest for 'nhan_su', defaulting to LGPL-3 
+2026-03-23 13:47:04,796 14111 INFO QLNS odoo.modules.loading: loading 28 modules... 
+2026-03-23 13:47:04,802 14111 WARNING QLNS odoo.modules.module: Missing `license` key in manifest for 'nhan_su', defaulting to LGPL-3 
+2026-03-23 13:47:04,968 14111 INFO QLNS odoo.modules.loading: Loading module tinh_luong (28/28) 
+2026-03-23 13:47:04,986 14111 WARNING QLNS odoo.fields: cham_cong.ca_lam_dang_ky: selection attribute will be ignored as the field is related 
+2026-03-23 13:47:04,987 14111 WARNING QLNS odoo.fields: don_tu.trang_thai_cham_cong: selection attribute will be ignored as the field is related 
+2026-03-23 13:47:04,992 14111 WARNING QLNS odoo.fields: Field dang_ky_ca_lam_theo_ngay.trang_thai: unknown parameter 'tracking', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-23 13:47:05,017 14111 WARNING QLNS odoo.fields: cham_cong.ca_lam_dang_ky: selection attribute will be ignored as the field is related 
+2026-03-23 13:47:05,017 14111 WARNING QLNS odoo.fields: don_tu.trang_thai_cham_cong: selection attribute will be ignored as the field is related 
+2026-03-23 13:47:05,022 14111 WARNING QLNS odoo.fields: Field dang_ky_ca_lam_theo_ngay.trang_thai: unknown parameter 'tracking', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-23 13:47:05,023 14111 WARNING QLNS odoo.fields: Field thuong.phat.phieu.state: unknown parameter 'tracking', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-23 13:47:05,031 14111 INFO QLNS odoo.modules.registry: module tinh_luong: creating or updating database tables 
+2026-03-23 13:47:05,058 14111 INFO QLNS odoo.modules.registry: Models have no table: cham_cong.face_id.wizard. 
+2026-03-23 13:47:05,058 14111 INFO QLNS odoo.modules.registry: Recreate table of model cham_cong.face_id.wizard. 
+2026-03-23 13:47:05,060 14111 ERROR QLNS odoo.modules.registry: Model cham_cong.face_id.wizard has no table. 
+2026-03-23 13:47:05,140 14111 INFO QLNS odoo.modules.loading: loading tinh_luong/security/ir.model.access.csv 
+2026-03-23 13:47:05,174 14111 INFO QLNS odoo.modules.loading: loading tinh_luong/data/sequence_thuong_phat.xml 
+2026-03-23 13:47:05,178 14111 INFO QLNS odoo.modules.loading: loading tinh_luong/data/ir_cron.xml 
+2026-03-23 13:47:05,181 14111 INFO QLNS odoo.modules.loading: loading tinh_luong/data/email_template_bang_luong.xml 
+2026-03-23 13:47:05,190 14111 INFO QLNS odoo.modules.loading: loading tinh_luong/views/loai_thuong_phat_views.xml 
+2026-03-23 13:47:05,210 14111 INFO QLNS odoo.modules.loading: loading tinh_luong/views/phieu_thuong_phat_views.xml 
+2026-03-23 13:47:05,223 14111 INFO QLNS odoo.modules.loading: loading tinh_luong/views/report_bang_luong.xml 
+2026-03-23 13:47:05,238 14111 INFO QLNS odoo.modules.loading: loading tinh_luong/views/bang_luong.xml 
+2026-03-23 13:47:05,262 14111 INFO QLNS odoo.modules.loading: loading tinh_luong/views/menu.xml 
+2026-03-23 13:47:05,283 14111 INFO QLNS odoo.addons.base.models.ir_translation: module tinh_luong: no translation for language vi_VN 
+2026-03-23 13:47:05,296 14111 INFO QLNS odoo.modules.loading: Module tinh_luong loaded in 0.33s, 268 queries 
+2026-03-23 13:47:05,296 14111 INFO QLNS odoo.modules.loading: 28 modules loaded in 0.50s, 268 queries (+0 extra) 
+2026-03-23 13:47:05,307 14111 WARNING QLNS odoo.fields: cham_cong.ca_lam_dang_ky: selection attribute will be ignored as the field is related 
+2026-03-23 13:47:05,307 14111 WARNING QLNS odoo.fields: don_tu.trang_thai_cham_cong: selection attribute will be ignored as the field is related 
+2026-03-23 13:47:05,311 14111 WARNING QLNS odoo.fields: Field dang_ky_ca_lam_theo_ngay.trang_thai: unknown parameter 'tracking', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-23 13:47:05,312 14111 WARNING QLNS odoo.fields: Field thuong.phat.phieu.state: unknown parameter 'tracking', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-23 13:47:05,488 14111 INFO QLNS odoo.modules.loading: Modules loaded. 
+2026-03-23 13:47:05,491 14111 INFO QLNS odoo.modules.registry: Registry loaded in 1.877s 
+2026-03-23 13:48:04,187 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 13:48:04,198 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 13:48:10,121 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 13:48:10,138 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 13:48:42,105 14111 INFO QLNS odoo.addons.base.models.ir_http: Generating routing map for key None 
+2026-03-23 13:48:42,201 14111 INFO QLNS werkzeug: 127.0.0.1 - - [23/Mar/2026 13:48:42] "GET /web/assets/375-663efa9/web.report_assets_common.min.css HTTP/1.1" 200 - 5 0.003 0.096
+2026-03-23 13:48:42,239 14111 INFO ? odoo.http: HTTP Configuring static files 
+2026-03-23 13:48:42,248 14111 INFO QLNS werkzeug: 127.0.0.1 - - [23/Mar/2026 13:48:42] "GET /web/assets/377-09368b4/web.report_assets_pdf.min.css HTTP/1.1" 200 - 3 0.002 0.004
+2026-03-23 13:48:42,283 14111 INFO QLNS werkzeug: 127.0.0.1 - - [23/Mar/2026 13:48:42] "[32mGET / HTTP/1.1[0m" 303 - 1 0.000 0.002
+2026-03-23 13:48:42,288 14111 INFO QLNS werkzeug: 127.0.0.1 - - [23/Mar/2026 13:48:42] "[32mGET /web HTTP/1.1[0m" 303 - 1 0.000 0.002
+2026-03-23 13:48:42,428 14111 INFO QLNS werkzeug: 127.0.0.1 - - [23/Mar/2026 13:48:42] "GET /web/login HTTP/1.1" 200 - 82 0.036 0.103
+2026-03-23 13:49:04,464 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 13:49:04,471 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 13:49:10,532 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 13:49:10,536 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 13:50:06,621 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 13:50:06,627 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 13:50:12,556 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 13:50:12,559 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 13:51:08,993 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 13:51:08,995 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 13:51:14,956 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 13:51:14,958 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 13:52:09,061 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 13:52:09,065 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 13:52:14,996 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 13:52:14,999 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 13:53:13,261 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 13:53:13,264 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 13:53:19,229 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 13:53:19,231 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 13:54:12,625 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 13:54:12,629 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 13:54:18,877 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 13:54:18,879 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 13:55:15,659 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 13:55:15,668 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 13:55:20,689 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 13:55:20,690 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 13:56:16,443 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 13:56:16,450 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 13:56:22,376 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 13:56:22,379 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 13:57:17,076 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 13:57:17,081 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 13:57:23,032 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 13:57:23,034 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 13:58:20,826 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 13:58:20,830 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 13:58:26,793 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 13:58:26,796 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 13:59:19,422 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 13:59:19,427 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 13:59:25,370 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 13:59:25,372 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:00:23,599 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:00:23,605 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:00:29,553 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:00:29,556 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:01:24,298 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:01:24,304 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:01:30,262 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:01:30,265 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:02:25,896 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:02:25,904 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:02:31,840 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:02:31,841 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:03:28,728 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:03:28,737 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:03:33,746 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:03:33,749 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:04:28,221 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:04:28,225 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:04:33,249 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:04:33,252 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:05:31,430 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:05:31,436 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:05:37,369 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:05:37,372 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:06:31,323 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:06:31,328 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:06:37,329 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:06:37,331 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:07:33,728 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:07:33,734 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:07:39,723 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:07:39,726 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:08:35,757 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:08:35,763 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:08:41,720 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:08:41,724 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:09:36,124 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:09:36,127 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:09:42,089 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:09:42,091 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:10:40,026 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:10:40,031 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:10:46,209 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:10:46,212 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:11:38,346 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:11:38,352 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:11:44,300 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:11:44,302 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:12:42,491 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:12:42,496 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:12:48,047 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:12:48,050 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:13:42,876 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:13:42,884 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:13:48,844 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:13:48,848 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:14:43,893 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:14:43,898 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:14:49,883 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:14:49,885 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:15:47,209 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:15:47,212 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:15:53,153 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:15:53,154 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:16:46,120 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:16:46,127 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:16:52,245 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:16:52,248 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:17:50,410 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:17:50,413 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:17:56,332 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:17:56,334 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:18:50,683 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:18:50,686 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:18:56,632 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:18:56,635 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:19:52,591 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:19:52,597 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:19:58,561 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:19:58,564 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:20:55,032 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:20:55,039 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:21:00,024 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:21:00,027 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:21:54,920 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:21:54,929 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:21:59,962 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:21:59,966 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:22:58,207 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Snailmail: process letters queue`. 
+2026-03-23 14:22:58,219 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Snailmail: process letters queue` done. 
+2026-03-23 14:22:58,235 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `SMS: SMS Queue Manager`. 
+2026-03-23 14:22:58,246 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `SMS: SMS Queue Manager` done. 
+2026-03-23 14:22:58,264 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Mail: Email Queue Manager`. 
+2026-03-23 14:22:58,285 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Mail: Email Queue Manager` done. 
+2026-03-23 14:22:58,292 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Partner Autocomplete : Sync with remote DB`. 
+2026-03-23 14:22:58,294 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Partner Autocomplete : Sync with remote DB` done. 
+2026-03-23 14:22:58,299 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:22:58,301 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:23:04,311 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:23:04,314 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:23:57,552 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:23:57,563 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:24:03,560 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:24:03,563 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:25:00,656 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:25:00,666 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:25:06,665 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:25:06,667 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:26:01,932 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:26:01,939 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:26:07,894 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:26:07,897 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:27:03,023 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:27:03,029 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:27:08,994 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:27:08,996 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:28:06,244 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:28:06,249 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:28:12,196 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:28:12,199 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:29:05,319 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:29:05,326 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:29:11,283 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:29:11,286 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:30:09,379 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:30:09,382 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:30:14,360 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:30:14,363 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:31:08,725 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:31:08,730 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:31:16,921 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:31:16,924 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:32:10,622 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:32:10,629 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:32:16,573 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:32:16,576 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:33:14,730 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:33:14,737 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:33:20,742 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:33:20,745 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:34:14,363 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:34:14,366 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:34:20,315 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:34:20,318 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:35:16,965 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:35:16,971 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:35:22,935 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:35:22,937 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:36:18,569 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:36:18,574 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:36:24,529 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:36:24,532 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:37:19,238 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:37:19,242 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:37:25,154 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:37:25,155 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:38:22,839 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:38:22,851 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:38:27,831 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:38:27,834 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:39:21,437 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:39:21,444 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:39:26,417 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:39:26,421 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:40:24,564 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:40:24,571 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:40:30,565 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:40:30,568 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:41:25,237 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:41:25,245 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:41:31,210 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:41:31,213 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:42:26,844 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:42:26,851 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:42:32,804 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:42:32,806 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:43:29,523 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:43:29,531 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:43:35,521 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:43:35,523 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:44:28,932 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:44:28,939 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:44:34,912 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:44:34,914 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:45:33,006 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:45:33,013 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:45:38,534 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:45:38,536 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:46:32,831 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:46:32,838 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:46:37,812 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:46:37,815 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:47:34,725 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:47:34,732 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:47:40,152 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:47:40,155 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:48:36,120 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:48:36,127 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:48:42,088 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:48:42,091 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:49:36,341 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:49:36,348 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:49:42,298 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:49:42,301 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:50:40,350 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:50:40,353 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:50:46,314 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:50:46,316 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:51:38,473 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:51:38,480 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:51:44,456 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:51:44,460 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:52:42,520 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:52:42,524 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:52:48,484 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:52:48,487 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:53:43,662 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:53:43,668 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:53:49,636 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:53:49,639 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:54:44,618 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:54:44,624 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:54:50,107 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:54:50,110 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:55:47,808 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:55:47,813 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:55:52,788 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:55:52,791 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:56:46,269 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:56:46,272 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:56:51,709 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:56:51,713 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:57:49,779 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:57:49,788 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:57:55,804 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:57:55,806 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:58:50,200 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:58:50,206 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:58:56,215 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:58:56,218 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 14:59:52,646 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 14:59:52,650 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 14:59:58,570 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 14:59:58,572 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:00:54,556 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:00:54,563 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:01:00,522 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:01:00,524 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:01:54,495 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:01:54,503 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:02:00,454 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:02:00,457 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:02:58,607 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:02:58,612 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:03:03,632 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:03:03,636 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:03:58,123 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:03:58,130 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:04:03,110 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:04:03,111 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:04:59,885 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:04:59,888 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:05:05,828 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:05:05,832 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:06:01,474 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:06:01,477 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:06:07,416 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:06:07,419 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:07:02,085 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:07:02,090 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:07:08,095 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:07:08,098 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:08:05,790 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:08:05,794 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:08:11,756 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:08:11,758 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:09:04,404 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:09:04,409 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:09:10,408 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:09:10,411 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:10:08,552 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:10:08,556 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:10:14,556 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:10:14,558 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:11:09,167 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:11:09,169 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:11:15,112 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:11:15,115 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:12:10,864 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:12:10,867 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:12:15,875 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:12:15,878 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:13:13,442 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:13:13,448 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:13:18,449 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:13:18,452 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:14:12,196 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:14:12,202 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:14:18,161 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:14:18,162 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:15:16,319 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:15:16,325 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:15:22,301 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:15:22,303 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:16:15,817 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:16:15,821 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:16:21,772 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:16:21,774 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:17:18,594 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:17:18,600 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:17:24,549 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:17:24,552 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:18:20,027 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:18:20,034 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:18:26,004 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:18:26,005 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:19:20,755 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:19:20,762 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:19:26,720 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:19:26,723 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:20:24,303 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:20:24,309 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:20:29,306 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:20:29,308 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:21:22,887 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:21:22,892 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:21:27,862 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:21:27,864 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:22:26,004 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:22:26,010 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:22:32,019 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:22:32,022 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:23:26,628 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Snailmail: process letters queue`. 
+2026-03-23 15:23:26,638 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Snailmail: process letters queue` done. 
+2026-03-23 15:23:26,650 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `SMS: SMS Queue Manager`. 
+2026-03-23 15:23:26,657 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `SMS: SMS Queue Manager` done. 
+2026-03-23 15:23:26,666 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Mail: Email Queue Manager`. 
+2026-03-23 15:23:26,673 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Mail: Email Queue Manager` done. 
+2026-03-23 15:23:26,680 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Partner Autocomplete : Sync with remote DB`. 
+2026-03-23 15:23:26,685 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Partner Autocomplete : Sync with remote DB` done. 
+2026-03-23 15:23:26,692 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:23:26,694 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:23:32,636 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:23:32,638 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:24:28,232 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:24:28,236 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:24:34,218 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:24:34,220 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:25:30,808 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:25:30,815 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:25:36,794 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:25:36,796 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:26:30,407 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:26:30,414 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:26:36,487 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:26:36,490 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:27:34,610 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:27:34,616 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:27:40,572 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:27:40,574 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:28:34,020 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:28:34,026 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:28:39,987 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:28:39,989 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:29:36,811 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:29:36,815 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:29:41,781 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:29:41,783 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:30:38,230 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:30:38,233 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:30:43,218 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:30:43,222 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:31:37,972 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:31:37,979 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:31:43,946 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:31:43,948 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:32:41,449 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:32:41,458 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:32:47,463 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:32:47,467 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:33:40,114 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:33:40,118 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:33:46,103 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:33:46,105 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:34:44,210 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:34:44,214 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:34:50,201 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:34:50,204 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:35:44,752 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:35:44,755 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:35:50,773 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:35:50,776 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:36:46,373 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:36:46,380 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:36:52,347 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:36:52,351 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:37:48,990 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:37:48,992 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:37:54,528 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:37:54,531 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:38:48,490 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:38:48,497 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:38:53,456 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:38:53,459 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:39:51,577 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:39:51,584 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:39:57,559 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:39:57,561 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:40:51,326 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:40:51,333 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:40:57,307 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:40:57,310 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:41:53,746 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:41:53,752 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:41:59,700 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:41:59,702 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:42:55,514 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:42:55,519 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:43:01,477 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:43:01,480 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:43:55,885 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:43:55,894 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:44:01,871 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:44:01,874 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:44:59,694 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:44:59,701 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:45:05,685 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:45:05,688 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:45:58,052 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:45:58,059 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:46:04,020 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:46:04,023 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:47:02,133 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:47:02,141 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:47:07,096 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:47:07,099 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:48:02,945 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:48:02,952 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:48:07,953 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:48:07,956 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:49:03,274 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:49:03,282 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:49:09,261 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:49:09,264 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:50:06,236 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:50:06,243 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:50:12,194 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:50:12,197 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:51:05,445 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:51:05,451 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:51:11,432 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:51:11,435 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:52:09,532 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:52:09,538 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:52:15,474 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:52:15,477 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-23 15:53:09,445 14111 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-23 15:53:09,450 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-23 15:53:15,415 14111 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-23 15:53:15,418 14111 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 

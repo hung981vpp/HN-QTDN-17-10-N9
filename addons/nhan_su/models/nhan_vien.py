@@ -46,6 +46,7 @@ class NhanVien(models.Model):
     # Hệ thống lương
     he_so_luong = fields.Float("Hệ số lương", default=1.0, help="Hệ số nhân với lương cơ bản")
     luong_co_ban = fields.Float("Lương cơ bản/tháng", default=5000000, help="Lương cơ bản hàng tháng của nhân viên")
+    diem_kpi = fields.Float("Điểm KPI", default=100.0, help="Điểm đánh giá hiệu suất (100 là chuẩn)")
     luong_theo_ngay = fields.Float("Lương theo ngày", compute="_compute_luong_theo_ngay", store=True, help="Lương theo ngày = (Lương cơ bản × Hệ số lương) / 26")
     luong_theo_gio = fields.Float("Lương theo giờ", compute="_compute_luong_theo_gio", store=True, help="Lương theo giờ = Lương theo ngày / 8")
     
