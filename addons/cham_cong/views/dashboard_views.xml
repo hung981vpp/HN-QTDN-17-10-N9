@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Khai báo Client Action cho Dashboard -->
+        <record id="action_cham_cong_dashboard" model="ir.actions.client">
+            <field name="name">Dashboard Chấm Công</field>
+            <field name="tag">cham_cong_dashboard</field>
+        </record>
+
+        <!-- Thêm Menu con Dashboard nằm trong menu gốc "Chấm công" -->
+        <!-- Lưu ý sequence="5" để nó đứng đầu danh sách -->
+        <menuitem id="menu_cham_cong_dashboard_main"
+                  name="Dashboard"
+                  parent="menu_cham_cong_root"
+                  action="action_cham_cong_dashboard"
+                  sequence="1"/>
+    </data>
+</odoo>

@@ -1,0 +1,39 @@
+.o_dashboard_cham_cong {
+    padding: 24px;
+}
+.o_dashboard_cham_cong .kpi-card {
+    border-radius: 16px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    align-items: center;
+}
+.o_dashboard_cham_cong .kpi-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08) !important;
+}
+.o_dashboard_cham_cong .icon-box {
+    width: 65px;
+    height: 65px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bg-primary-light { background-color: rgba(0, 123, 255, 0.1); }
+.bg-warning-light { background-color: rgba(255, 193, 7, 0.1); }
+.bg-danger-light { background-color: rgba(220, 53, 69, 0.1); }
+
+.o_dashboard_cham_cong h3 {
+    font-size: 1.8rem;
+    margin-top: 5px;
+}
+.text-small { 
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.chart-container {
+    width: 100%;
+}
+.card {
+    border-radius: 16px;
+}

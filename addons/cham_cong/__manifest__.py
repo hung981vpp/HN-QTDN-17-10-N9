@@ -22,10 +22,20 @@ Module quản lý chấm công nhân viên bao gồm:
         'views/dot_dang_ky_views.xml',
         'views/dang_ky_ca_lam_views.xml',
         'views/don_tu_views.xml',
+        'views/dashboard_views.xml',
         'views/menu.xml',
         'security/ir.model.access.csv',
         'views/cham_cong_face_id_views.xml',
     ],
+    'assets': {
+        'web.assets_backend': [
+            'cham_cong/static/src/css/dashboard.css',
+            'cham_cong/static/src/js/dashboard.js',
+        ],
+        'web.assets_qweb': [
+            'cham_cong/static/src/xml/dashboard.xml',
+        ],
+    },
     'installable': True,
     'application': True,
     'auto_install': False,
