@@ -1,37 +1,37 @@
-2026-03-24 08:01:10,465 11475 INFO ? odoo: Odoo version 15.0 
-2026-03-24 08:01:10,465 11475 INFO ? odoo: Using configuration file at /home/hwungg/Business-Internship/odoo.conf 
-2026-03-24 08:01:10,465 11475 INFO ? odoo: addons paths: ['/home/hwungg/Business-Internship/odoo/addons', '/home/hwungg/.local/share/Odoo/addons/15.0', '/home/hwungg/Business-Internship/addons'] 
-2026-03-24 08:01:10,465 11475 INFO ? odoo: database: odoo@localhost:5431 
-2026-03-24 08:01:10,630 11475 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/bin/wkhtmltopdf 
-2026-03-24 08:01:11,148 11475 INFO ? odoo.service.server: HTTP service (werkzeug) running on LAPTOP-HWUNGG.localdomain:8069 
-2026-03-24 08:01:11,168 11475 INFO QLNS odoo.modules.loading: loading 1 modules... 
-2026-03-24 08:01:11,173 11475 INFO QLNS odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
-2026-03-24 08:01:11,188 11475 INFO QLNS odoo.modules.loading: updating modules list 
-2026-03-24 08:01:11,192 11475 INFO QLNS odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
-2026-03-24 08:01:11,705 11475 WARNING QLNS odoo.modules.module: Missing `license` key in manifest for 'nhan_su', defaulting to LGPL-3 
-2026-03-24 08:01:11,870 11475 WARNING QLNS odoo.modules.module: Missing `license` key in manifest for 'quan_ly_van_ban', defaulting to LGPL-3 
-2026-03-24 08:01:12,145 11475 INFO QLNS odoo.addons.base.models.ir_module: ALLOW access to module.button_upgrade on ['Chấm Công'] to user __system__ #1 via n/a 
-2026-03-24 08:01:12,145 11475 INFO QLNS odoo.addons.base.models.ir_module: ALLOW access to module.update_list on ['Chấm Công'] to user __system__ #1 via n/a 
-2026-03-24 08:01:12,345 11475 WARNING QLNS odoo.modules.module: Missing `license` key in manifest for 'nhan_su', defaulting to LGPL-3 
-2026-03-24 08:01:12,434 11475 WARNING QLNS odoo.modules.module: Missing `license` key in manifest for 'quan_ly_van_ban', defaulting to LGPL-3 
-2026-03-24 08:01:12,634 11475 INFO QLNS odoo.addons.base.models.ir_module: ALLOW access to module.button_install on [] to user __system__ #1 via n/a 
-2026-03-24 08:01:12,670 11475 WARNING QLNS odoo.modules.module: Missing `license` key in manifest for 'nhan_su', defaulting to LGPL-3 
-2026-03-24 08:01:12,674 11475 INFO QLNS odoo.modules.loading: loading 28 modules... 
-2026-03-24 08:01:12,685 11475 WARNING QLNS odoo.modules.module: Missing `license` key in manifest for 'nhan_su', defaulting to LGPL-3 
-2026-03-24 08:01:12,849 11475 INFO QLNS odoo.modules.loading: Loading module cham_cong (18/28) 
-2026-03-24 08:01:12,898 11475 WARNING QLNS odoo.fields: cham_cong.ca_lam_dang_ky: selection attribute will be ignored as the field is related 
-2026-03-24 08:01:12,899 11475 WARNING QLNS odoo.fields: don_tu.trang_thai_cham_cong: selection attribute will be ignored as the field is related 
-2026-03-24 08:01:12,902 11475 WARNING QLNS odoo.fields: Field dang_ky_ca_lam_theo_ngay.trang_thai: unknown parameter 'tracking', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
-2026-03-24 08:01:12,909 11475 INFO QLNS odoo.modules.registry: module cham_cong: creating or updating database tables 
-2026-03-24 08:01:13,034 11475 INFO QLNS odoo.modules.loading: loading cham_cong/views/cham_cong.xml 
-2026-03-24 08:01:13,072 11475 INFO QLNS odoo.modules.loading: loading cham_cong/views/dot_dang_ky_views.xml 
-2026-03-24 08:01:13,088 11475 INFO QLNS odoo.modules.loading: loading cham_cong/views/dang_ky_ca_lam_views.xml 
-2026-03-24 08:01:13,104 11475 INFO QLNS odoo.modules.loading: loading cham_cong/views/don_tu_views.xml 
-2026-03-24 08:01:13,150 11475 INFO QLNS odoo.modules.loading: loading cham_cong/views/dashboard_views.xml 
-2026-03-24 08:01:13,159 11475 INFO QLNS odoo.modules.loading: loading cham_cong/views/menu.xml 
-2026-03-24 08:01:13,204 11475 INFO QLNS odoo.modules.loading: loading cham_cong/security/ir.model.access.csv 
-2026-03-24 08:01:13,231 11475 INFO QLNS odoo.modules.loading: loading cham_cong/views/cham_cong_face_id_views.xml 
-2026-03-24 08:01:13,241 11475 WARNING QLNS odoo.addons.base.models.ir_ui_view: An alert (class alert-*) must have an alert, alertdialog or status role or an alert-link class. Please use alert and alertdialog only for what expects to stop any activity to be read immediately.
+2026-03-24 08:48:25,787 7211 INFO ? odoo: Odoo version 15.0 
+2026-03-24 08:48:25,787 7211 INFO ? odoo: Using configuration file at /home/hwungg/Business-Internship/odoo.conf 
+2026-03-24 08:48:25,787 7211 INFO ? odoo: addons paths: ['/home/hwungg/Business-Internship/odoo/addons', '/home/hwungg/.local/share/Odoo/addons/15.0', '/home/hwungg/Business-Internship/addons'] 
+2026-03-24 08:48:25,787 7211 INFO ? odoo: database: odoo@localhost:5431 
+2026-03-24 08:48:25,858 7211 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/bin/wkhtmltopdf 
+2026-03-24 08:48:25,986 7211 INFO ? odoo.service.server: HTTP service (werkzeug) running on LAPTOP-HWUNGG.localdomain:8069 
+2026-03-24 08:48:26,000 7211 INFO QLNS odoo.modules.loading: loading 1 modules... 
+2026-03-24 08:48:26,005 7211 INFO QLNS odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2026-03-24 08:48:26,019 7211 INFO QLNS odoo.modules.loading: updating modules list 
+2026-03-24 08:48:26,021 7211 INFO QLNS odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2026-03-24 08:48:26,415 7211 WARNING QLNS odoo.modules.module: Missing `license` key in manifest for 'nhan_su', defaulting to LGPL-3 
+2026-03-24 08:48:26,444 7211 WARNING QLNS odoo.modules.module: Missing `license` key in manifest for 'quan_ly_van_ban', defaulting to LGPL-3 
+2026-03-24 08:48:26,551 7211 INFO QLNS odoo.addons.base.models.ir_module: ALLOW access to module.button_upgrade on ['Chấm Công'] to user __system__ #1 via n/a 
+2026-03-24 08:48:26,551 7211 INFO QLNS odoo.addons.base.models.ir_module: ALLOW access to module.update_list on ['Chấm Công'] to user __system__ #1 via n/a 
+2026-03-24 08:48:26,899 7211 WARNING QLNS odoo.modules.module: Missing `license` key in manifest for 'nhan_su', defaulting to LGPL-3 
+2026-03-24 08:48:26,923 7211 WARNING QLNS odoo.modules.module: Missing `license` key in manifest for 'quan_ly_van_ban', defaulting to LGPL-3 
+2026-03-24 08:48:27,056 7211 INFO QLNS odoo.addons.base.models.ir_module: ALLOW access to module.button_install on [] to user __system__ #1 via n/a 
+2026-03-24 08:48:27,079 7211 WARNING QLNS odoo.modules.module: Missing `license` key in manifest for 'nhan_su', defaulting to LGPL-3 
+2026-03-24 08:48:27,082 7211 INFO QLNS odoo.modules.loading: loading 28 modules... 
+2026-03-24 08:48:27,084 7211 WARNING QLNS odoo.modules.module: Missing `license` key in manifest for 'nhan_su', defaulting to LGPL-3 
+2026-03-24 08:48:27,144 7211 INFO QLNS odoo.modules.loading: Loading module cham_cong (18/28) 
+2026-03-24 08:48:27,182 7211 WARNING QLNS odoo.fields: cham_cong.ca_lam_dang_ky: selection attribute will be ignored as the field is related 
+2026-03-24 08:48:27,183 7211 WARNING QLNS odoo.fields: don_tu.trang_thai_cham_cong: selection attribute will be ignored as the field is related 
+2026-03-24 08:48:27,186 7211 WARNING QLNS odoo.fields: Field dang_ky_ca_lam_theo_ngay.trang_thai: unknown parameter 'tracking', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-24 08:48:27,193 7211 INFO QLNS odoo.modules.registry: module cham_cong: creating or updating database tables 
+2026-03-24 08:48:27,265 7211 INFO QLNS odoo.modules.loading: loading cham_cong/views/cham_cong.xml 
+2026-03-24 08:48:27,293 7211 INFO QLNS odoo.modules.loading: loading cham_cong/views/dot_dang_ky_views.xml 
+2026-03-24 08:48:27,339 7211 INFO QLNS odoo.modules.loading: loading cham_cong/views/dang_ky_ca_lam_views.xml 
+2026-03-24 08:48:27,360 7211 INFO QLNS odoo.modules.loading: loading cham_cong/views/don_tu_views.xml 
+2026-03-24 08:48:27,380 7211 INFO QLNS odoo.modules.loading: loading cham_cong/views/dashboard_views.xml 
+2026-03-24 08:48:27,388 7211 INFO QLNS odoo.modules.loading: loading cham_cong/views/menu.xml 
+2026-03-24 08:48:27,431 7211 INFO QLNS odoo.modules.loading: loading cham_cong/security/ir.model.access.csv 
+2026-03-24 08:48:27,453 7211 INFO QLNS odoo.modules.loading: loading cham_cong/views/cham_cong_face_id_views.xml 
+2026-03-24 08:48:27,459 7211 WARNING QLNS odoo.addons.base.models.ir_ui_view: An alert (class alert-*) must have an alert, alertdialog or status role or an alert-link class. Please use alert and alertdialog only for what expects to stop any activity to be read immediately.
 View error context:
 {'file': '/home/hwungg/Business-Internship/addons/cham_cong/views/cham_cong_face_id_views.xml',
  'line': 5,
@@ -40,96 +40,412 @@ View error context:
  'view.model': 'cham_cong.face_id.wizard',
  'view.parent': ir.ui.view(),
  'xmlid': 'view_cham_cong_face_id_wizard'} 
-2026-03-24 08:01:13,253 11475 INFO QLNS odoo.addons.base.models.ir_translation: module cham_cong: no translation for language vi_VN 
-2026-03-24 08:01:13,266 11475 INFO QLNS odoo.modules.loading: Module cham_cong loaded in 0.42s, 407 queries 
-2026-03-24 08:01:13,325 11475 INFO QLNS odoo.modules.loading: Loading module telegram_bot (27/28) 
-2026-03-24 08:01:13,337 11475 WARNING QLNS odoo.fields: cham_cong.ca_lam_dang_ky: selection attribute will be ignored as the field is related 
-2026-03-24 08:01:13,337 11475 WARNING QLNS odoo.fields: don_tu.trang_thai_cham_cong: selection attribute will be ignored as the field is related 
-2026-03-24 08:01:13,342 11475 WARNING QLNS odoo.fields: Field dang_ky_ca_lam_theo_ngay.trang_thai: unknown parameter 'tracking', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
-2026-03-24 08:01:13,371 11475 WARNING QLNS odoo.fields: cham_cong.ca_lam_dang_ky: selection attribute will be ignored as the field is related 
-2026-03-24 08:01:13,371 11475 WARNING QLNS odoo.fields: don_tu.trang_thai_cham_cong: selection attribute will be ignored as the field is related 
-2026-03-24 08:01:13,375 11475 WARNING QLNS odoo.fields: Field dang_ky_ca_lam_theo_ngay.trang_thai: unknown parameter 'tracking', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
-2026-03-24 08:01:13,383 11475 INFO QLNS odoo.modules.registry: module telegram_bot: creating or updating database tables 
-2026-03-24 08:01:13,432 11475 INFO QLNS odoo.modules.loading: loading telegram_bot/security/ir.model.access.csv 
-2026-03-24 08:01:13,448 11475 INFO QLNS odoo.modules.loading: loading telegram_bot/views/telegram_bot_config_views.xml 
-2026-03-24 08:01:13,466 11475 INFO QLNS odoo.modules.loading: loading telegram_bot/views/telegram_bot_user_views.xml 
-2026-03-24 08:01:13,487 11475 INFO QLNS odoo.modules.loading: loading telegram_bot/views/menu.xml 
-2026-03-24 08:01:13,511 11475 INFO QLNS odoo.modules.loading: loading telegram_bot/data/ir_cron.xml 
-2026-03-24 08:01:13,518 11475 INFO QLNS odoo.addons.base.models.ir_translation: module telegram_bot: no translation for language vi_VN 
-2026-03-24 08:01:13,528 11475 INFO QLNS odoo.modules.loading: Module telegram_bot loaded in 0.20s, 187 queries 
-2026-03-24 08:01:13,528 11475 INFO QLNS odoo.modules.loading: Loading module tinh_luong (28/28) 
-2026-03-24 08:01:13,541 11475 WARNING QLNS odoo.fields: cham_cong.ca_lam_dang_ky: selection attribute will be ignored as the field is related 
-2026-03-24 08:01:13,542 11475 WARNING QLNS odoo.fields: don_tu.trang_thai_cham_cong: selection attribute will be ignored as the field is related 
-2026-03-24 08:01:13,548 11475 WARNING QLNS odoo.fields: Field dang_ky_ca_lam_theo_ngay.trang_thai: unknown parameter 'tracking', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
-2026-03-24 08:01:13,573 11475 WARNING QLNS odoo.fields: cham_cong.ca_lam_dang_ky: selection attribute will be ignored as the field is related 
-2026-03-24 08:01:13,574 11475 WARNING QLNS odoo.fields: don_tu.trang_thai_cham_cong: selection attribute will be ignored as the field is related 
-2026-03-24 08:01:13,579 11475 WARNING QLNS odoo.fields: Field dang_ky_ca_lam_theo_ngay.trang_thai: unknown parameter 'tracking', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
-2026-03-24 08:01:13,579 11475 WARNING QLNS odoo.fields: Field thuong.phat.phieu.state: unknown parameter 'tracking', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
-2026-03-24 08:01:13,589 11475 INFO QLNS odoo.modules.registry: module tinh_luong: creating or updating database tables 
-2026-03-24 08:01:13,653 11475 INFO QLNS odoo.modules.loading: loading tinh_luong/security/ir.model.access.csv 
-2026-03-24 08:01:13,690 11475 INFO QLNS odoo.modules.loading: loading tinh_luong/data/sequence_thuong_phat.xml 
-2026-03-24 08:01:13,693 11475 INFO QLNS odoo.modules.loading: loading tinh_luong/data/ir_cron.xml 
-2026-03-24 08:01:13,696 11475 INFO QLNS odoo.modules.loading: loading tinh_luong/data/email_template_bang_luong.xml 
-2026-03-24 08:01:13,710 11475 INFO QLNS odoo.modules.loading: loading tinh_luong/views/loai_thuong_phat_views.xml 
-2026-03-24 08:01:13,733 11475 INFO QLNS odoo.modules.loading: loading tinh_luong/views/phieu_thuong_phat_views.xml 
-2026-03-24 08:01:13,753 11475 INFO QLNS odoo.modules.loading: loading tinh_luong/views/report_bang_luong.xml 
-2026-03-24 08:01:13,773 11475 INFO QLNS odoo.modules.loading: loading tinh_luong/views/bang_luong.xml 
-2026-03-24 08:01:13,813 11475 INFO QLNS odoo.modules.loading: loading tinh_luong/views/menu.xml 
-2026-03-24 08:01:13,858 11475 INFO QLNS odoo.addons.base.models.ir_translation: module tinh_luong: no translation for language vi_VN 
-2026-03-24 08:01:13,876 11475 INFO QLNS odoo.modules.loading: Module tinh_luong loaded in 0.35s, 268 queries 
-2026-03-24 08:01:13,876 11475 INFO QLNS odoo.modules.loading: 28 modules loaded in 1.20s, 862 queries (+0 extra) 
-2026-03-24 08:01:13,890 11475 WARNING QLNS odoo.fields: cham_cong.ca_lam_dang_ky: selection attribute will be ignored as the field is related 
-2026-03-24 08:01:13,890 11475 WARNING QLNS odoo.fields: don_tu.trang_thai_cham_cong: selection attribute will be ignored as the field is related 
-2026-03-24 08:01:13,895 11475 WARNING QLNS odoo.fields: Field dang_ky_ca_lam_theo_ngay.trang_thai: unknown parameter 'tracking', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
-2026-03-24 08:01:13,895 11475 WARNING QLNS odoo.fields: Field thuong.phat.phieu.state: unknown parameter 'tracking', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
-2026-03-24 08:01:14,020 11475 INFO QLNS odoo.addons.base.models.ir_model: Deleting 318@ir.model.access (cham_cong.access_don_tu_manager) 
-2026-03-24 08:01:14,064 11475 INFO QLNS odoo.models.unlink: User #1 deleted ir.model.data records with IDs: [33269] 
-2026-03-24 08:01:14,064 11475 INFO QLNS odoo.models.unlink: User #1 deleted ir.model.access records with IDs: [318] 
-2026-03-24 08:01:14,065 11475 INFO QLNS odoo.addons.base.models.ir_model: Deleting 317@ir.model.access (cham_cong.access_don_tu_user) 
-2026-03-24 08:01:14,074 11475 INFO QLNS odoo.models.unlink: User #1 deleted ir.model.data records with IDs: [33268] 
-2026-03-24 08:01:14,074 11475 INFO QLNS odoo.models.unlink: User #1 deleted ir.model.access records with IDs: [317] 
-2026-03-24 08:01:14,075 11475 INFO QLNS odoo.addons.base.models.ir_model: Deleting 310@ir.model.access (cham_cong.access_dang_ky_ca_lam_theo_ngay_manager) 
-2026-03-24 08:01:14,085 11475 INFO QLNS odoo.models.unlink: User #1 deleted ir.model.data records with IDs: [28837] 
-2026-03-24 08:01:14,085 11475 INFO QLNS odoo.models.unlink: User #1 deleted ir.model.access records with IDs: [310] 
-2026-03-24 08:01:14,086 11475 INFO QLNS odoo.modules.registry: verifying fields for every extended model 
-2026-03-24 08:01:14,263 11475 INFO QLNS odoo.modules.loading: Modules loaded. 
-2026-03-24 08:01:14,267 11475 INFO QLNS odoo.modules.registry: Registry loaded in 3.119s 
-2026-03-24 08:02:11,271 11475 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Snailmail: process letters queue`. 
-2026-03-24 08:02:11,282 11475 INFO QLNS odoo.addons.base.models.ir_cron: Job `Snailmail: process letters queue` done. 
-2026-03-24 08:02:11,296 11475 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Mail: Email Queue Manager`. 
-2026-03-24 08:02:11,311 11475 INFO QLNS odoo.addons.base.models.ir_cron: Job `Mail: Email Queue Manager` done. 
-2026-03-24 08:02:11,316 11475 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Partner Autocomplete : Sync with remote DB`. 
-2026-03-24 08:02:11,320 11475 INFO QLNS odoo.addons.base.models.ir_cron: Job `Partner Autocomplete : Sync with remote DB` done. 
-2026-03-24 08:02:11,325 11475 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Users: Notify About Unregistered Users`. 
-2026-03-24 08:02:11,330 11475 INFO QLNS odoo.addons.base.models.ir_cron: Job `Users: Notify About Unregistered Users` done. 
-2026-03-24 08:02:11,335 11475 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Notification: Delete Notifications older than 6 Month`. 
-2026-03-24 08:02:11,341 11475 INFO QLNS odoo.addons.base.models.ir_cron: Job `Notification: Delete Notifications older than 6 Month` done. 
-2026-03-24 08:02:11,345 11475 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Base: Auto-vacuum internal data`. 
-2026-03-24 08:02:11,398 11475 INFO QLNS odoo.addons.base.models.ir_attachment: filestore gc 9 checked, 3 removed 
-2026-03-24 08:02:11,430 11475 INFO QLNS odoo.addons.base.models.res_users: GC'd 0 user log entries 
-2026-03-24 08:02:11,458 11475 INFO QLNS odoo.addons.auth_totp.models.auth_totp: GC'd 0 totp devices entries 
-2026-03-24 08:02:11,512 11475 INFO QLNS odoo.addons.base.models.ir_cron: Job `Base: Auto-vacuum internal data` done. 
-2026-03-24 08:02:11,518 11475 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `SMS: SMS Queue Manager`. 
-2026-03-24 08:02:11,521 11475 INFO QLNS odoo.addons.base.models.ir_cron: Job `SMS: SMS Queue Manager` done. 
-2026-03-24 08:02:11,528 11475 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
-2026-03-24 08:02:11,534 11475 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
-2026-03-24 08:02:16,141 11475 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
-2026-03-24 08:02:16,145 11475 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
-2026-03-24 08:03:10,657 11475 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
-2026-03-24 08:03:10,664 11475 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
-2026-03-24 08:03:18,598 11475 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
-2026-03-24 08:03:18,601 11475 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
-2026-03-24 08:04:10,266 11475 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
-2026-03-24 08:04:10,272 11475 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
-2026-03-24 08:04:16,365 11475 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
-2026-03-24 08:04:16,367 11475 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
-2026-03-24 08:05:13,284 11475 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
-2026-03-24 08:05:13,287 11475 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
-2026-03-24 08:05:19,340 11475 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
-2026-03-24 08:05:19,343 11475 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
-2026-03-24 08:06:12,325 11475 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
-2026-03-24 08:06:12,342 11475 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
-2026-03-24 08:06:18,424 11475 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
-2026-03-24 08:06:18,427 11475 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
-2026-03-24 08:07:13,192 11475 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
-2026-03-24 08:07:13,198 11475 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 08:48:27,474 7211 INFO QLNS odoo.addons.base.models.ir_translation: module cham_cong: no translation for language vi_VN 
+2026-03-24 08:48:27,488 7211 INFO QLNS odoo.modules.loading: Module cham_cong loaded in 0.34s, 403 queries 
+2026-03-24 08:48:27,511 7211 INFO QLNS odoo.modules.loading: Loading module telegram_bot (27/28) 
+2026-03-24 08:48:27,525 7211 WARNING QLNS odoo.fields: cham_cong.ca_lam_dang_ky: selection attribute will be ignored as the field is related 
+2026-03-24 08:48:27,526 7211 WARNING QLNS odoo.fields: don_tu.trang_thai_cham_cong: selection attribute will be ignored as the field is related 
+2026-03-24 08:48:27,530 7211 WARNING QLNS odoo.fields: Field dang_ky_ca_lam_theo_ngay.trang_thai: unknown parameter 'tracking', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-24 08:48:27,550 7211 WARNING QLNS odoo.fields: cham_cong.ca_lam_dang_ky: selection attribute will be ignored as the field is related 
+2026-03-24 08:48:27,551 7211 WARNING QLNS odoo.fields: don_tu.trang_thai_cham_cong: selection attribute will be ignored as the field is related 
+2026-03-24 08:48:27,555 7211 WARNING QLNS odoo.fields: Field dang_ky_ca_lam_theo_ngay.trang_thai: unknown parameter 'tracking', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-24 08:48:27,563 7211 INFO QLNS odoo.modules.registry: module telegram_bot: creating or updating database tables 
+2026-03-24 08:48:27,605 7211 INFO QLNS odoo.modules.loading: loading telegram_bot/security/ir.model.access.csv 
+2026-03-24 08:48:27,625 7211 INFO QLNS odoo.modules.loading: loading telegram_bot/views/telegram_bot_config_views.xml 
+2026-03-24 08:48:27,644 7211 INFO QLNS odoo.modules.loading: loading telegram_bot/views/telegram_bot_user_views.xml 
+2026-03-24 08:48:27,668 7211 INFO QLNS odoo.modules.loading: loading telegram_bot/views/menu.xml 
+2026-03-24 08:48:27,685 7211 INFO QLNS odoo.modules.loading: loading telegram_bot/data/ir_cron.xml 
+2026-03-24 08:48:27,691 7211 INFO QLNS odoo.addons.base.models.ir_translation: module telegram_bot: no translation for language vi_VN 
+2026-03-24 08:48:27,717 7211 INFO QLNS odoo.modules.loading: Module telegram_bot loaded in 0.21s, 185 queries 
+2026-03-24 08:48:27,717 7211 INFO QLNS odoo.modules.loading: Loading module tinh_luong (28/28) 
+2026-03-24 08:48:27,728 7211 WARNING QLNS odoo.fields: cham_cong.ca_lam_dang_ky: selection attribute will be ignored as the field is related 
+2026-03-24 08:48:27,728 7211 WARNING QLNS odoo.fields: don_tu.trang_thai_cham_cong: selection attribute will be ignored as the field is related 
+2026-03-24 08:48:27,733 7211 WARNING QLNS odoo.fields: Field dang_ky_ca_lam_theo_ngay.trang_thai: unknown parameter 'tracking', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-24 08:48:27,755 7211 WARNING QLNS odoo.fields: cham_cong.ca_lam_dang_ky: selection attribute will be ignored as the field is related 
+2026-03-24 08:48:27,755 7211 WARNING QLNS odoo.fields: don_tu.trang_thai_cham_cong: selection attribute will be ignored as the field is related 
+2026-03-24 08:48:27,760 7211 WARNING QLNS odoo.fields: Field dang_ky_ca_lam_theo_ngay.trang_thai: unknown parameter 'tracking', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-24 08:48:27,761 7211 WARNING QLNS odoo.fields: Field thuong.phat.phieu.state: unknown parameter 'tracking', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-24 08:48:27,769 7211 INFO QLNS odoo.modules.registry: module tinh_luong: creating or updating database tables 
+2026-03-24 08:48:27,817 7211 INFO QLNS odoo.modules.loading: loading tinh_luong/security/ir.model.access.csv 
+2026-03-24 08:48:27,844 7211 INFO QLNS odoo.modules.loading: loading tinh_luong/data/sequence_thuong_phat.xml 
+2026-03-24 08:48:27,847 7211 INFO QLNS odoo.modules.loading: loading tinh_luong/data/ir_cron.xml 
+2026-03-24 08:48:27,848 7211 INFO QLNS odoo.modules.loading: loading tinh_luong/data/email_template_bang_luong.xml 
+2026-03-24 08:48:27,856 7211 INFO QLNS odoo.modules.loading: loading tinh_luong/views/loai_thuong_phat_views.xml 
+2026-03-24 08:48:27,868 7211 INFO QLNS odoo.modules.loading: loading tinh_luong/views/phieu_thuong_phat_views.xml 
+2026-03-24 08:48:27,881 7211 INFO QLNS odoo.modules.loading: loading tinh_luong/views/report_bang_luong.xml 
+2026-03-24 08:48:27,892 7211 INFO QLNS odoo.modules.loading: loading tinh_luong/views/bang_luong.xml 
+2026-03-24 08:48:27,912 7211 INFO QLNS odoo.modules.loading: loading tinh_luong/views/menu.xml 
+2026-03-24 08:48:27,937 7211 INFO QLNS odoo.addons.base.models.ir_translation: module tinh_luong: no translation for language vi_VN 
+2026-03-24 08:48:27,950 7211 INFO QLNS odoo.modules.loading: Module tinh_luong loaded in 0.23s, 268 queries 
+2026-03-24 08:48:27,950 7211 INFO QLNS odoo.modules.loading: 28 modules loaded in 0.87s, 856 queries (+0 extra) 
+2026-03-24 08:48:27,963 7211 WARNING QLNS odoo.fields: cham_cong.ca_lam_dang_ky: selection attribute will be ignored as the field is related 
+2026-03-24 08:48:27,964 7211 WARNING QLNS odoo.fields: don_tu.trang_thai_cham_cong: selection attribute will be ignored as the field is related 
+2026-03-24 08:48:27,969 7211 WARNING QLNS odoo.fields: Field dang_ky_ca_lam_theo_ngay.trang_thai: unknown parameter 'tracking', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-24 08:48:27,969 7211 WARNING QLNS odoo.fields: Field thuong.phat.phieu.state: unknown parameter 'tracking', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-24 08:48:28,061 7211 INFO QLNS odoo.modules.registry: verifying fields for every extended model 
+2026-03-24 08:48:28,213 7211 INFO QLNS odoo.modules.loading: Modules loaded. 
+2026-03-24 08:48:28,225 7211 INFO QLNS odoo.modules.registry: Registry loaded in 2.239s 
+2026-03-24 08:48:33,660 7211 INFO ? odoo.http: HTTP Configuring static files 
+2026-03-24 08:48:33,664 7211 INFO QLNS odoo.addons.base.models.ir_http: Generating routing map for key None 
+2026-03-24 08:48:33,740 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:48:33] "POST /longpolling/im_status HTTP/1.1" 200 - 18 0.009 0.068
+2026-03-24 08:48:56,100 7211 INFO ? odoo.addons.bus.models.bus: Bus.loop listen imbus on db postgres 
+2026-03-24 08:49:24,268 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:24] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.005 0.010
+2026-03-24 08:49:25,688 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 08:49:25,696 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 08:49:27,574 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:27] "POST /longpolling/poll HTTP/1.1" 200 - 17 0.018 31.508
+2026-03-24 08:49:27,584 7211 INFO QLNS odoo.modules.registry: At least one model cache has been invalidated, signaling through the database. 
+2026-03-24 08:49:27,587 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:27] "GET /web HTTP/1.1" 200 - 357 0.185 1.463
+2026-03-24 08:49:27,905 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:27] "GET /web/assets/debug/web.assets_common.css HTTP/1.1" 200 - 4 0.002 0.005
+2026-03-24 08:49:27,973 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:27] "GET /web/assets/debug/web.assets_backend.css HTTP/1.1" 200 - 3 0.003 0.021
+2026-03-24 08:49:27,995 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:27] "GET /web/assets/debug/web.assets_common.js HTTP/1.1" 200 - 3 0.004 0.041
+2026-03-24 08:49:27,996 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:27] "GET /web/assets/debug/web.assets_backend_prod_only.js HTTP/1.1" 200 - 3 0.003 0.039
+2026-03-24 08:49:28,015 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:28] "GET /web/assets/debug/web.assets_backend.js HTTP/1.1" 200 - 3 0.014 0.049
+2026-03-24 08:49:28,139 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:28] "GET /web/webclient/load_menus/ae8546a9640837bca0152cae4b30587d970cc93c127ed7cf0c6edb83ee6f2874 HTTP/1.1" 200 - 203 0.117 0.065
+2026-03-24 08:49:28,263 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:28] "GET /web/webclient/qweb/e60c77e08c9a7719438f66aff5aab92ca5a977b01a9931ee3f69b12b448f7e22?bundle=web.assets_qweb HTTP/1.1" 200 - 2 0.002 0.032
+2026-03-24 08:49:28,305 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:28] "GET /web/webclient/translations/3e3e3662962d53a0d7dce4b78680b64cceb942a3?lang=en_US HTTP/1.1" 200 - 3 0.002 0.003
+2026-03-24 08:49:28,533 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:28] "GET /web/webclient/translations/3e3e3662962d53a0d7dce4b78680b64cceb942a3?lang=en_US HTTP/1.1" 200 - 3 0.003 0.004
+2026-03-24 08:49:28,540 7211 INFO ? werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:28] "GET /web/static/img/favicon.ico HTTP/1.1" 200 - - - -
+2026-03-24 08:49:28,894 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:28] "GET /web/webclient/translations/3e3e3662962d53a0d7dce4b78680b64cceb942a3?lang=en_US HTTP/1.1" 200 - 3 0.009 0.016
+2026-03-24 08:49:28,905 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:28] "POST /web/action/load HTTP/1.1" 200 - 9 0.014 0.017
+2026-03-24 08:49:29,235 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:29] "GET /web/webclient/locale/en_US HTTP/1.1" 200 - 1 0.001 0.005
+2026-03-24 08:49:29,593 7211 INFO ? werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:29] "GET /web/static/lib/fontawesome/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 - - - -
+2026-03-24 08:49:29,670 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:29] "POST /web/dataset/call_kw/res.users/systray_get_activities HTTP/1.1" 200 - 2 0.006 0.036
+2026-03-24 08:49:29,712 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:29] "POST /web/dataset/call_kw/cham_cong.dashboard/get_dashboard_data HTTP/1.1" 200 - 31 0.031 0.035
+2026-03-24 08:49:29,713 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:29] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 200 - 20 0.025 0.039
+2026-03-24 08:49:29,741 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:29] "POST /mail/init_messaging HTTP/1.1" 200 - 70 0.080 0.035
+2026-03-24 08:49:29,921 7211 INFO ? werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:29] "[36mGET /muk_web_theme/static/img/default_icon.png HTTP/1.1[0m" 304 - - - -
+2026-03-24 08:49:30,021 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:30] "GET /web/image/res.company/1/favicon HTTP/1.1" 200 - 10 0.012 0.008
+2026-03-24 08:49:30,127 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:30] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.003 0.008
+2026-03-24 08:49:30,134 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:30] "POST /mail/load_message_failures HTTP/1.1" 200 - 3 0.005 0.011
+2026-03-24 08:49:30,146 7211 INFO ? werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:30] "GET /web/static/fonts/google/Roboto/Roboto-Regular.ttf HTTP/1.1" 200 - - - -
+2026-03-24 08:49:33,306 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-24 08:49:33,309 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 08:49:54,768 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:54] "GET /web/assets/debug/web.assets_common.css HTTP/1.1" 200 - 3 0.003 0.021
+2026-03-24 08:49:54,768 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:54] "GET /web/assets/debug/web.assets_backend.css HTTP/1.1" 200 - 3 0.005 0.018
+2026-03-24 08:49:54,770 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:54] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 - 2 0.008 0.014
+2026-03-24 08:49:54,979 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:54] "GET /web/assets/417-9092611/web.assets_backend.js.map HTTP/1.1" 200 - 2 0.002 0.034
+2026-03-24 08:49:54,979 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:54] "GET /web/assets/348-7156dff/web.assets_common.js.map HTTP/1.1" 200 - 2 0.001 0.037
+2026-03-24 08:49:55,112 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:55] "GET /web/assets/217-f0d4000/web.assets_backend_prod_only.js.map HTTP/1.1" 200 - 2 0.001 0.006
+2026-03-24 08:49:55,152 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:55] "GET /web/assets/415-9092611/web.assets_backend.css.map HTTP/1.1" 200 - 2 0.001 0.011
+2026-03-24 08:49:55,152 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:49:55] "GET /web/assets/344-7156dff/web.assets_common.css.map HTTP/1.1" 200 - 2 0.002 0.011
+2026-03-24 08:50:17,121 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:50:17] "POST /longpolling/poll HTTP/1.1" 200 - 13 0.025 47.464
+2026-03-24 08:50:19,816 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:50:19] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.003 0.005
+2026-03-24 08:50:25,261 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 08:50:25,268 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 08:50:31,826 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-24 08:50:31,828 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 08:51:04,899 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:51:04] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.008 47.431
+2026-03-24 08:51:09,510 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:51:09] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.005 0.009
+2026-03-24 08:51:28,249 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 08:51:28,255 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 08:51:34,294 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-24 08:51:34,298 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 08:51:53,990 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:51:53] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.007 48.734
+2026-03-24 08:52:00,658 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:52:00] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.006 0.010
+2026-03-24 08:52:28,555 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 08:52:28,563 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 08:52:33,215 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-24 08:52:33,218 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 08:52:41,540 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:52:41] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.012 47.188
+2026-03-24 08:52:50,277 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:52:50] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.005 0.008
+2026-03-24 08:53:28,916 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 08:53:28,920 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 08:53:29,239 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:53:29] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.012 47.346
+2026-03-24 08:53:33,736 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-24 08:53:33,738 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 08:53:40,971 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:53:40] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.007 0.009
+2026-03-24 08:54:18,276 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:54:18] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.010 48.679
+2026-03-24 08:54:29,961 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 08:54:29,967 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 08:54:31,699 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:54:31] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.004 0.008
+2026-03-24 08:54:36,063 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-24 08:54:36,064 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 08:55:05,897 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:55:05] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.006 47.283
+2026-03-24 08:55:23,358 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:55:23] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.006 0.009
+2026-03-24 08:55:28,470 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 08:55:28,478 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 08:55:34,550 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-24 08:55:34,553 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 08:55:53,568 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:55:53] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.008 47.324
+2026-03-24 08:56:14,470 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:56:14] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.004 0.008
+2026-03-24 08:56:31,871 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 08:56:31,880 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 08:56:37,922 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-24 08:56:37,924 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 08:56:42,575 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:56:42] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.010 48.648
+2026-03-24 08:57:05,333 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:57:05] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.004 0.006
+2026-03-24 08:57:30,071 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:57:30] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.003 47.150
+2026-03-24 08:57:30,813 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 08:57:30,817 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 08:57:36,944 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-24 08:57:36,945 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 08:57:55,862 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:57:55] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.003 0.005
+2026-03-24 08:58:15,322 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:15] "GET /web HTTP/1.1" 200 - 60 0.038 0.127
+2026-03-24 08:58:15,729 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:15] "GET /web/assets/debug/web.assets_common.js HTTP/1.1" 200 - 3 0.004 0.043
+2026-03-24 08:58:15,731 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:15] "GET /web/webclient/load_menus/ae8546a9640837bca0152cae4b30587d970cc93c127ed7cf0c6edb83ee6f2874 HTTP/1.1" 200 - 1 0.005 0.042
+2026-03-24 08:58:15,765 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:15] "GET /web/assets/debug/web.assets_backend.js HTTP/1.1" 200 - 3 0.005 0.077
+2026-03-24 08:58:15,766 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:15] "GET /web/assets/debug/web.assets_backend.css HTTP/1.1" 200 - 3 0.008 0.070
+2026-03-24 08:58:15,767 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:15] "GET /web/assets/debug/web.assets_backend_prod_only.js HTTP/1.1" 200 - 3 0.007 0.071
+2026-03-24 08:58:15,774 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:15] "GET /web/assets/debug/web.assets_common.css HTTP/1.1" 200 - 3 0.039 0.042
+2026-03-24 08:58:16,098 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:16] "GET /web/webclient/translations/3e3e3662962d53a0d7dce4b78680b64cceb942a3?lang=en_US HTTP/1.1" 200 - 3 0.007 0.007
+2026-03-24 08:58:16,136 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:16] "GET /web/webclient/qweb/e60c77e08c9a7719438f66aff5aab92ca5a977b01a9931ee3f69b12b448f7e22?bundle=web.assets_qweb HTTP/1.1" 200 - 2 0.003 0.052
+2026-03-24 08:58:16,283 7211 INFO ? werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:16] "[36mGET /web/static/img/favicon.ico HTTP/1.1[0m" 304 - - - -
+2026-03-24 08:58:16,438 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:16] "GET /web/webclient/translations/3e3e3662962d53a0d7dce4b78680b64cceb942a3?lang=en_US HTTP/1.1" 200 - 3 0.004 0.006
+2026-03-24 08:58:16,784 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:16] "GET /web/webclient/translations/3e3e3662962d53a0d7dce4b78680b64cceb942a3?lang=en_US HTTP/1.1" 200 - 3 0.006 0.008
+2026-03-24 08:58:16,795 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:16] "POST /web/action/load HTTP/1.1" 200 - 8 0.010 0.012
+2026-03-24 08:58:17,121 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:17] "GET /web/webclient/locale/en_US HTTP/1.1" 200 - 1 0.001 0.005
+2026-03-24 08:58:17,478 7211 INFO ? werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:17] "[36mGET /web/static/fonts/google/Roboto/Roboto-Regular.ttf HTTP/1.1[0m" 304 - - - -
+2026-03-24 08:58:17,513 7211 INFO ? werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:17] "[36mGET /web/static/lib/fontawesome/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1[0m" 304 - - - -
+2026-03-24 08:58:17,546 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:17] "POST /web/dataset/call_kw/res.users/systray_get_activities HTTP/1.1" 200 - 2 0.005 0.022
+2026-03-24 08:58:17,575 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:17] "POST /web/dataset/call_kw/cham_cong.dashboard/get_dashboard_data HTTP/1.1" 200 - 25 0.029 0.018
+2026-03-24 08:58:17,586 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:17] "POST /mail/init_messaging HTTP/1.1" 200 - 38 0.042 0.028
+2026-03-24 08:58:17,626 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:17] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.007 47.206
+2026-03-24 08:58:17,809 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:17] "GET /web/image/res.company/1/favicon HTTP/1.1" 200 - 4 0.002 0.006
+2026-03-24 08:58:17,859 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:17] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.003 0.005
+2026-03-24 08:58:17,890 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:17] "POST /mail/load_message_failures HTTP/1.1" 200 - 3 0.003 0.006
+2026-03-24 08:58:17,915 7211 INFO ? werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:17] "[36mGET /muk_web_theme/static/img/default_icon.png HTTP/1.1[0m" 304 - - - -
+2026-03-24 08:58:17,931 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:17] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 200 - 6 0.004 0.013
+2026-03-24 08:58:32,393 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 08:58:32,398 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 08:58:33,574 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:33] "GET /web HTTP/1.1" 200 - 29 0.020 0.082
+2026-03-24 08:58:33,958 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:33] "GET /web/assets/debug/web.assets_common.css HTTP/1.1" 200 - 3 0.004 0.023
+2026-03-24 08:58:33,985 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:33] "GET /web/assets/debug/web.assets_backend.css HTTP/1.1" 200 - 3 0.015 0.037
+2026-03-24 08:58:33,997 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:33] "GET /web/webclient/load_menus/ae8546a9640837bca0152cae4b30587d970cc93c127ed7cf0c6edb83ee6f2874 HTTP/1.1" 200 - 1 0.001 0.050
+2026-03-24 08:58:34,001 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:34] "GET /web/assets/debug/web.assets_common.js HTTP/1.1" 200 - 3 0.014 0.051
+2026-03-24 08:58:34,002 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:34] "GET /web/assets/debug/web.assets_backend_prod_only.js HTTP/1.1" 200 - 3 0.004 0.056
+2026-03-24 08:58:34,003 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:34] "GET /web/assets/debug/web.assets_backend.js HTTP/1.1" 200 - 3 0.005 0.058
+2026-03-24 08:58:34,339 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:34] "GET /web/webclient/translations/3e3e3662962d53a0d7dce4b78680b64cceb942a3?lang=en_US HTTP/1.1" 200 - 3 0.007 0.010
+2026-03-24 08:58:34,360 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:34] "GET /web/webclient/qweb/e60c77e08c9a7719438f66aff5aab92ca5a977b01a9931ee3f69b12b448f7e22?bundle=web.assets_qweb HTTP/1.1" 200 - 2 0.001 0.067
+2026-03-24 08:58:34,470 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:34] "GET /web/webclient/translations/3e3e3662962d53a0d7dce4b78680b64cceb942a3?lang=en_US HTTP/1.1" 200 - 3 0.007 0.008
+2026-03-24 08:58:34,475 7211 INFO ? werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:34] "GET /web/static/img/favicon.ico HTTP/1.1" 200 - - - -
+2026-03-24 08:58:34,814 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:34] "GET /web/webclient/translations/3e3e3662962d53a0d7dce4b78680b64cceb942a3?lang=en_US HTTP/1.1" 200 - 3 0.006 0.009
+2026-03-24 08:58:34,834 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:34] "POST /web/action/load HTTP/1.1" 200 - 8 0.008 0.010
+2026-03-24 08:58:35,165 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:35] "GET /web/webclient/locale/en_US HTTP/1.1" 200 - 1 0.001 0.006
+2026-03-24 08:58:35,516 7211 INFO ? werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:35] "GET /web/static/fonts/google/Roboto/Roboto-Regular.ttf HTTP/1.1" 200 - - - -
+2026-03-24 08:58:35,533 7211 INFO ? werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:35] "GET /web/static/lib/fontawesome/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 - - - -
+2026-03-24 08:58:35,568 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:35] "POST /web/dataset/call_kw/res.users/systray_get_activities HTTP/1.1" 200 - 2 0.010 0.027
+2026-03-24 08:58:35,585 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:35] "POST /web/dataset/call_kw/cham_cong.dashboard/get_dashboard_data HTTP/1.1" 200 - 25 0.026 0.020
+2026-03-24 08:58:35,595 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:35] "POST /mail/init_messaging HTTP/1.1" 200 - 38 0.036 0.033
+2026-03-24 08:58:35,871 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:35] "GET /web/image/res.company/1/favicon HTTP/1.1" 200 - 4 0.005 0.008
+2026-03-24 08:58:35,890 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:35] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.004 0.006
+2026-03-24 08:58:35,903 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:35] "POST /mail/load_message_failures HTTP/1.1" 200 - 3 0.002 0.006
+2026-03-24 08:58:35,924 7211 INFO ? werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:35] "[36mGET /muk_web_theme/static/img/default_icon.png HTTP/1.1[0m" 304 - - - -
+2026-03-24 08:58:35,943 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:35] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 200 - 6 0.005 0.011
+2026-03-24 08:58:37,619 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:58:37] "POST /web/dataset/call_kw/cham_cong.dashboard/get_dashboard_data HTTP/1.1" 200 - 25 0.010 0.011
+2026-03-24 08:58:38,431 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-24 08:58:38,434 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 08:59:06,204 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:59:06] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.009 48.671
+2026-03-24 08:59:22,661 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:59:22] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.019 47.107
+2026-03-24 08:59:26,004 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 08:59:26] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.002 0.004
+2026-03-24 08:59:33,315 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 08:59:33,322 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 08:59:39,388 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-24 08:59:39,392 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 09:00:10,102 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:00:10] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.005 47.090
+2026-03-24 09:00:16,774 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:00:16] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.007 0.008
+2026-03-24 09:00:32,691 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 09:00:32,702 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 09:00:37,540 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-24 09:00:37,541 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 09:00:59,226 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:00:59] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.005 48.780
+2026-03-24 09:01:07,541 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:01:07] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.003 0.006
+2026-03-24 09:01:34,344 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 09:01:34,350 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 09:01:40,390 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-24 09:01:40,393 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 09:01:46,578 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:01:46] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.009 46.975
+2026-03-24 09:01:59,712 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:01:59] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.002 0.005
+2026-03-24 09:02:31,632 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 09:02:31,639 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 09:02:34,012 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:02:34] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.009 47.064
+2026-03-24 09:02:37,703 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-24 09:02:37,704 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 09:02:50,407 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:02:50] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.005 0.008
+2026-03-24 09:03:22,867 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:03:22] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.007 48.504
+2026-03-24 09:03:34,828 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 09:03:34,835 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 09:03:40,952 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-24 09:03:40,955 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 09:03:41,049 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:03:41] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.004 0.007
+2026-03-24 09:04:10,266 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:04:10] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.007 47.054
+2026-03-24 09:04:31,707 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:04:31] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.005 0.008
+2026-03-24 09:04:34,682 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 09:04:34,690 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 09:04:40,774 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-24 09:04:40,777 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 09:04:57,668 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:04:57] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.011 47.046
+2026-03-24 09:05:22,412 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:05:22] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.006 0.009
+2026-03-24 09:05:35,114 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 09:05:35,122 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 09:05:41,400 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-24 09:05:41,402 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 09:05:46,571 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:05:46] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.010 48.553
+2026-03-24 09:06:14,590 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:06:14] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.005 0.009
+2026-03-24 09:06:33,968 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:06:33] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.008 47.042
+2026-03-24 09:06:36,935 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 09:06:36,943 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 09:06:43,033 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-24 09:06:43,034 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 09:07:05,271 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:07:05] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.003 0.006
+2026-03-24 09:07:21,346 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:07:21] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.010 47.021
+2026-03-24 09:07:35,573 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 09:07:35,579 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 09:07:41,678 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-24 09:07:41,679 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 09:07:55,916 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:07:55] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.003 0.005
+2026-03-24 09:08:10,221 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:08:10] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.008 48.524
+2026-03-24 09:08:38,739 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 09:08:38,746 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 09:08:43,298 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-24 09:08:43,299 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 09:08:46,655 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:08:46] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.004 0.008
+2026-03-24 09:08:57,570 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:08:57] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.006 47.000
+2026-03-24 09:09:37,250 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 09:09:37,254 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 09:09:37,256 7211 ERROR QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Unexpected Error: getUpdates - Could not find a suitable TLS CA certificate bundle, invalid path: /home/hwungg/Business-Internship/venv/lib/python3.10/site-packages/certifi/cacert.pem 
+2026-03-24 09:09:37,256 7211 WARNING QLNS odoo.addons.telegram_bot.models.telegram_bot_config: Telegram polling failed: None 
+2026-03-24 09:09:37,256 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 09:09:38,852 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:09:38] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.006 0.011
+2026-03-24 09:09:44,907 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:09:44] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.004 47.006
+2026-03-24 09:10:29,729 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:10:29] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.006 0.011
+2026-03-24 09:10:33,984 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:10:33] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.006 48.733
+2026-03-24 09:10:35,484 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 09:10:35,489 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 09:10:35,490 7211 ERROR QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Unexpected Error: getUpdates - Could not find a suitable TLS CA certificate bundle, invalid path: /home/hwungg/Business-Internship/venv/lib/python3.10/site-packages/certifi/cacert.pem 
+2026-03-24 09:10:35,490 7211 WARNING QLNS odoo.addons.telegram_bot.models.telegram_bot_config: Telegram polling failed: None 
+2026-03-24 09:10:35,490 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 09:11:20,361 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:11:20] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.006 0.010
+2026-03-24 09:11:21,260 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:11:21] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.006 46.934
+2026-03-24 09:11:33,489 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 09:11:33,494 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 09:11:33,495 7211 ERROR QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Unexpected Error: getUpdates - Could not find a suitable TLS CA certificate bundle, invalid path: /home/hwungg/Business-Internship/venv/lib/python3.10/site-packages/certifi/cacert.pem 
+2026-03-24 09:11:33,495 7211 WARNING QLNS odoo.addons.telegram_bot.models.telegram_bot_config: Telegram polling failed: None 
+2026-03-24 09:11:33,495 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 09:12:08,520 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:12:08] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.008 46.912
+2026-03-24 09:12:11,209 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:12:11] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.002 0.004
+2026-03-24 09:12:29,927 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 09:12:29,931 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 09:12:29,932 7211 ERROR QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Unexpected Error: getUpdates - Could not find a suitable TLS CA certificate bundle, invalid path: /home/hwungg/Business-Internship/venv/lib/python3.10/site-packages/certifi/cacert.pem 
+2026-03-24 09:12:29,932 7211 WARNING QLNS odoo.addons.telegram_bot.models.telegram_bot_config: Telegram polling failed: None 
+2026-03-24 09:12:29,932 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 09:12:57,040 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:12:57] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.005 48.507
+2026-03-24 09:13:01,559 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:13:01] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.002 0.004
+2026-03-24 09:13:27,978 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 09:13:27,986 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 09:13:34,057 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-24 09:13:34,060 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 09:13:44,346 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:13:44] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.005 46.963
+2026-03-24 09:13:53,827 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:13:53] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.006 0.010
+2026-03-24 09:14:25,475 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 09:14:25,489 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 09:14:31,539 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-24 09:14:31,542 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 09:14:31,661 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:14:31] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.010 46.959
+2026-03-24 09:14:44,487 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:14:44] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.004 0.010
+2026-03-24 09:15:20,453 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:15:20] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.004 48.452
+2026-03-24 09:15:28,590 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 09:15:28,602 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 09:15:34,682 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-24 09:15:34,687 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 09:15:35,171 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:15:35] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.006 0.013
+2026-03-24 09:16:07,748 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:07] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.005 46.942
+2026-03-24 09:16:25,821 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:25] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.005 0.009
+2026-03-24 09:16:28,071 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 09:16:28,080 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 09:16:34,157 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-24 09:16:34,159 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 09:16:42,172 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:42] "GET /web HTTP/1.1" 200 - 29 0.019 0.098
+2026-03-24 09:16:42,573 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:42] "GET /web/assets/debug/web.assets_backend.css HTTP/1.1" 200 - 3 0.006 0.026
+2026-03-24 09:16:42,580 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:42] "GET /web/webclient/load_menus/ae8546a9640837bca0152cae4b30587d970cc93c127ed7cf0c6edb83ee6f2874 HTTP/1.1" 200 - 1 0.001 0.025
+2026-03-24 09:16:42,582 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:42] "GET /web/assets/debug/web.assets_backend_prod_only.js HTTP/1.1" 200 - 3 0.002 0.029
+2026-03-24 09:16:42,606 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:42] "GET /web/assets/debug/web.assets_common.css HTTP/1.1" 200 - 3 0.004 0.062
+2026-03-24 09:16:42,622 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:42] "GET /web/assets/debug/web.assets_backend.js HTTP/1.1" 200 - 3 0.004 0.069
+2026-03-24 09:16:42,624 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:42] "GET /web/assets/debug/web.assets_common.js HTTP/1.1" 200 - 3 0.010 0.070
+2026-03-24 09:16:42,964 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:42] "GET /web/webclient/translations/3e3e3662962d53a0d7dce4b78680b64cceb942a3?lang=en_US HTTP/1.1" 200 - 3 0.011 0.016
+2026-03-24 09:16:42,995 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:42] "GET /web/webclient/qweb/e60c77e08c9a7719438f66aff5aab92ca5a977b01a9931ee3f69b12b448f7e22?bundle=web.assets_qweb HTTP/1.1" 200 - 2 0.002 0.077
+2026-03-24 09:16:43,151 7211 INFO ? werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:43] "[36mGET /web/static/img/favicon.ico HTTP/1.1[0m" 304 - - - -
+2026-03-24 09:16:43,306 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:43] "GET /web/webclient/translations/3e3e3662962d53a0d7dce4b78680b64cceb942a3?lang=en_US HTTP/1.1" 200 - 3 0.004 0.004
+2026-03-24 09:16:43,659 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:43] "GET /web/webclient/translations/3e3e3662962d53a0d7dce4b78680b64cceb942a3?lang=en_US HTTP/1.1" 200 - 3 0.006 0.009
+2026-03-24 09:16:43,667 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:43] "POST /web/action/load HTTP/1.1" 200 - 8 0.010 0.011
+2026-03-24 09:16:44,014 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:44] "GET /web/webclient/locale/en_US HTTP/1.1" 200 - 1 0.001 0.006
+2026-03-24 09:16:44,368 7211 INFO ? werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:44] "[36mGET /web/static/fonts/google/Roboto/Roboto-Regular.ttf HTTP/1.1[0m" 304 - - - -
+2026-03-24 09:16:44,412 7211 INFO ? werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:44] "[36mGET /web/static/lib/fontawesome/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1[0m" 304 - - - -
+2026-03-24 09:16:44,423 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:44] "POST /web/dataset/call_kw/res.users/systray_get_activities HTTP/1.1" 200 - 2 0.003 0.013
+2026-03-24 09:16:44,450 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:44] "POST /web/dataset/call_kw/cham_cong.dashboard/get_dashboard_data HTTP/1.1" 200 - 25 0.022 0.015
+2026-03-24 09:16:44,461 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:44] "POST /mail/init_messaging HTTP/1.1" 200 - 38 0.034 0.025
+2026-03-24 09:16:44,709 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:44] "GET /web/image/res.company/1/favicon HTTP/1.1" 200 - 4 0.005 0.009
+2026-03-24 09:16:44,757 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:44] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.005 0.008
+2026-03-24 09:16:44,769 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:44] "POST /mail/load_message_failures HTTP/1.1" 200 - 3 0.004 0.006
+2026-03-24 09:16:44,795 7211 INFO ? werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:44] "[36mGET /muk_web_theme/static/img/default_icon.png HTTP/1.1[0m" 304 - - - -
+2026-03-24 09:16:44,820 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:44] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 200 - 6 0.007 0.014
+2026-03-24 09:16:46,824 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:46] "POST /web/action/load HTTP/1.1" 200 - 24 0.011 0.010
+2026-03-24 09:16:46,273 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:46] "POST /web/dataset/call_kw/dot_dang_ky/load_views HTTP/1.1" 200 - 54 0.033 0.029
+2026-03-24 09:16:46,650 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:46] "POST /web/dataset/search_read HTTP/1.1" 200 - 10 0.021 0.007
+2026-03-24 09:16:46,991 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:46] "POST /web/dataset/call_kw/res.users/has_group HTTP/1.1" 200 - 2 0.002 0.004
+2026-03-24 09:16:48,411 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:48] "POST /web/dataset/call_kw/dot_dang_ky/onchange HTTP/1.1" 200 - 3 0.002 0.006
+2026-03-24 09:16:51,295 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:51] "POST /web/dataset/call_kw/dot_dang_ky/create HTTP/1.1" 200 - 7 0.011 0.011
+2026-03-24 09:16:51,652 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:51] "POST /web/dataset/call_kw/dot_dang_ky/read HTTP/1.1" 200 - 4 0.005 0.009
+2026-03-24 09:16:51,988 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:51] "POST /web/dataset/call_button HTTP/1.1" 200 - 5 0.002 0.004
+2026-03-24 09:16:52,326 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:52] "POST /web/dataset/call_kw/dot_dang_ky/read HTTP/1.1" 200 - 4 0.004 0.007
+2026-03-24 09:16:54,990 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:54] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.005 46.886
+2026-03-24 09:16:56,693 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:16:56] "POST /web/dataset/search_read HTTP/1.1" 200 - 6 0.005 0.007
+2026-03-24 09:17:07,809 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:17:07] "POST /web/action/load HTTP/1.1" 200 - 36 0.030 0.021
+2026-03-24 09:17:08,204 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:17:08] "POST /web/dataset/call_kw/don_tu/load_views HTTP/1.1" 200 - 24 0.023 0.027
+2026-03-24 09:17:08,549 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:17:08] "POST /web/dataset/search_read HTTP/1.1" 200 - 3 0.002 0.004
+2026-03-24 09:17:08,902 7211 INFO ? werkzeug: 127.0.0.1 - - [24/Mar/2026 09:17:08] "[36mGET /web/static/img/smiling_face.svg HTTP/1.1[0m" 304 - - - -
+2026-03-24 09:17:09,448 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:17:09] "POST /web/dataset/call_kw/mail.message/load_views HTTP/1.1" 200 - 17 0.016 0.018
+2026-03-24 09:17:09,454 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:17:09] "POST /web/dataset/call_kw/mail.followers/load_views HTTP/1.1" 200 - 13 0.024 0.018
+2026-03-24 09:17:09,793 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:17:09] "POST /web/dataset/call_kw/don_tu/onchange HTTP/1.1" 200 - 3 0.001 0.005
+2026-03-24 09:17:10,210 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:17:10] "GET /web/image/res.partner/3/avatar_128 HTTP/1.1" 200 - 7 0.010 0.015
+2026-03-24 09:17:14,443 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:17:14] "POST /web/dataset/search_read HTTP/1.1" 200 - 2 0.001 0.003
+2026-03-24 09:17:15,453 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:17:15] "POST /web/dataset/search_read HTTP/1.1" 200 - 6 0.006 0.009
+2026-03-24 09:17:28,617 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 09:17:28,622 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 09:17:31,447 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:17:31] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.013 47.023
+2026-03-24 09:17:34,329 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:17:34] "POST /longpolling/im_status HTTP/1.1" 200 - 4 0.006 0.010
+2026-03-24 09:17:34,735 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-24 09:17:34,738 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 09:18:18,735 7211 INFO QLNS werkzeug: 127.0.0.1 - - [24/Mar/2026 09:18:18] "POST /longpolling/poll HTTP/1.1" 200 - 9 0.009 46.948
+2026-03-24 09:18:30,131 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 09:18:30,137 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 09:18:36,581 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-24 09:18:36,583 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 09:19:28,787 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 09:19:28,794 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 09:19:34,876 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-24 09:19:34,878 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 09:20:31,850 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 09:20:31,854 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 09:20:36,383 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-24 09:20:36,385 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 09:21:30,495 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 09:21:30,499 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 09:21:35,021 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-24 09:21:35,024 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 09:22:30,352 7211 INFO QLNS odoo.addons.base.models.ir_cron: Starting job `Telegram Bot: Poll Updates`. 
+2026-03-24 09:22:30,359 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Request: getUpdates 
+2026-03-24 09:22:36,430 7211 INFO QLNS odoo.addons.telegram_bot.services.telegram_api: Telegram API Response: getUpdates - ok: True 
+2026-03-24 09:22:36,433 7211 INFO QLNS odoo.addons.base.models.ir_cron: Job `Telegram Bot: Poll Updates` done. 
+2026-03-24 09:22:39,263 7211 INFO QLNS odoo.service.server: Initiating shutdown 
+2026-03-24 09:22:39,263 7211 INFO QLNS odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+Exception in thread odoo.service.cron.cron0:
+Traceback (most recent call last):
+  File "/home/hwungg/Business-Internship/odoo/service/server.py", line 445, in cron_thread
+    pg_conn.poll()
+psycopg2.InterfaceError: connection already closed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/hwungg/Business-Internship/odoo/service/server.py", line 473, in target
+    self.cron_thread(i)
+  File "/home/hwungg/Business-Internship/odoo/service/server.py", line 431, in cron_thread
+    with conn.cursor() as cr:
+  File "/home/hwungg/Business-Internship/odoo/sql_db.py", line 162, in __exit__
+    self.close()
+  File "<decorator-gen-6>", line 2, in close
+2026-03-24 09:22:39,356 7211 INFO QLNS odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 11 connections  

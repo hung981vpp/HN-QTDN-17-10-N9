@@ -6,10 +6,16 @@
               sequence="15"
               web_icon="cham_cong,static/description/icon.png"/>
     
-    <!-- Menu Chấm Công -->
-    <menuitem id="menu_cham_cong" 
+    <!-- Cụm Menu Chấm Công (Dropdown) -->
+    <menuitem id="menu_cham_cong_category" 
               name="Chấm Công" 
               parent="menu_cham_cong_root" 
+              sequence="10"/>
+
+    <!-- Menu Danh sách Chấm Công -->
+    <menuitem id="menu_cham_cong" 
+              name="Danh sách Chấm Công" 
+              parent="menu_cham_cong_category" 
               action="action_cham_cong" 
               sequence="10"/>
     

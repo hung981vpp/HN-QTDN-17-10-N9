@@ -1,4 +1,4 @@
-.o_dashboard_cham_cong {
+.o_dashboard_tinh_luong {
     padding: 24px;
     overflow-y: auto !important;
 }
@@ -13,29 +13,32 @@
 .o_content {
     overflow: auto !important;
 }
-.o_dashboard_cham_cong .kpi-card {
+.o_dashboard_tinh_luong .kpi-card {
     border-radius: 16px;
     padding: 20px;
     transition: all 0.3s ease;
     align-items: center;
 }
-.o_dashboard_cham_cong .kpi-card:hover {
+.o_dashboard_tinh_luong .kpi-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 30px rgba(0,0,0,0.08) !important;
 }
-.o_dashboard_cham_cong .icon-box {
+.o_dashboard_tinh_luong .icon-box {
     width: 65px;
     height: 65px;
     border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 .bg-primary-light { background-color: rgba(0, 123, 255, 0.1); }
+.bg-success-light { background-color: rgba(40, 167, 69, 0.1); }
+.bg-info-light { background-color: rgba(23, 162, 184, 0.1); }
 .bg-warning-light { background-color: rgba(255, 193, 7, 0.1); }
 .bg-danger-light { background-color: rgba(220, 53, 69, 0.1); }
 
-.o_dashboard_cham_cong h3 {
+.o_dashboard_tinh_luong h3 {
     font-size: 1.8rem;
     margin-top: 5px;
 }
@@ -50,7 +53,7 @@
     border-radius: 16px;
 }
 /* History Table */
-.o_dashboard_cham_cong .history-table thead th {
+.o_dashboard_tinh_luong .history-table thead th {
     background-color: #f8f9fa;
     border-top: none;
     font-size: 13px;
@@ -58,11 +61,11 @@
     color: #6c757d;
     padding: 12px 16px;
 }
-.o_dashboard_cham_cong .history-table tbody td {
+.o_dashboard_tinh_luong .history-table tbody td {
     padding: 10px 16px;
     vertical-align: middle;
     font-size: 14px;
 }
-.o_dashboard_cham_cong .history-table tbody tr:hover {
+.o_dashboard_tinh_luong .history-table tbody tr:hover {
     background-color: #f0f4ff;
 }

@@ -26,8 +26,19 @@ Module quản lý tính lương nhân viên bao gồm:
         'views/phieu_thuong_phat_views.xml',
         'views/report_bang_luong.xml',
         'views/bang_luong.xml',
+        'views/dashboard_views.xml',
         'views/menu.xml',
     ],
+    'assets': {
+        'web.assets_backend': [
+            'web/static/lib/Chart/Chart.js',
+            'tinh_luong/static/src/css/dashboard.css',
+            'tinh_luong/static/src/js/dashboard.js',
+        ],
+        'web.assets_qweb': [
+            'tinh_luong/static/src/xml/dashboard.xml',
+        ],
+    },
     'installable': True,
     'application': True,
     'auto_install': False,

@@ -40,8 +40,8 @@
     <!-- Menu item xuất hiện tại app Chấm Công -->
     <menuitem id="menu_cham_cong_face_id"
               name="Face ID Check-in AI"
-              parent="menu_cham_cong"
+              parent="menu_cham_cong_category"
               action="action_cham_cong_face_id_wizard"
-              sequence="5"
+              sequence="20"
               groups="base.group_user"/>
 </odoo>

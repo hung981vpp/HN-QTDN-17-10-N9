@@ -29,6 +29,7 @@ Module quản lý chấm công nhân viên bao gồm:
     ],
     'assets': {
         'web.assets_backend': [
+            'web/static/lib/Chart/Chart.js',
             'cham_cong/static/src/css/dashboard.css',
             'cham_cong/static/src/js/dashboard.js',
         ],

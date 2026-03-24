@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<templates id="template" xml:space="preserve">
-    <t t-name="ChamCongDashboardMain">
-        <div class="o_dashboard_cham_cong p-4" style="background-color: #f4f6f9; min-height: 100vh;">
+<templates id="template_tinh_luong" xml:space="preserve">
+    <t t-name="TinhLuongDashboardMain">
+        <div class="o_dashboard_tinh_luong p-4" style="background-color: #f4f6f9; min-height: 100vh;">
             <div class="row mb-4">
                 <div class="col-12">
-                    <h2 class="text-primary font-weight-bold"><i class="fa fa-dashboard mr-2"></i> Tổng Quan Chấm Công</h2>
+                    <h2 class="text-primary font-weight-bold"><i class="fa fa-money mr-2"></i> Tổng Quan Tính Lương (T<t t-esc="moment().format('M/YYYY')"/>)</h2>
                     <p class="text-muted">Số liệu cập nhật thời gian thực (Real-time)</p>
                 </div>
             </div>
@@ -18,8 +18,8 @@
                             <i class="fa fa-users fa-2x"></i>
                         </div>
                         <div class="info-box pl-3">
-                            <h6 class="text-uppercase text-muted font-weight-bold mb-1">Check-in Hôm nay</h6>
-                            <h3 class="font-weight-bold mb-0"><t t-esc="widget.kpi_data.checkins_today"/> <span class="text-small text-muted">/ <t t-esc="widget.kpi_data.total_employees"/></span></h3>
+                            <h6 class="text-uppercase text-muted font-weight-bold mb-1" style="font-size: 11px;">Tổng Số Phiếu Lương</h6>
+                            <h3 class="font-weight-bold mb-0"><t t-esc="widget.kpi_data.payslips_count"/></h3>
                         </div>
                     </div>
                 </div>
@@ -27,13 +27,12 @@
                 <!-- KPI 2 -->
                 <div class="col-md-3">
                     <div class="card kpi-card shadow-sm border-0 d-flex flex-row wrap-card bg-white">
-                        <div class="icon-box bg-warning-light text-warning">
-                            <i class="fa fa-clock-o fa-2x"></i>
+                        <div class="icon-box bg-success-light text-success">
+                            <i class="fa fa-money fa-2x"></i>
                         </div>
                         <div class="info-box pl-3">
-                            <h6 class="text-uppercase text-muted font-weight-bold mb-1">Đi muộn Hôm nay</h6>
-                            <h3 class="font-weight-bold mb-0 text-warning"><t t-esc="widget.kpi_data.lates_today"/></h3>
-                            <small class="text-muted">Tháng này: <t t-esc="widget.kpi_data.lates_this_month"/></small>
+                            <h6 class="text-uppercase text-muted font-weight-bold mb-1" style="font-size: 11px;">Lương Thực Nhận</h6>
+                            <h3 class="font-weight-bold mb-0 text-success" style="font-size: 1.4rem;"><t t-esc="widget.formatCurrency(widget.kpi_data.total_salary)"/></h3>
                         </div>
                     </div>
                 </div>
@@ -41,55 +40,67 @@
                 <!-- KPI 3 -->
                 <div class="col-md-3">
                     <div class="card kpi-card shadow-sm border-0 d-flex flex-row wrap-card bg-white">
-                        <div class="icon-box bg-danger-light text-danger">
-                            <i class="fa fa-file-text-o fa-2x"></i>
+                        <div class="icon-box bg-info-light text-info">
+                            <i class="fa fa-gift fa-2x"></i>
                         </div>
                         <div class="info-box pl-3">
-                            <h6 class="text-uppercase text-muted font-weight-bold mb-1">Đơn từ Chờ duyệt</h6>
-                            <h3 class="font-weight-bold mb-0 text-danger"><t t-esc="widget.kpi_data.pending_requests"/></h3>
+                            <h6 class="text-uppercase text-muted font-weight-bold mb-1" style="font-size: 11px;">Tổng Thưởng</h6>
+                            <h3 class="font-weight-bold mb-0 text-info" style="font-size: 1.4rem;"><t t-esc="widget.formatCurrency(widget.kpi_data.total_bonus)"/></h3>
                         </div>
                     </div>
                 </div>
-                
+
+                <!-- KPI 4 -->
+                <div class="col-md-3">
+                    <div class="card kpi-card shadow-sm border-0 d-flex flex-row wrap-card bg-white">
+                        <div class="icon-box bg-danger-light text-danger">
+                            <i class="fa fa-exclamation-triangle fa-2x"></i>
+                        </div>
+                        <div class="info-box pl-3">
+                            <h6 class="text-uppercase text-muted font-weight-bold mb-1" style="font-size: 11px;">Tổng Phạt</h6>
+                            <h3 class="font-weight-bold mb-0 text-danger" style="font-size: 1.4rem;"><t t-esc="widget.formatCurrency(widget.kpi_data.total_penalty)"/></h3>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Charts Row -->
             <div class="row">
-                <!-- Bar Chart: 7 Days Attendance -->
+                <!-- Line Chart: Salary Trend -->
                 <div class="col-md-8 mb-4">
                     <div class="card shadow-sm border-0 h-100">
                         <div class="card-header bg-white border-0 pt-4 pb-0">
-                            <h5 class="font-weight-bold text-dark mb-0">Tình hình đi làm 7 ngày qua</h5>
+                            <h5 class="font-weight-bold text-dark mb-0">Biến Động Lương (6 tháng gần đây)</h5>
                         </div>
                         <div class="card-body">
                             <div class="chart-container" style="position: relative; height:40vh; width:100%">
-                                <canvas id="attendanceBarChart"></canvas>
+                                <canvas id="salaryTrendChart"></canvas>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Doughnut Chart: Leave Requests -->
+                <!-- Polar Chart: Statuses -->
                 <div class="col-md-4 mb-4">
                     <div class="card shadow-sm border-0 h-100">
                         <div class="card-header bg-white border-0 pt-4 pb-0">
-                            <h5 class="font-weight-bold text-dark mb-0">Tương quan Đơn Từ</h5>
+                            <h5 class="font-weight-bold text-dark mb-0">Trạng Thái Tháng Này</h5>
                         </div>
                         <div class="card-body d-flex align-items-center justify-content-center">
                             <div class="chart-container" style="position: relative; height:35vh; width:100%">
-                                <canvas id="leaveDoughnutChart"></canvas>
+                                <canvas id="statusDoughnutChart"></canvas>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- History Table -->
+            <!-- History Table Row -->
             <div class="row mt-2">
                 <div class="col-12">
                     <div class="card shadow-sm border-0">
                         <div class="card-header bg-white border-0 pt-4 pb-0 d-flex justify-content-between align-items-center">
-                            <h5 class="font-weight-bold text-dark mb-0"><i class="fa fa-history mr-2"></i> Lịch sử chấm công gần đây</h5>
+                            <h5 class="font-weight-bold text-dark mb-0"><i class="fa fa-history mr-2"></i> Phiếu Lương Gần Đây</h5>
                         </div>
                         <div class="card-body p-0">
                             <div class="table-responsive" style="max-height: 500px; overflow-y: auto;">
@@ -97,15 +108,15 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Nhân viên</th>
-                                            <th>Ngày</th>
-                                            <th>Giờ vào</th>
-                                            <th>Giờ ra</th>
-                                            <th>Tổng giờ</th>
-                                            <th>Trạng thái</th>
+                                            <th>Mã Phiếu</th>
+                                            <th>Nhân Viên</th>
+                                            <th>Kỳ Lương</th>
+                                            <th class="text-right">Lương Thực Nhận</th>
+                                            <th class="text-center">Trạng Thái</th>
                                         </tr>
                                     </thead>
                                     <tbody id="historyTableBody">
+                                        <!-- Rendered dynamically by JS -->
                                     </tbody>
                                 </table>
                             </div>

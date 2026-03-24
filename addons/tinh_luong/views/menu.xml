@@ -6,6 +6,13 @@
               sequence="20"
               web_icon="tinh_luong,static/description/icon.png"/>
     
+    <!-- Menu Dashboard -->
+    <menuitem id="menu_tinh_luong_dashboard" 
+              name="Dashboard" 
+              parent="menu_tinh_luong_root" 
+              action="action_tinh_luong_dashboard" 
+              sequence="5"/>
+
     <!-- Menu Bảng Lương -->
     <menuitem id="menu_bang_luong" 
               name="Bảng Lương" 
