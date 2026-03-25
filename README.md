@@ -1,10 +1,22 @@
 # 🏢 Hệ thống Quản lý Nhân sự - Chấm công - Tính lương
+<h2 align="center">
+    <a href="https://dainam.edu.vn/vi/khoa-cong-nghe-thong-tin">
+    🎓 Faculty of Information Technology (DaiNam University)
+    </a>
+</h2>
+<h2 align="center">
+    PLATFORM ERP
+</h2>
+<div align="center">
+    <p align="center">
+        <img src="docs/logo/aiotlab_logo.png" alt="AIoTLab Logo" width="170"/>
+        <img src="docs/logo/fitdnu_logo.png" alt="AIoTLab Logo" width="180"/>
+        <img src="docs/logo/dnu_logo.png" alt="DaiNam University Logo" width="200"/>
+    </p>
 
 [![AIoTLab](https://img.shields.io/badge/AIoTLab-green?style=for-the-badge)](https://www.facebook.com/DNUAIoTLab)
-[![Faculty of IT](https://img.shields.io/badge/Faculty%20of%20Information%20Technology-blue?style=for-the-badge)](https://dainam.edu.vn/vi/khoa-cong-nghe-thong-tin)
+[![Faculty of Information Technology](https://img.shields.io/badge/Faculty%20of%20Information%20Technology-blue?style=for-the-badge)](https://dainam.edu.vn/vi/khoa-cong-nghe-thong-tin)
 [![DaiNam University](https://img.shields.io/badge/DaiNam%20University-orange?style=for-the-badge)](https://dainam.edu.vn)
-[![Odoo](https://img.shields.io/badge/Odoo-714B67?style=for-the-badge&logo=odoo&logoColor=white)](https://www.odoo.com/)
-[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 
 > **Bài tập lớn học phần Hội nhập & Quản trị phần mềm Doanh nghiệp**  
 > Nhóm 9 — Lớp CNTT 17-10 — Khoa Công nghệ Thông tin — Đại học Đại Nam
@@ -156,9 +168,9 @@ module_name/
 
 | STT | Họ và Tên | Mã sinh viên | Vai trò |
 |---|---|---|---|
-| 1 | (Thêm tên) | (Mã SV) | Trưởng nhóm |
-| 2 | (Thêm tên) | (Mã SV) | Thành viên |
-| 3 | (Thêm tên) | (Mã SV) | Thành viên |
+| 1 | Đàm Vĩnh Hưng | 1771020333 | Trưởng nhóm |
+| 2 | Vương Thị Ngọc Ánh | 1771020066 | Thành viên |
+| 3 | Phạm Thị Yến Anh | 1771020060 | Thành viên |
 
 ---
 
