@@ -4,9 +4,6 @@
     🎓 Faculty of Information Technology (DaiNam University)
     </a>
 </h2>
-<h2 align="center">
-    PLATFORM ERP
-</h2>
 <div align="center">
     <p align="center">
         <img src="docs/logo/aiotlab_logo.png" alt="AIoTLab Logo" width="170"/>
