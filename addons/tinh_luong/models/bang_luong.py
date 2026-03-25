@@ -17,26 +17,26 @@ class BangLuong(models.Model):
     nam = fields.Integer(string='Năm', required=True, default=2026)
     
     # Thông tin công và giờ làm
-    so_cong = fields.Float(string='Số công', compute='_compute_so_cong', store=True)
-    tong_gio_lam = fields.Float(string='Tổng giờ làm (giờ)', compute='_compute_gio_lam', store=True)
-    tong_gio_ot = fields.Float(string='Tổng giờ OT (giờ)', compute='_compute_gio_lam', store=True)
+    so_cong = fields.Float(string='Số công', compute='_compute_so_cong')
+    tong_gio_lam = fields.Float(string='Tổng giờ làm (giờ)', compute='_compute_gio_lam')
+    tong_gio_ot = fields.Float(string='Tổng giờ OT (giờ)', compute='_compute_gio_lam')
     
     # Lương cơ bản và phụ cấp
     luong_co_ban = fields.Float(string='Lương cơ bản/tháng', compute='_compute_luong_co_ban', store=True, readonly=False)
     luong_theo_gio = fields.Float(string='Lương theo giờ', compute='_compute_luong_theo_gio', store=True)
-    tien_luong_chinh = fields.Float(string='Tiền lương chính', compute='_compute_tien_luong', store=True)
+    tien_luong_chinh = fields.Float(string='Tiền lương chính', compute='_compute_tien_luong')
     
     # Lương OT
     he_so_ot = fields.Float(string='Hệ số OT', default=1.5)
-    tien_ot = fields.Float(string='Tiền OT', compute='_compute_tien_ot', store=True)
+    tien_ot = fields.Float(string='Tiền OT', compute='_compute_tien_ot')
     
     
     # Trợ cấp
     tro_cap = fields.Float(string='Trợ cấp', default=0)
     
     # Thưởng tự động
-    thuong_chuyen_can = fields.Float(string='Thưởng chuyên cần', compute='_compute_thuong_tu_dong', store=True, help='Đi làm đủ công, không muộn')
-    thuong_ot = fields.Float(string='Thưởng OT', compute='_compute_thuong_tu_dong', store=True, help='Làm OT nhiều')
+    thuong_chuyen_can = fields.Float(string='Thưởng chuyên cần', compute='_compute_thuong_tu_dong', help='Đi làm đủ công, không muộn')
+    thuong_ot = fields.Float(string='Thưởng OT', compute='_compute_thuong_tu_dong', help='Làm OT nhiều')
     
     # Thưởng thủ công
     thuong_hieu_suat = fields.Float(string='Thưởng hiệu suất', default=0)
@@ -44,24 +44,24 @@ class BangLuong(models.Model):
     thuong_khac = fields.Float(string='Thưởng khác', default=0)
     
     # Tổng thưởng
-    tong_thuong = fields.Float(string='Tổng thưởng', compute='_compute_tong_thuong', store=True)
+    tong_thuong = fields.Float(string='Tổng thưởng', compute='_compute_tong_thuong')
     
     # Backward compatibility: thuong = tong_thuong
-    thuong = fields.Float(string='Thưởng (tổng)', compute='_compute_tong_thuong', store=True, help='Tổng thưởng (tự động + thủ công)')
+    thuong = fields.Float(string='Thưởng (tổng)', compute='_compute_tong_thuong', help='Tổng thưởng (tự động + thủ công)')
     
     # Phạt thủ công
     phat_thu_cong = fields.Float(string='Phạt (thủ công)', default=0)
     
     # Phạt tự động
-    phat_khong_chuyen_can = fields.Float(string='Phạt không chuyên cần', compute='_compute_phat_tu_dong', store=True, help='Đi làm thiếu hoặc hay muộn')
-    phat_den_muon = fields.Float(string='Phạt đến muộn', compute='_compute_phat_tu_dong', store=True)
-    phat_ve_som = fields.Float(string='Phạt về sớm', compute='_compute_phat_tu_dong', store=True)
-    tong_phat = fields.Float(string='Tổng phạt', compute='_compute_tong_phat', store=True)
+    phat_khong_chuyen_can = fields.Float(string='Phạt không chuyên cần', compute='_compute_phat_tu_dong', help='Đi làm thiếu hoặc hay muộn')
+    phat_den_muon = fields.Float(string='Phạt đến muộn', compute='_compute_phat_tu_dong')
+    phat_ve_som = fields.Float(string='Phạt về sớm', compute='_compute_phat_tu_dong')
+    tong_phat = fields.Float(string='Tổng phạt', compute='_compute_tong_phat')
 
     # Thưởng phạt từ phiếu
     thuong_phat_ids = fields.Many2many('thuong.phat.phieu', compute='_compute_thuong_phat')
-    thuong_tu_phieu = fields.Float(string='Thưởng từ phiếu', compute='_compute_tien_thuong_phat', store=True)
-    phat_tu_phieu = fields.Float(string='Phạt từ phiếu', compute='_compute_tien_thuong_phat', store=True)
+    thuong_tu_phieu = fields.Float(string='Thưởng từ phiếu', compute='_compute_tien_thuong_phat')
+    phat_tu_phieu = fields.Float(string='Phạt từ phiếu', compute='_compute_tien_thuong_phat')
     
     # Bảo hiểm
     ty_le_bhxh = fields.Float(string='Tỷ lệ BHXH (%)', default=8.0)
@@ -70,8 +70,8 @@ class BangLuong(models.Model):
     tong_bao_hiem = fields.Float(string='Tổng BH cá nhân', compute='_compute_bao_hiem', store=True)
     
     # Tổng lương
-    tong_luong = fields.Float(string='Tổng lương', compute='_compute_tong_luong', store=True)
-    luong_thuc_nhan = fields.Float(string='Lương thực nhận', compute='_compute_luong_thuc_nhan', store=True)
+    tong_luong = fields.Float(string='Tổng lương', compute='_compute_tong_luong')
+    luong_thuc_nhan = fields.Float(string='Lương thực nhận', compute='_compute_luong_thuc_nhan')
     
     trang_thai = fields.Selection([
         ('chua_duyet', 'Chưa duyệt'),
@@ -143,11 +143,13 @@ class BangLuong(models.Model):
         """Lấy dữ liệu chấm công theo tháng/năm"""
         for record in self:
             if record.id_nhan_vien and record.thang and record.nam:
+                import calendar
+                last_day = calendar.monthrange(record.nam, int(record.thang))[1]
                 # Tìm tất cả bản ghi chấm công của nhân viên trong tháng
                 domain = [
                     ('id_nhan_vien', '=', record.id_nhan_vien.id),
                     ('ngay', '>=', f'{record.nam}-{record.thang.zfill(2)}-01'),
-                    ('ngay', '<=', f'{record.nam}-{record.thang.zfill(2)}-31'),
+                    ('ngay', '<=', f'{record.nam}-{record.thang.zfill(2)}-{last_day}'),
                 ]
                 record.cham_cong_ids = self.env['cham_cong'].search(domain)
             else:
@@ -213,11 +215,13 @@ class BangLuong(models.Model):
         for record in self:
             if record.id_nhan_vien and record.thang and record.nam:
                 month_str = record.thang.zfill(2)
+                import calendar
+                last_day = calendar.monthrange(record.nam, int(record.thang))[1]
                 domain = [
                     ('nhan_vien_ids', 'in', record.id_nhan_vien.id),
                     ('state', '=', 'da_duyet'),
                     ('ngay_ap_dung', '>=', f'{record.nam}-{month_str}-01'),
-                    ('ngay_ap_dung', '<=', f'{record.nam}-{month_str}-31')
+                    ('ngay_ap_dung', '<=', f'{record.nam}-{month_str}-{last_day}')
                 ]
                 record.thuong_phat_ids = self.env['thuong.phat.phieu'].search(domain)
             else:
