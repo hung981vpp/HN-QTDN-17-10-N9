@@ -1,83 +1,114 @@
-<h2 align="center">
-    <a href="https://dainam.edu.vn/vi/khoa-cong-nghe-thong-tin">
-    🎓 Faculty of Information Technology (DaiNam University)
-    </a>
-</h2>
-<h2 align="center">
-    PLATFORM ERP
-</h2>
-<div align="center">
-    <p align="center">
-        <img src="docs/logo/aiotlab_logo.png" alt="AIoTLab Logo" width="170"/>
-        <img src="docs/logo/fitdnu_logo.png" alt="AIoTLab Logo" width="180"/>
-        <img src="docs/logo/dnu_logo.png" alt="DaiNam University Logo" width="200"/>
-    </p>
+# 🏢 Hệ thống Quản lý Nhân sự - Chấm công - Tính lương
 
 [![AIoTLab](https://img.shields.io/badge/AIoTLab-green?style=for-the-badge)](https://www.facebook.com/DNUAIoTLab)
-[![Faculty of Information Technology](https://img.shields.io/badge/Faculty%20of%20Information%20Technology-blue?style=for-the-badge)](https://dainam.edu.vn/vi/khoa-cong-nghe-thong-tin)
+[![Faculty of IT](https://img.shields.io/badge/Faculty%20of%20Information%20Technology-blue?style=for-the-badge)](https://dainam.edu.vn/vi/khoa-cong-nghe-thong-tin)
 [![DaiNam University](https://img.shields.io/badge/DaiNam%20University-orange?style=for-the-badge)](https://dainam.edu.vn)
-
-</div>
-
-## 📖 1. Giới thiệu
-Platform ERP được áp dụng vào học phần Thực tập doanh nghiệp dựa trên mã nguồn mở Odoo. 
-
-## 🔧 2. Các công nghệ được sử dụng
-<div align="center">
-
-### Hệ điều hành
-[![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)](https://ubuntu.com/)
-### Công nghệ chính
 [![Odoo](https://img.shields.io/badge/Odoo-714B67?style=for-the-badge&logo=odoo&logoColor=white)](https://www.odoo.com/)
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![XML](https://img.shields.io/badge/XML-FF6600?style=for-the-badge&logo=codeforces&logoColor=white)](https://www.w3.org/XML/)
-### Cơ sở dữ liệu
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
-</div>
 
-## 🚀 3. Các project đã thực hiện dựa trên Platform
+> **Bài tập lớn học phần Hội nhập & Quản trị phần mềm Doanh nghiệp**  
+> Nhóm 9 — Lớp CNTT 17-10 — Khoa Công nghệ Thông tin — Đại học Đại Nam
 
-Một số project sinh viên đã thực hiện:
-- #### [Khoá 15](./docs/projects/K15/README.md)
-- #### [Khoá 16](./docs/projects/K16/README.md)
-- #### [Khoá 17](./docs/projects/K17/README.md)
-## ⚙️ 4. Cài đặt
+---
 
-### 4.1. Cài đặt công cụ, môi trường và các thư viện cần thiết
+## 📖 Giới thiệu
 
-#### 4.1.1. Tải project.
-```
-git clone https://github.com/FIT-DNU/Business-Internship.git
-```
-#### 4.1.2. Cài đặt các thư viện cần thiết
-Người sử dụng thực thi các lệnh sau đề cài đặt các thư viện cần thiết
+Dự án xây dựng hệ thống **ERP quản lý nguồn nhân lực** trên nền tảng mã nguồn mở **Odoo**, bao gồm 3 module nghiệp vụ cốt lõi được tích hợp chặt chẽ với nhau:
 
+| Module | Mô tả |
+|---|---|
+| 👤 `nhan_su` | Quản lý hồ sơ nhân viên, phòng ban, chức vụ |
+| 🕐 `cham_cong` | Ghi nhận và theo dõi thời gian làm việc |
+| 💰 `tinh_luong` | Tính toán và quản lý bảng lương hàng tháng |
+
+---
+
+## 🧩 Các Module Chính
+
+### 👤 Module Nhân Sự (`nhan_su`)
+
+Quản lý toàn bộ thông tin nhân viên trong doanh nghiệp:
+
+- Lưu trữ hồ sơ nhân viên: họ tên, ngày sinh, CCCD, địa chỉ, liên hệ
+- Quản lý phòng ban và chức vụ
+- Theo dõi hợp đồng lao động và loại hợp đồng
+- Phân quyền theo vai trò người dùng (HR Manager, Employee)
+
+---
+
+### 🕐 Module Chấm Công (`cham_cong`)
+
+Theo dõi và quản lý thời gian làm việc của nhân viên:
+
+- Ghi nhận giờ vào / giờ ra theo từng ngày
+- Theo dõi đi trễ, về sớm, làm thêm giờ (OT)
+- Quản lý nghỉ phép, nghỉ lễ
+- Tổng hợp bảng chấm công theo tháng, phòng ban
+- Tích hợp dữ liệu với module Tính lương
+
+---
+
+### 💰 Module Tính Lương (`tinh_luong`)
+
+Tự động tính toán và quản lý lương nhân viên:
+
+- Cấu hình các khoản lương, phụ cấp và khấu trừ
+- Tính lương tự động dựa trên dữ liệu chấm công
+- Hỗ trợ các loại: lương cố định, lương theo ngày công
+- Tính bảo hiểm xã hội, bảo hiểm y tế, thuế TNCN
+- Xuất bảng lương chi tiết theo nhân viên / phòng ban
+
+---
+
+## 🔧 Công Nghệ Sử Dụng
+
+| Thành phần | Công nghệ |
+|---|---|
+| Nền tảng ERP | Odoo 17 |
+| Ngôn ngữ backend | Python 3.10 |
+| Ngôn ngữ frontend | JavaScript, XML |
+| Cơ sở dữ liệu | PostgreSQL |
+| Hệ điều hành | Ubuntu |
+| Container | Docker |
+
+---
+
+## ⚙️ Hướng Dẫn Cài Đặt
+
+### 1. Clone repository
+
+```bash
+git clone https://github.com/hung981vpp/HN-QTDN-17-10-N9.git
+cd HN-QTDN-17-10-N9
 ```
-sudo apt-get install libxml2-dev libxslt-dev libldap2-dev libsasl2-dev libssl-dev python3.10-distutils python3.10-dev build-essential libssl-dev libffi-dev zlib1g-dev python3.10-venv libpq-dev
+
+### 2. Cài đặt thư viện hệ thống
+
+```bash
+sudo apt-get install libxml2-dev libxslt-dev libldap2-dev libsasl2-dev \
+  libssl-dev python3.10-distutils python3.10-dev build-essential \
+  libffi-dev zlib1g-dev python3.10-venv libpq-dev
 ```
-#### 4.1.3. Khởi tạo môi trường ảo.
-- Khởi tạo môi trường ảo
-```
+
+### 3. Khởi tạo môi trường ảo Python
+
+```bash
 python3.10 -m venv ./venv
-```
-- Thay đổi trình thông dịch sang môi trường ảo
-```
 source venv/bin/activate
-```
-- Chạy requirements.txt để cài đặt tiếp các thư viện được yêu cầu
-```
 pip3 install -r requirements.txt
 ```
-### 4.2. Setup database
 
-Khởi tạo database trên docker bằng việc thực thi file dockercompose.yml.
-```
+### 4. Khởi động database (Docker)
+
+```bash
 sudo docker-compose up -d
 ```
-### 4.3. Setup tham số chạy cho hệ thống
-Tạo tệp **odoo.conf** có nội dung như sau:
-```
+
+### 5. Cấu hình Odoo
+
+Tạo file `odoo.conf` với nội dung:
+
+```ini
 [options]
 addons_path = addons
 db_host = localhost
@@ -86,37 +117,51 @@ db_user = odoo
 db_port = 5431
 xmlrpc_port = 8069
 ```
-Có thể kế thừa từ file **odoo.conf.template**
-### 4.4. Chạy hệ thống và cài đặt các ứng dụng cần thiết
-Lệnh chạy
-```
+
+### 6. Chạy hệ thống
+
+```bash
 python3 odoo-bin.py -c odoo.conf -u all
 ```
-Người sử dụng truy cập theo đường dẫn _http://localhost:8069/_ để đăng nhập vào hệ thống.
 
-## 📝 5. License
-
-© 2024 AIoTLab, Faculty of Information Technology, DaiNam University. All rights reserved.
+Truy cập hệ thống tại: [http://localhost:8069](http://localhost:8069)
 
 ---
 
-    
+## 📁 Cấu Trúc Module
+
+```
 module_name/
-├── __init__.py              # Khởi tạo module Python
-├── __manifest__.py          # File khai báo thông tin module
-├── models/                  # Chứa các file định nghĩa model
+├── __init__.py
+├── __manifest__.py
+├── models/
 │   ├── __init__.py
 │   └── model_name.py
-├── views/                   # Chứa các file view XML
+├── views/
 │   ├── model_views.xml
 │   └── menu_views.xml
-├── security/                # Cấu hình phân quyền
+├── security/
 │   └── ir.model.access.csv
-├── data/                    # Dữ liệu mẫu / dữ liệu khởi tạo
-├── demo/                    # Dữ liệu demo
-├── static/                  # Tài nguyên tĩnh (CSS, JS, images)
-│   └── src/
-│       ├── css/
-│       ├── js/
-│       └── img/
-└── wizard/                  # Các wizard tạm thời (nếu có)
+├── data/
+└── static/
+    └── src/
+        ├── css/
+        ├── js/
+        └── img/
+```
+
+---
+
+## 👥 Thành Viên Nhóm 9
+
+| STT | Họ và Tên | Mã sinh viên | Vai trò |
+|---|---|---|---|
+| 1 | (Thêm tên) | (Mã SV) | Trưởng nhóm |
+| 2 | (Thêm tên) | (Mã SV) | Thành viên |
+| 3 | (Thêm tên) | (Mã SV) | Thành viên |
+
+---
+
+## 📝 License
+
+© 2024 AIoTLab, Khoa Công nghệ Thông tin, Đại học Đại Nam. All rights reserved.
