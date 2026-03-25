@@ -16,7 +16,7 @@ class ImportNhanVienWizard(models.TransientModel):
     _name = 'import.nhan.vien.wizard'
     _description = 'Wizard Nhập dữ liệu Nhân viên từ Excel'
 
-    file_upload = fields.Binary(string='File Excel', required=True)
+    file_upload = fields.Binary(string='File Excel')
     file_name = fields.Char(string='Tên File')
     
     def action_download_template(self):
@@ -66,9 +66,13 @@ class ImportNhanVienWizard(models.TransientModel):
                 ho_dem = str(row[1]).strip() if row[1] else ''
                 ten = str(row[2]).strip() if row[2] else ''
                 
-                if not ma_dinh_danh or not ho_dem or not ten:
-                    errors.append(f"Dòng {row_idx}: Thiếu Mã Định Danh, Họ Mẫu, hoặc Tên.")
+                if not ho_dem or not ten:
+                    errors.append(f"Dòng {row_idx}: Thiếu Họ đệm hoặc Tên.")
                     continue
+                    
+                if not ma_dinh_danh:
+                    chu_cai_dau = ''.join([tu[0][0] for tu in ho_dem.lower().split()]) if ho_dem else ''
+                    ma_dinh_danh = ten.lower() + chu_cai_dau
                 
                 sdt = str(row[3]).strip() if row[3] else ''
                 email = str(row[4]).strip() if row[4] else ''

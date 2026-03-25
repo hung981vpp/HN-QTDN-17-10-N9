@@ -59,27 +59,7 @@ class ChamCong(models.Model):
     @api.model
     def create(self, vals):
         if vals.get('ma_cham_cong', 'New') == 'New':
-            # Thử lấy từ sequence trước
-            ma_moi = self.env['ir.sequence'].next_by_code('cham_cong.sequence')
-            
-            # Nếu sequence không hoạt động hoặc bị trùng, tự tạo mã mới
-            if not ma_moi or ma_moi == 'New':
-                # Tìm số lớn nhất hiện có
-                self.env.cr.execute("""
-                    SELECT ma_cham_cong FROM cham_cong 
-                    WHERE ma_cham_cong ~ '^CC[0-9]+$' 
-                    ORDER BY CAST(SUBSTRING(ma_cham_cong FROM 3) AS INTEGER) DESC 
-                    LIMIT 1
-                """)
-                result = self.env.cr.fetchone()
-                if result:
-                    # Lấy số từ mã cũ và tăng lên 1
-                    so_cu = int(result[0][2:])  # Bỏ 'CC' ở đầu
-                    ma_moi = f'CC{so_cu + 1:05d}'
-                else:
-                    ma_moi = 'CC00001'
-            
-            vals['ma_cham_cong'] = ma_moi
+            vals['ma_cham_cong'] = self.env['ir.sequence'].next_by_code('cham_cong.sequence') or 'New'
         return super(ChamCong, self).create(vals)
 
     @api.depends('gio_vao', 'gio_ra', 'gio_nghi')

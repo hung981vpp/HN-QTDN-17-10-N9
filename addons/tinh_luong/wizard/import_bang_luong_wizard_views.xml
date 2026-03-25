@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_import_bang_luong_wizard_form" model="ir.ui.view">
+        <field name="name">import.bang.luong.wizard.form</field>
+        <field name="model">import.bang.luong.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Import Giải Trình Tiền Lương">
+                <group>
+                    <div class="alert alert-info" role="alert" style="margin-bottom:10px;">
+                        Tải biểu mẫu Excel chuẩn (.xlsx) tại đây để điền dữ liệu thưởng/phạt ngoại lệ:<br/>
+                        <button name="action_download_template" type="object" string="⬇️ Tải File Mẫu Mới Nhất" class="btn-link p-0 m-0"/>
+                    </div>
+                </group>
+                <group>
+                    <field name="file_upload" filename="file_name" widget="binary"/>
+                    <field name="file_name" invisible="1"/>
+                </group>
+                <footer>
+                    <button name="action_import" string="Xác nhận Import" type="object" class="btn-primary" icon="fa-upload"/>
+                    <button string="Hủy Bỏ" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_import_bang_luong_wizard" model="ir.actions.act_window">
+        <field name="name">Nhập File Excel Của Tôi</field>
+        <field name="res_model">import.bang.luong.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="tinh_luong.model_bang_luong"/>
+        <field name="binding_view_types">list</field>
+    </record>
+</odoo>

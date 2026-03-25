@@ -5,5 +5,6 @@ access_dot_dang_ky_user,access_dot_dang_ky_user,model_dot_dang_ky,base.group_use
 access_dot_dang_ky_manager,access_dot_dang_ky_manager,model_dot_dang_ky,base.group_system,1,1,1,1
 access_dang_ky_ca_lam_theo_ngay_user,access_dang_ky_ca_lam_theo_ngay_user,model_dang_ky_ca_lam_theo_ngay,base.group_user,1,1,1,1
 access_dang_ky_ca_lam_theo_ngay,dang_ky_ca_lam_theo_ngay,model_dang_ky_ca_lam_theo_ngay,base.group_user,1,1,1,1
+access_import_cham_cong_wizard,import.cham.cong.wizard,model_import_cham_cong_wizard,base.group_user,1,1,1,1
 access_don_tu_cham_cong,don_tu_cham_cong,model_don_tu,base.group_user,1,1,1,1
 access_cham_cong_face_id_wizard,cham_cong.face_id.wizard,model_cham_cong_face_id_wizard,base.group_user,1,1,1,1

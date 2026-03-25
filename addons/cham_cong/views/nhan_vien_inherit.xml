@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_cham_cong_graph_nhan_vien" model="ir.actions.act_window">
+        <field name="name">Dashboard Chấm Công</field>
+        <field name="res_model">cham_cong</field>
+        <field name="view_mode">graph,pivot,tree</field>
+        <field name="domain">[('id_nhan_vien', '=', active_id)]</field>
+        <field name="context">{'search_default_id_nhan_vien': active_id, 'default_id_nhan_vien': active_id, 'group_by': ['ngay:month']}</field>
+    </record>
+
+    <record id="view_nhan_vien_form_inherit_cham_cong" model="ir.ui.view">
+        <field name="name">nhan_vien.form.inherit.cham_cong</field>
+        <field name="model">nhan_vien</field>
+        <field name="inherit_id" ref="nhan_su.view_nhan_vien_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@class='oe_read_only']" position="before">
+                <div class="oe_button_box" name="button_box">
+                    <button name="%(action_cham_cong_graph_nhan_vien)d" 
+                            type="action" class="oe_stat_button" icon="fa-pie-chart"
+                            groups="base.group_user">
+                        <div class="o_stat_info">
+                            <span class="o_stat_text">Biểu Đồ CC</span>
+                        </div>
+                    </button>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

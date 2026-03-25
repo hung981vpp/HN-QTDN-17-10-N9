@@ -20,6 +20,7 @@ Module quản lý tính lương nhân viên bao gồm:
     'data': [
         'security/ir.model.access.csv',
         'data/sequence_thuong_phat.xml',
+        'data/ir_sequence.xml',
         'data/ir_cron.xml',
         'data/email_template_bang_luong.xml',
         'views/loai_thuong_phat_views.xml',
@@ -27,7 +28,9 @@ Module quản lý tính lương nhân viên bao gồm:
         'views/report_bang_luong.xml',
         'views/bang_luong.xml',
         'views/dashboard_views.xml',
+        'views/nhan_vien_inherit.xml',
         'views/menu.xml',
+        'wizard/import_bang_luong_wizard_views.xml',
     ],
     'assets': {
         'web.assets_backend': [
