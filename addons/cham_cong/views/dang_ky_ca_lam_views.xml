@@ -39,7 +39,7 @@
                         <group>
                             <field name="ngay_lam" attrs="{'readonly': [('trang_thai', '!=', 'nhap')]}"/>
                             <field name="ca_lam" attrs="{'readonly': [('trang_thai', '!=', 'nhap')]}"/>
-                            <field name="ly_do_tu_choi" readonly="1" attrs="{'invisible': [('trang_thai', '!=', 'tu_choi')]}"/>
+                            <field name="ly_do_tu_choi" attrs="{'invisible': [('trang_thai', 'not in', ['cho_duyet', 'tu_choi'])], 'readonly': [('trang_thai', '!=', 'cho_duyet')]}"/>
                         </group>
                     </group>
                 </sheet>

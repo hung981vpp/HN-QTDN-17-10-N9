@@ -60,9 +60,23 @@ class PhieuThuongPhat(models.Model):
         self.state = 'da_duyet'
         self.nguoi_duyet_id = self.env.user.id
         self.ngay_duyet = fields.Datetime.now()
+        
+        # Gửi thông báo Telegram
+        try:
+            self.env['telegram.notification.service'].notify_thuong_phat_duyet(self.id)
+        except Exception as e:
+            pass
 
     def action_tu_choi(self):
         self.state = 'tu_choi'
+        self.nguoi_duyet_id = self.env.user.id
+        self.ngay_duyet = fields.Datetime.now()
+        
+        # Gửi thông báo Telegram
+        try:
+            self.env['telegram.notification.service'].notify_thuong_phat_tu_choi(self.id)
+        except Exception as e:
+            pass
 
     def action_huy(self):
         self.state = 'nhap'

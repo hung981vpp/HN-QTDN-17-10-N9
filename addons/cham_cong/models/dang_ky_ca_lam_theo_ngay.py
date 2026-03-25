@@ -143,6 +143,8 @@ class DangKyCaLamTheoNgay(models.Model):
         self.ensure_one()
         if self.trang_thai != 'cho_duyet':
             raise ValidationError('Chỉ có thể từ chối phiếu đang chờ duyệt!')
+        if not self.ly_do_tu_choi:
+            raise ValidationError('Vui lòng nhập lý do từ chối trước khi thực hiện!')
             
         self.write({
             'trang_thai': 'tu_choi',

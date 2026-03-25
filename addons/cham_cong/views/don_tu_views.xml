@@ -46,7 +46,10 @@
                     <group>
                         <field name="ly_do" attrs="{'readonly': [('trang_thai', '!=', 'cho_duyet')]}"/>
                     </group>
-                    <group string="Thông Tin Duyệt" attrs="{'invisible': [('trang_thai', '=', 'cho_duyet')]}">
+                    <group string="Phê duyệt">
+                        <field name="ghi_chu_duyet" attrs="{'readonly': [('trang_thai', '!=', 'cho_duyet')], 'required': [('trang_thai', '=', 'tu_choi')]}"/>
+                    </group>
+                    <group string="Thông tin người duyệt" attrs="{'invisible': [('trang_thai', '=', 'cho_duyet')]}">
                         <group>
                             <field name="nguoi_duyet_id"/>
                             <field name="ngay_duyet"/>

@@ -131,6 +131,12 @@ class DonTu(models.Model):
                 cham_cong.write({'co_xin_phep': True})
                 self.cham_cong_id = cham_cong.id
         
+        # Gửi thông báo Telegram
+        try:
+            self.env['telegram.notification.service'].notify_don_tu_duyet(self.id)
+        except Exception as e:
+            _logger.warning(f'Không thể gửi thông báo Telegram: {str(e)}')
+
         # Gửi thông báo Zalo
         try:
             self.env['zalo.notification.service'].notify_don_tu_duyet(self.id)
@@ -142,6 +148,8 @@ class DonTu(models.Model):
         self.ensure_one()
         if self.trang_thai != 'cho_duyet':
             raise ValidationError('Chỉ có thể từ chối đơn đang chờ duyệt!')
+        if not self.ghi_chu_duyet:
+            raise ValidationError('Vui lòng nhập lý do từ chối vào ô "Ghi chú duyệt" trước khi thực hiện!')
         
         self.write({
             'trang_thai': 'tu_choi',
@@ -153,6 +161,12 @@ class DonTu(models.Model):
         if self.cham_cong_id:
             self.cham_cong_id.write({'co_xin_phep': False})
         
+        # Gửi thông báo Telegram
+        try:
+            self.env['telegram.notification.service'].notify_don_tu_tu_choi(self.id)
+        except Exception as e:
+            _logger.warning(f'Không thể gửi thông báo Telegram: {str(e)}')
+
         # Gửi thông báo Zalo
         try:
             self.env['zalo.notification.service'].notify_don_tu_tu_choi(self.id)
